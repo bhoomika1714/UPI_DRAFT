@@ -1,20 +1,18 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
-import { FontFamily, Color, FontSize, Border } from "../GlobalStyles";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { FontSize, Color, FontFamily, Border } from "../GlobalStyles";
 
 const TandC = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.tandc}>
       <View style={styles.tandcChild} />
-      <Text style={[styles.iAccept, styles.nextTypo]}>[ ] I accept</Text>
+      <Text style={[styles.iAccept, styles.iAcceptFlexBox]}>[ ] I accept</Text>
       <Image
         style={styles.image1Icon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-1.png")}
       />
       <Pressable
@@ -23,18 +21,17 @@ const TandC = () => {
       >
         <Image
           style={styles.icon}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/rectangle-225.png")}
         />
       </Pressable>
       <Text style={[styles.next, styles.nextTypo]}>Next</Text>
       <Text
-        style={[
-          styles.eligibilityapplicantsMustBeContainer,
-          styles.termsAndConditionsClr,
-        ]}
+        style={[styles.eligibilityapplicantsMustBeContainer, styles.nextTypo]}
       >
-        <Text style={styles.eligibility}>Eligibility:</Text>
+        <Text style={styles.eligibility}>{`
+
+Eligibility:`}</Text>
         <Text
           style={styles.applicantsMustBe}
         >{`Applicants must be 18-65 years old with
@@ -116,7 +113,8 @@ electronic signatures.
 
 `}</Text>
       </Text>
-      <Text style={[styles.termsAndConditions, styles.termsAndConditionsClr]}>
+      <View style={styles.tandcItem} />
+      <Text style={[styles.termsAndConditions, styles.iAcceptFlexBox]}>
         Terms and Conditions
       </Text>
     </View>
@@ -124,24 +122,22 @@ electronic signatures.
 };
 
 const styles = StyleSheet.create({
-  nextTypo: {
+  iAcceptFlexBox: {
     textAlign: "left",
-    fontFamily: FontFamily.poppinsRegular,
-    top: 754,
     position: "absolute",
   },
-  termsAndConditionsClr: {
-    color: Color.miscellaneousFloatingTabTextUnselected,
+  nextTypo: {
+    fontSize: FontSize.size_smi,
     textAlign: "left",
     position: "absolute",
   },
   tandcChild: {
-    marginLeft: -180,
-    top: 37,
+    marginLeft: -179,
+    top: 96,
     left: "50%",
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_400,
     width: 357,
-    height: 700,
+    height: 660,
     position: "absolute",
   },
   iAccept: {
@@ -149,13 +145,15 @@ const styles = StyleSheet.create({
     color: "#181616",
     width: 289,
     height: 39,
-    left: 4,
+    fontFamily: FontFamily.poppinsRegular,
+    left: 19,
+    top: 773,
   },
   image1Icon: {
+    top: 772,
     width: 15,
     height: 15,
-    left: 4,
-    top: 754,
+    left: 19,
     position: "absolute",
   },
   icon: {
@@ -164,18 +162,19 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   wrapper: {
-    left: 234,
-    top: 752,
+    left: 238,
     width: 110,
     height: 21,
+    top: 773,
     position: "absolute",
   },
   next: {
-    left: 268,
+    left: 265,
     color: "#f5ebeb",
     width: 60,
     height: 12,
-    fontSize: FontSize.size_smi,
+    fontFamily: FontFamily.poppinsRegular,
+    top: 773,
   },
   eligibility: {
     fontWeight: "700",
@@ -187,20 +186,29 @@ const styles = StyleSheet.create({
   eligibilityapplicantsMustBeContainer: {
     bottom: 31,
     left: 10,
+    color: Color.miscellaneousFloatingTabTextUnselected,
     width: 382,
     height: 708,
-    fontSize: FontSize.size_smi,
+  },
+  tandcItem: {
+    top: 0,
+    left: 0,
+    backgroundColor: Color.colorDarkcyan,
+    width: 358,
+    height: 61,
+    position: "absolute",
   },
   termsAndConditions: {
-    top: 5,
-    left: 50,
+    top: 16,
+    left: 61,
     fontSize: FontSize.size_5xl,
     fontFamily: FontFamily.interRegular,
+    color: "#fcf4f4",
     width: 566,
     height: 45,
   },
   tandc: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

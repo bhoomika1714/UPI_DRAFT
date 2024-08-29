@@ -1,28 +1,26 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Image, StyleSheet, View, Text, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, Border, FontSize, FontFamily } from "../GlobalStyles";
 
 const LoginPage = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.loginPage2, styles.lockIconTransform]}>
       <Image
         style={[styles.loginPage2Child, styles.loginLayout]}
-        contentFit="cover"
-        source={require("../assets/rectangle-12.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-14.png")}
       />
       <Image
         style={[styles.loginPage2Item, styles.loginLayout]}
-        contentFit="cover"
-        source={require("../assets/rectangle-12.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-14.png")}
       />
       <Image
         style={styles.loginPage2Inner}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-5.png")}
       />
       <View style={styles.rectangleView} />
@@ -34,7 +32,7 @@ const LoginPage = () => {
       <Text style={[styles.text, styles.textTypo]}>****</Text>
       <Image
         style={[styles.phoneIcon, styles.text1Position]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/phone.png")}
       />
       <Text style={[styles.digitNumber, styles.digitTypo]}>
@@ -46,7 +44,7 @@ const LoginPage = () => {
       <Text style={[styles.text1, styles.text1Position]}>**********</Text>
       <Image
         style={[styles.lockIcon, styles.lockIconTransform]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/lock.png")}
       />
       <Text style={styles.show}>SHOW</Text>
@@ -56,8 +54,8 @@ const LoginPage = () => {
       <View style={[styles.loginPage2Child3, styles.loginChildLayout]} />
       <Image
         style={styles.rectangleIcon}
-        contentFit="cover"
-        source={require("../assets/rectangle-581.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-58.png")}
       />
       <View style={styles.loginPage2Child4} />
       <Pressable
@@ -184,7 +182,7 @@ const styles = StyleSheet.create({
   },
   loginPage2Child1: {
     top: 200,
-    backgroundColor: "rgba(232, 227, 227, 0.34)",
+    backgroundColor: Color.colorGainsboro_300,
     height: 78,
     width: 317,
     borderRadius: Border.br_mini,

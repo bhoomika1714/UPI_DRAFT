@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Pressable, Text } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Image, Pressable, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontSize, FontFamily } from "../GlobalStyles";
 
 const Rewards = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.rewards}>
@@ -17,14 +15,14 @@ const Rewards = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left16.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left1.png")}
         />
       </Pressable>
       <View style={[styles.rewardsItem, styles.footerIconPosition]} />
       <Image
         style={styles.rewardsInner}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-10.png")}
       />
       <Pressable
@@ -33,18 +31,18 @@ const Rewards = () => {
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-111.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-11.png")}
         />
       </Pressable>
       <Image
         style={[styles.rectangleIcon, styles.wrapperLayout]}
-        contentFit="cover"
-        source={require("../assets/rectangle-121.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-12.png")}
       />
       <Image
         style={styles.rewardsChild1}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-13.png")}
       />
       <Text
@@ -53,7 +51,7 @@ const Rewards = () => {
 Last Updated 2 mins ago`}</Text>
       <Image
         style={[styles.footerIcon, styles.footerIconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/footer.png")}
       />
       <Text style={[styles.rewards1, styles.rewards1FlexBox]}>{`Rewards

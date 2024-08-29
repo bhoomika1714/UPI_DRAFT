@@ -1,21 +1,17 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Pressable, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, Border, FontFamily, FontSize } from "../GlobalStyles";
 
 const GraphYear = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.graphYear, styles.iconLayout]}>
       <View style={[styles.graphYearChild, styles.graphChildLayout4]} />
       <Text style={[styles.year2021, styles.year2021Typo]}> Year 2021</Text>
       <View style={styles.graphYearItem} />
-      <Text style={[styles.selectAYear, styles.yearFlexBox]}>
-        Select a year
-      </Text>
+      <Text style={styles.selectAYear}>Select a year</Text>
       <Pressable
         style={[styles.graphYearInner, styles.graphChildLayout3]}
         onPress={() => navigation.navigate("GraphicalOverview1")}
@@ -39,29 +35,29 @@ const GraphYear = () => {
       <View style={[styles.graphYearChild9, styles.graphChildLayout]} />
       <View style={[styles.graphYearChild10, styles.graphChildLayout]} />
       <View style={[styles.graphYearChild11, styles.graphChildLayout4]} />
-      <Text style={[styles.year2022, styles.yearFlexBox]}>Year 2022</Text>
+      <Text style={[styles.year2022, styles.yearTypo]}>Year 2022</Text>
       <View style={[styles.graphYearChild12, styles.graphChildLayout4]} />
-      <Text style={[styles.year2023, styles.yearFlexBox]}> Year 2023</Text>
-      <View style={[styles.graphYearChild13, styles.graphChildLayout4]} />
-      <Text style={[styles.year2024, styles.octoberTypo]}> Year 2024</Text>
+      <Text style={[styles.year2023, styles.yearTypo]}> Year 2023</Text>
+      <View style={[styles.graphYearChild13, styles.yearPosition]} />
+      <Text style={[styles.year2024, styles.yearPosition]}> Year 2024</Text>
       <Text style={[styles.march, styles.juneTypo]}>March</Text>
       <Text style={[styles.april, styles.juneTypo]}>April</Text>
-      <Text style={[styles.may, styles.yearFlexBox]}>May</Text>
+      <Text style={[styles.may, styles.mayTypo]}>May</Text>
       <Text style={[styles.june, styles.juneTypo]}>June</Text>
-      <Text style={[styles.july, styles.julyTypo]}>July</Text>
-      <Text style={[styles.august, styles.yearFlexBox]}>August</Text>
+      <Text style={[styles.july, styles.mayTypo]}>July</Text>
+      <Text style={[styles.august, styles.mayTypo]}>August</Text>
       <Text style={[styles.september, styles.juneTypo]}>September</Text>
       <Text style={[styles.october, styles.octoberTypo]}>October</Text>
       <Text style={[styles.november, styles.juneTypo]}>November</Text>
-      <Text style={[styles.december, styles.year2021Typo]}> December</Text>
+      <Text style={[styles.december, styles.mayTypo]}> December</Text>
       <Pressable
         style={styles.arrowLeft}
         onPress={() => navigation.navigate("ViewStatement")}
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left5.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left6.png")}
         />
       </Pressable>
     </View>
@@ -76,47 +72,40 @@ const styles = StyleSheet.create({
   graphChildLayout4: {
     height: 33,
     width: 275,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_500,
     borderRadius: Border.br_xl,
-    position: "absolute",
   },
   year2021Typo: {
     height: 29,
     textAlign: "left",
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
-    position: "absolute",
-  },
-  yearFlexBox: {
-    textAlign: "left",
-    position: "absolute",
   },
   graphChildLayout3: {
     width: 153,
     borderRadius: Border.br_3xs,
     height: 29,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_500,
     position: "absolute",
   },
   julyTypo: {
     height: 23,
     textAlign: "left",
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
   },
   octoberTypo: {
     height: 27,
     textAlign: "left",
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
-    position: "absolute",
   },
   graphChildLayout2: {
     top: 209,
     width: 153,
     borderRadius: Border.br_3xs,
     height: 29,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_500,
     position: "absolute",
   },
   graphChildLayout1: {
@@ -124,7 +113,7 @@ const styles = StyleSheet.create({
     width: 153,
     borderRadius: Border.br_3xs,
     height: 29,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_500,
     position: "absolute",
   },
   graphChildLayout: {
@@ -132,26 +121,41 @@ const styles = StyleSheet.create({
     width: 153,
     borderRadius: Border.br_3xs,
     height: 29,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_500,
+    position: "absolute",
+  },
+  yearTypo: {
+    color: Color.colorDarkcyan,
+    fontFamily: FontFamily.interRegular,
+    textAlign: "left",
+  },
+  yearPosition: {
+    top: 533,
     position: "absolute",
   },
   juneTypo: {
     height: 24,
     fontSize: FontSize.size_base,
     textAlign: "left",
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
+    position: "absolute",
+  },
+  mayTypo: {
+    fontSize: FontSize.size_base,
     position: "absolute",
   },
   graphYearChild: {
     top: 115,
     left: 45,
+    position: "absolute",
   },
   year2021: {
     top: 119,
     left: 94,
     width: 160,
     fontSize: FontSize.size_xl,
+    position: "absolute",
   },
   graphYearItem: {
     top: 0,
@@ -170,6 +174,8 @@ const styles = StyleSheet.create({
     color: Color.schemesOnPrimary,
     width: 372,
     height: 59,
+    textAlign: "left",
+    position: "absolute",
   },
   graphYearInner: {
     top: 168,
@@ -194,6 +200,7 @@ const styles = StyleSheet.create({
     left: 220,
     width: 134,
     fontSize: FontSize.size_base,
+    position: "absolute",
   },
   graphYearChild1: {
     left: 8,
@@ -233,39 +240,45 @@ const styles = StyleSheet.create({
   graphYearChild11: {
     top: 426,
     left: 36,
+    position: "absolute",
   },
   year2022: {
     top: 431,
     left: 114,
     width: 177,
     height: 28,
-    color: Color.miscellaneousFloatingTabTextUnselected,
-    fontFamily: FontFamily.interRegular,
     textAlign: "left",
     fontSize: FontSize.size_xl,
+    position: "absolute",
   },
   graphYearChild12: {
     top: 477,
     left: 36,
+    position: "absolute",
   },
   year2023: {
     top: 482,
     left: 101,
     width: 132,
     height: 31,
-    color: Color.miscellaneousFloatingTabTextUnselected,
-    fontFamily: FontFamily.interRegular,
     textAlign: "left",
     fontSize: FontSize.size_xl,
+    position: "absolute",
   },
   graphYearChild13: {
-    top: 533,
     left: 36,
+    height: 33,
+    width: 275,
+    backgroundColor: Color.colorSnow_500,
+    borderRadius: Border.br_xl,
   },
   year2024: {
-    top: 535,
-    left: 69,
+    left: 63,
     width: 228,
+    height: 27,
+    textAlign: "left",
+    color: Color.colorDarkcyan,
+    fontFamily: FontFamily.interRegular,
     fontSize: FontSize.size_xl,
   },
   march: {
@@ -283,10 +296,9 @@ const styles = StyleSheet.create({
     left: 55,
     width: 133,
     height: 30,
-    fontSize: FontSize.size_base,
-    color: Color.miscellaneousFloatingTabTextUnselected,
-    fontFamily: FontFamily.interRegular,
     textAlign: "left",
+    color: Color.colorDarkcyan,
+    fontFamily: FontFamily.interRegular,
   },
   june: {
     top: 255,
@@ -297,18 +309,19 @@ const styles = StyleSheet.create({
     top: 290,
     left: 56,
     width: 119,
-    fontSize: FontSize.size_base,
-    position: "absolute",
+    height: 23,
+    textAlign: "left",
+    color: Color.colorDarkcyan,
+    fontFamily: FontFamily.interRegular,
   },
   august: {
     top: 296,
     left: 227,
     width: 111,
     height: 26,
-    fontSize: FontSize.size_base,
-    color: Color.miscellaneousFloatingTabTextUnselected,
-    fontFamily: FontFamily.interRegular,
     textAlign: "left",
+    color: Color.colorDarkcyan,
+    fontFamily: FontFamily.interRegular,
   },
   september: {
     top: 335,
@@ -320,6 +333,7 @@ const styles = StyleSheet.create({
     left: 224,
     width: 136,
     fontSize: FontSize.size_base,
+    position: "absolute",
   },
   november: {
     top: 376,
@@ -330,7 +344,10 @@ const styles = StyleSheet.create({
     top: 374,
     left: 196,
     width: 168,
-    fontSize: FontSize.size_base,
+    height: 29,
+    textAlign: "left",
+    color: Color.colorDarkcyan,
+    fontFamily: FontFamily.interRegular,
   },
   icon: {
     height: "100%",
@@ -347,7 +364,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   graphYear: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
   },

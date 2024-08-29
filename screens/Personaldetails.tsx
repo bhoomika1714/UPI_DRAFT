@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const Personaldetails = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.personaldetails}>
@@ -18,7 +16,7 @@ const Personaldetails = () => {
       </Text>
       <Image
         style={[styles.image20Icon, styles.image20IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-20.png")}
       />
       <Pressable
@@ -27,14 +25,14 @@ const Personaldetails = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left1.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left4.png")}
         />
       </Pressable>
       <Image
         style={[styles.bankLogosSmall, styles.image20IconLayout]}
-        contentFit="cover"
-        source={require("../assets/bank-logos-small.png")}
+        resizeMode="cover"
+        source={require("../assets/bank-logos-small1.png")}
       />
       <Text style={[styles.sbiLoan, styles.sbiLoanTypo]}>SBI LOAN</Text>
       <Text style={[styles.text, styles.textLayout]}>1/5</Text>
@@ -52,55 +50,55 @@ const Personaldetails = () => {
       <Text style={[styles.dob, styles.personalTypo]}>{`DOB   `}</Text>
       <Image
         style={[styles.icon1, styles.iconLayout]}
-        contentFit="cover"
-        source={require("../assets/icon1.png")}
+        resizeMode="cover"
+        source={require("../assets/icon2.png")}
       />
       <Text style={[styles.marriageStatus, styles.changeTypo]}>
         Marriage Status
       </Text>
       <Image
         style={[styles.personaldetailsInner, styles.ellipseIconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-71.png")}
       />
       <Image
         style={[styles.ellipseIcon, styles.ellipseIconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-71.png")}
       />
       <Text style={[styles.address, styles.sbiLoanTypo]}>Address</Text>
       <Text style={[styles.rented, styles.rentedTypo]}>Rented</Text>
       <Text style={[styles.owned, styles.textLayout]}>Owned</Text>
-      <View style={[styles.lineView, styles.personaldetailsChildPosition]} />
+      <View style={[styles.lineView, styles.personaldetailsChildPosition1]} />
       <View
         style={[
           styles.personaldetailsChild1,
-          styles.personaldetailsChildPosition,
+          styles.personaldetailsChildPosition1,
         ]}
       />
       <View
         style={[
           styles.personaldetailsChild2,
-          styles.personaldetailsChildBorder,
+          styles.personaldetailsChildPosition,
         ]}
       />
       <View
         style={[
           styles.personaldetailsChild3,
-          styles.personaldetailsChildBorder,
+          styles.personaldetailsChildPosition,
         ]}
       />
       <View
         style={[
           styles.personaldetailsChild4,
-          styles.personaldetailsChildPosition,
+          styles.personaldetailsChildPosition1,
         ]}
       />
       <Text style={[styles.selectPlace, styles.changeTypo]}>Select Place</Text>
       <View
         style={[
           styles.personaldetailsChild5,
-          styles.personaldetailsChildPosition,
+          styles.personaldetailsChildPosition1,
         ]}
       />
       <Pressable
@@ -173,18 +171,16 @@ const styles = StyleSheet.create({
     top: 559,
     position: "absolute",
   },
-  personaldetailsChildPosition: {
+  personaldetailsChildPosition1: {
     height: 1,
     width: 331,
     borderTopWidth: 1,
-    borderColor: Color.colorGray_400,
     borderStyle: "solid",
     marginLeft: -165.5,
     left: "50%",
     position: "absolute",
   },
-  personaldetailsChildBorder: {
-    borderColor: Color.miscellaneousFloatingTabTextUnselected,
+  personaldetailsChildPosition: {
     top: 410,
     height: 1,
     borderTopWidth: 1,
@@ -214,10 +210,10 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   arrowLeft: {
-    left: "-2.78%",
-    top: "-1.37%",
-    right: "88.89%",
-    bottom: "95.13%",
+    left: "-1.94%",
+    top: "1.25%",
+    right: "88.06%",
+    bottom: "92.5%",
     width: "13.89%",
     height: "6.25%",
     position: "absolute",
@@ -233,7 +229,7 @@ const styles = StyleSheet.create({
     left: 48,
     fontSize: FontSize.size_smi,
     width: 66,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
   },
   text: {
     left: 16,
@@ -247,7 +243,7 @@ const styles = StyleSheet.create({
     left: 63,
     width: 157,
     height: 23,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     textAlign: "left",
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
@@ -270,7 +266,7 @@ const styles = StyleSheet.create({
   },
   mobileNumber: {
     top: 274,
-    color: Color.colorWhitesmoke_300,
+    color: Color.colorWhitesmoke_700,
     width: 187,
     left: 15,
   },
@@ -313,14 +309,14 @@ const styles = StyleSheet.create({
   address: {
     top: 501,
     left: 12,
-    color: "#fff5f5",
+    color: Color.colorSnow_700,
     width: 142,
     fontSize: FontSize.size_base,
   },
   rented: {
     top: 567,
     left: 64,
-    color: Color.colorSnow_400,
+    color: Color.colorSnow_800,
     width: 84,
   },
   owned: {
@@ -335,30 +331,36 @@ const styles = StyleSheet.create({
   },
   lineView: {
     top: 301,
+    borderColor: "#f7f0f0",
   },
   personaldetailsChild1: {
     top: 351,
+    borderColor: "#fff6f6",
   },
   personaldetailsChild2: {
     marginLeft: -162.5,
+    borderColor: Color.colorSnow_600,
     width: 86,
     left: "50%",
   },
   personaldetailsChild3: {
     left: 160,
+    borderColor: "#f5e7e7",
     width: 181,
   },
   personaldetailsChild4: {
     top: 470,
+    borderColor: "#faefef",
   },
   selectPlace: {
     top: 379,
     left: 180,
-    color: "#f5ecec",
+    color: Color.colorLavenderblush_200,
     height: 16,
   },
   personaldetailsChild5: {
     top: 532,
+    borderColor: "#faf7f7",
   },
   rectanglePressable: {
     marginLeft: -80,
@@ -366,7 +368,7 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_8xs,
     backgroundColor: Color.colorPaleturquoise_100,
     width: 161,
-    height: 50,
+    height: 43,
     left: "50%",
     position: "absolute",
   },
@@ -375,7 +377,7 @@ const styles = StyleSheet.create({
     top: 624,
     width: 120,
     height: 22,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     fontSize: FontSize.size_base,
     left: "50%",
   },
@@ -386,7 +388,7 @@ const styles = StyleSheet.create({
     height: 31,
   },
   personaldetails: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

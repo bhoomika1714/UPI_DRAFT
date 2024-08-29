@@ -1,39 +1,26 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Text, View, Pressable } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Image, StyleSheet, View, Text, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { FontFamily, FontSize, Color, Border } from "../GlobalStyles";
 
 const ForgotPassword = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.forgotPassword}>
       <Image
         style={styles.bankLogosSmall}
-        contentFit="cover"
-        source={require("../assets/bank-logos-small3.png")}
+        resizeMode="cover"
+        source={require("../assets/bank-logos-small.png")}
       />
-      <Text style={[styles.stateBankOf, styles.stateBankOfTypo]}>
-        {" "}
-        State Bank Of India
-      </Text>
       <View style={[styles.forgotPasswordChild, styles.forgotLayout]} />
       <Text style={[styles.forgotPassword1, styles.stateBankOfTypo]}>
         <Text style={styles.forgot}>Forgot</Text>
         <Text style={styles.password}> Password</Text>
       </Text>
-      <Text style={styles.enterYourMail}>
+      <Text style={[styles.enterYourMail, styles.stateBankOfTypo]}>
         Enter your mail id we will send the reset link to your mail
       </Text>
-      <Pressable style={styles.image} onPress={() => navigation.navigate("")}>
-        <Image
-          style={styles.icon}
-          contentFit="cover"
-          source={require("../assets/image12.png")}
-        />
-      </Pressable>
       <Text style={[styles.emailAddress, styles.sendLinkTypo]}>
         Email address
       </Text>
@@ -42,17 +29,17 @@ const ForgotPassword = () => {
       <Text style={[styles.sendLink, styles.sendLinkTypo]}> Send Link</Text>
       <Image
         style={styles.image41Icon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-41.png")}
       />
       <Image
         style={[styles.image42Icon, styles.iconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-42.png")}
       />
       <Image
         style={[styles.image43Icon, styles.iconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-43.png")}
       />
       <Pressable
@@ -64,20 +51,28 @@ const ForgotPassword = () => {
           <Text style={styles.register}>Register</Text>
         </Text>
       </Pressable>
+      <Image
+        style={styles.communicationMail}
+        resizeMode="cover"
+        source={require("../assets/communication--mail.png")}
+      />
+      <View style={[styles.rectangleView, styles.stateBankOfPosition]} />
+      <Text style={[styles.stateBankOf, styles.stateBankOfPosition]}>
+        {" "}
+        State Bank Of India
+      </Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  stateBankOfTypo: {
-    textAlign: "left",
-    fontFamily: FontFamily.poppinsRegular,
-    left: "50%",
-    position: "absolute",
-  },
   forgotLayout: {
     width: 323,
     position: "absolute",
+  },
+  stateBankOfTypo: {
+    textAlign: "left",
+    fontFamily: FontFamily.poppinsRegular,
   },
   sendLinkTypo: {
     fontFamily: FontFamily.poppinsBold,
@@ -87,9 +82,13 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   iconLayout: {
+    height: 20,
     width: 20,
     top: 683,
-    height: 20,
+    position: "absolute",
+  },
+  stateBankOfPosition: {
+    top: 215,
     position: "absolute",
   },
   bankLogosSmall: {
@@ -101,20 +100,12 @@ const styles = StyleSheet.create({
     position: "absolute",
     overflow: "hidden",
   },
-  stateBankOf: {
-    top: 212,
-    fontSize: FontSize.size_xl,
-    width: 284,
-    height: 16,
-    color: Color.miscellaneousFloatingTabTextUnselected,
-    marginLeft: -161,
-  },
   forgotPasswordChild: {
+    marginLeft: -161,
     top: 281,
-    borderRadius: Border.br_3xs,
     backgroundColor: Color.colorDarkcyan,
     height: 200,
-    marginLeft: -161,
+    borderRadius: Border.br_3xs,
     left: "50%",
   },
   forgot: {
@@ -130,27 +121,16 @@ const styles = StyleSheet.create({
     color: "#efeded",
     width: 281,
     height: 40,
+    left: "50%",
+    position: "absolute",
   },
   enterYourMail: {
     top: 340,
-    fontSize: FontSize.size_mini,
-    color: "#464242",
+    left: 36,
+    fontSize: FontSize.size_smi,
+    color: Color.colorSnow_400,
     width: 285,
     height: 18,
-    left: 36,
-    textAlign: "left",
-    fontFamily: FontFamily.poppinsRegular,
-    position: "absolute",
-  },
-  icon: {
-    height: "100%",
-    width: "100%",
-  },
-  image: {
-    top: 407,
-    width: 25,
-    height: 20,
-    left: 36,
     position: "absolute",
   },
   emailAddress: {
@@ -164,7 +144,7 @@ const styles = StyleSheet.create({
     top: 434,
     left: 20,
     borderStyle: "solid",
-    borderColor: "#252222",
+    borderColor: "#fbf1f1",
     borderTopWidth: 1,
     height: 1,
   },
@@ -174,16 +154,16 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_8xs,
     backgroundColor: Color.colorPaleturquoise_100,
     width: 161,
-    height: 50,
+    height: 43,
     left: "50%",
     position: "absolute",
   },
   sendLink: {
     top: 481,
     left: 115,
+    color: Color.colorDarkcyan,
     width: 122,
     height: 22,
-    color: Color.miscellaneousFloatingTabTextUnselected,
   },
   image41Icon: {
     top: 677,
@@ -219,12 +199,37 @@ const styles = StyleSheet.create({
     left: "50%",
     position: "absolute",
   },
+  communicationMail: {
+    top: 396,
+    left: 24,
+    width: 31,
+    height: 31,
+    position: "absolute",
+    overflow: "hidden",
+  },
+  rectangleView: {
+    left: -9,
+    backgroundColor: Color.colorSnow_300,
+    width: 379,
+    height: 35,
+    borderRadius: Border.br_3xs,
+  },
+  stateBankOf: {
+    marginLeft: -151,
+    fontSize: FontSize.size_xl,
+    color: Color.colorPaleturquoise_100,
+    width: 284,
+    height: 16,
+    textAlign: "left",
+    fontFamily: FontFamily.poppinsRegular,
+    left: "50%",
+  },
   forgotPassword: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
+    width: "100%",
     height: 800,
     overflow: "hidden",
-    width: "100%",
   },
 });
 

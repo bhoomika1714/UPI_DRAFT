@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { FontFamily, Color, FontSize, Border } from "../GlobalStyles";
 
 const Feedback = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.feedback}>
@@ -20,103 +18,103 @@ const Feedback = () => {
  process?`}</Text>
       <Text
         style={[styles.satisfiedNeutralDissatisfied, styles.satisfiedTypo]}
-      >{`         Satisfied                                   Neutral                                           Dissatisfied    
+      >{`         Satisfied                           Neutral                                    Dissatisfied    
 `}</Text>
       <Image
-        style={[styles.feedbackItem, styles.feedbackChildLayout]}
-        contentFit="cover"
+        style={[styles.feedbackItem, styles.feedbackChildLayout1]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
         style={[styles.feedbackInner, styles.feedbackChildLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
-        style={[styles.ellipseIcon, styles.feedbackChildLayout]}
-        contentFit="cover"
+        style={[styles.ellipseIcon, styles.feedbackChildLayout1]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Text
         style={[
           styles.satisfiedNeutralDissatisfied1,
-          styles.feedbackChild1Position,
+          styles.feedbackChildPosition4,
         ]}
-      >{`         Satisfied                                   Neutral                                           Dissatisfied    
+      >{`         Satisfied                           Neutral                                    Dissatisfied    
 `}</Text>
       <Image
-        style={[styles.feedbackChild1, styles.feedbackChild1Position]}
-        contentFit="cover"
-        source={require("../assets/ellipse-89.png")}
-      />
-      <Image
-        style={[styles.feedbackChild2, styles.feedbackChildPosition4]}
-        contentFit="cover"
+        style={[styles.feedbackChild1, styles.feedbackChildPosition4]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
+        style={[styles.feedbackChild2, styles.feedbackChild2Layout]}
+        resizeMode="cover"
+        source={require("../assets/ellipse-90.png")}
+      />
+      <Image
         style={[styles.feedbackChild3, styles.feedbackChildPosition4]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Text
         style={[
           styles.satisfiedNeutralDissatisfied2,
-          styles.feedbackChild4Position,
+          styles.feedbackChild6Position,
         ]}
-      >{`         Satisfied                                   Neutral                                           Dissatisfied    
+      >{`         Satisfied                           Neutral                                    Dissatisfied    
 `}</Text>
       <Image
-        style={[styles.feedbackChild4, styles.feedbackChild4Position]}
-        contentFit="cover"
+        style={[styles.feedbackChild4, styles.feedbackChildPosition3]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
-        style={[styles.feedbackChild5, styles.feedbackChildLayout]}
-        contentFit="cover"
+        style={[styles.feedbackChild5, styles.feedbackChildPosition3]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
-        style={[styles.feedbackChild6, styles.feedbackChildLayout]}
-        contentFit="cover"
+        style={[styles.feedbackChild6, styles.feedbackChild6Position]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Text
         style={[styles.reasonableNeutralUnreasonabl, styles.satisfiedTypo]}
-      >{`         Reasonable                            Neutral                                           Unreasonable   
+      >{`         Reasonable                    Neutral                                   Unreasonable   
 `}</Text>
       <Image
-        style={[styles.feedbackChild7, styles.feedbackChildPosition3]}
-        contentFit="cover"
+        style={[styles.feedbackChild7, styles.feedbackChildLayout1]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
-        style={[styles.feedbackChild8, styles.feedbackChildPosition3]}
-        contentFit="cover"
+        style={[styles.feedbackChild8, styles.feedbackChildLayout1]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
-        style={[styles.feedbackChild9, styles.feedbackChildPosition3]}
-        contentFit="cover"
+        style={[styles.feedbackChild9, styles.feedbackChildLayout]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
-      <Text style={[styles.goodAveragePoor, styles.goodAveragePoorPosition]}>
+      <Text style={[styles.goodAveragePoor, styles.feedbackChild2Layout]}>
         {" "}
         Good Average Poor
       </Text>
       <Image
-        style={[styles.feedbackChild10, styles.goodAveragePoorPosition]}
-        contentFit="cover"
+        style={[styles.feedbackChild10, styles.feedbackChildPosition2]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
         style={[styles.feedbackChild11, styles.feedbackChildPosition2]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
-        style={[styles.feedbackChild12, styles.feedbackChildPosition2]}
-        contentFit="cover"
+        style={[styles.feedbackChild12, styles.feedbackChildLayout]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Text style={[styles.didYouEncounterContainer, styles.howTypo2]}>
@@ -124,56 +122,54 @@ const Feedback = () => {
           style={styles.didYouEncounter}
         >{`6. Did you encounter any issues during the loan 
 disbursement process?
-
 `}</Text>
-        <Text
-          style={styles.yesPleaseSpecify}
-        >{`      Yes (please specify)                                            
+        <Text style={styles.yesPleaseSpecify}>{`
+       Yes (please specify)                                            
 `}</Text>
       </Text>
       <Image
-        style={[styles.feedbackChild13, styles.noPosition]}
-        contentFit="cover"
+        style={[styles.feedbackChild13, styles.feedbackChildLayout1]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
         style={[styles.feedbackChild14, styles.feedbackChildLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
-      <Text style={[styles.no, styles.noPosition]}>No</Text>
+      <Text style={[styles.text, styles.howTypo2]}>{`          `}</Text>
       <Text
         style={[styles.satisfiedNeutralDissatisfied3, styles.satisfiedTypo]}
-      >{`           Satisfied                                   Neutral                                           Dissatisfied    
+      >{`           Satisfied                        Neutral                                      Dissatisfied    
 `}</Text>
       <Image
-        style={[styles.feedbackChild15, styles.feedbackChildLayout]}
-        contentFit="cover"
+        style={[styles.feedbackChild15, styles.feedbackChildPosition1]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
         style={[styles.feedbackChild16, styles.feedbackChildPosition1]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
-        style={[styles.feedbackChild17, styles.feedbackChildPosition1]}
-        contentFit="cover"
+        style={[styles.feedbackChild17, styles.feedbackChildLayout]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
-        style={[styles.feedbackChild18, styles.feedbackChildLayout]}
-        contentFit="cover"
+        style={[styles.feedbackChild18, styles.feedbackChildPosition]}
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
         style={[styles.feedbackChild19, styles.feedbackChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <Image
         style={[styles.feedbackChild20, styles.feedbackChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-86.png")}
       />
       <View style={[styles.rectangleView, styles.rectangleViewLayout]} />
@@ -184,7 +180,7 @@ disbursement process?
       >
         <Image
           style={styles.icon}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/rectangle-253.png")}
         />
       </Pressable>
@@ -198,11 +194,11 @@ disbursement process?
       >{`3. How do you rate the customer service provided 
 during the loan process?`}</Text>
       <Text
-        style={[styles.howReasonableDo, styles.howTypo2]}
+        style={[styles.howReasonableDo, styles.howTypo]}
       >{`4. How reasonable do you find the loan interest 
 rates?`}</Text>
       <Text
-        style={[styles.howWouldYou, styles.howTypo]}
+        style={styles.howWouldYou}
       >{`5. How would you rate the online platform
  formanaging your loan account?`}</Text>
       <Text
@@ -222,10 +218,10 @@ loan services?`}</Text>
       >
         10. Any additional comments or suggestions?
       </Text>
-      <Text
-        style={[styles.likelyNeutralUnlikely, styles.howTypo2]}
-      >{`Likely                                        Neutral                                            Unlikely
-`}</Text>
+      <Text style={[styles.likelyUnlikelyNeutral, styles.howTypo2]}>
+        likely Unlikely Neutral
+      </Text>
+      <Text style={[styles.no, styles.howTypo2]}>No</Text>
     </View>
   );
 };
@@ -238,59 +234,51 @@ const styles = StyleSheet.create({
   },
   howTypo2: {
     color: Color.miscellaneousFloatingTabTextUnselected,
+    fontFamily: FontFamily.poppinsRegular,
     textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
   },
   satisfiedTypo: {
     width: 352,
     fontSize: FontSize.size_3xs,
     color: Color.miscellaneousFloatingTabTextUnselected,
+    fontFamily: FontFamily.poppinsRegular,
     textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
+  },
+  feedbackChildLayout1: {
+    height: 10,
+    width: 10,
   },
   feedbackChildLayout: {
+    left: 261,
     height: 10,
     width: 10,
-  },
-  feedbackChild1Position: {
-    top: 195,
-    position: "absolute",
   },
   feedbackChildPosition4: {
-    top: 198,
-    height: 10,
-    width: 10,
+    top: 184,
     position: "absolute",
   },
-  feedbackChild4Position: {
-    top: 274,
+  feedbackChild2Layout: {
+    height: 11,
+    position: "absolute",
+  },
+  feedbackChild6Position: {
+    top: 260,
     position: "absolute",
   },
   feedbackChildPosition3: {
-    top: 335,
+    top: 257,
     height: 10,
     width: 10,
-    position: "absolute",
-  },
-  goodAveragePoorPosition: {
-    top: 400,
-    left: 9,
     position: "absolute",
   },
   feedbackChildPosition2: {
-    top: 403,
+    top: 395,
     height: 10,
     width: 10,
     position: "absolute",
   },
-  noPosition: {
-    top: 478,
-    position: "absolute",
-  },
   feedbackChildPosition1: {
-    top: 553,
+    top: 548,
     height: 10,
     width: 10,
     position: "absolute",
@@ -304,7 +292,6 @@ const styles = StyleSheet.create({
   rectangleViewLayout: {
     height: 22,
     width: 340,
-    backgroundColor: Color.colorGainsboro_200,
     borderRadius: Border.br_3xs,
     position: "absolute",
   },
@@ -314,29 +301,28 @@ const styles = StyleSheet.create({
   },
   howTypo1: {
     height: 36,
+    left: 11,
     color: Color.miscellaneousFloatingTabTextUnselected,
+    fontFamily: FontFamily.poppinsRegular,
     fontSize: FontSize.size_smi,
     textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
     position: "absolute",
   },
   howTypo: {
+    height: 29,
     left: 11,
     color: Color.miscellaneousFloatingTabTextUnselected,
+    fontFamily: FontFamily.poppinsRegular,
     fontSize: FontSize.size_smi,
     textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
     position: "absolute",
   },
   whatImprovementsWouldTypo: {
     height: 26,
     color: Color.miscellaneousFloatingTabTextUnselected,
+    fontFamily: FontFamily.poppinsRegular,
     fontSize: FontSize.size_smi,
     textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
     position: "absolute",
   },
   feedbackChild: {
@@ -357,113 +343,110 @@ const styles = StyleSheet.create({
   },
   howSatisfiedAre: {
     top: 72,
-    fontSize: FontSize.size_smi,
     left: 13,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    fontSize: FontSize.size_smi,
     position: "absolute",
   },
   satisfiedNeutralDissatisfied: {
-    top: 120,
+    top: 116,
     left: 4,
     width: 352,
     position: "absolute",
   },
   feedbackItem: {
     left: 129,
-    top: 122,
-    width: 10,
+    top: 117,
     position: "absolute",
   },
   feedbackInner: {
-    left: 261,
-    top: 122,
-    width: 10,
+    top: 117,
     position: "absolute",
   },
   ellipseIcon: {
-    left: 8,
-    top: 122,
-    width: 10,
+    left: 15,
+    top: 117,
     position: "absolute",
   },
   satisfiedNeutralDissatisfied1: {
+    left: 7,
     width: 352,
     fontSize: FontSize.size_3xs,
     color: Color.miscellaneousFloatingTabTextUnselected,
+    fontFamily: FontFamily.poppinsRegular,
     textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
-    left: 4,
   },
   feedbackChild1: {
-    left: 10,
+    left: 15,
     height: 10,
     width: 10,
   },
   feedbackChild2: {
+    top: 183,
+    width: 10,
+    height: 11,
     left: 129,
   },
   feedbackChild3: {
     left: 261,
+    height: 10,
+    width: 10,
   },
   satisfiedNeutralDissatisfied2: {
     width: 352,
     fontSize: FontSize.size_3xs,
     color: Color.miscellaneousFloatingTabTextUnselected,
+    fontFamily: FontFamily.poppinsRegular,
     textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
     left: 4,
   },
   feedbackChild4: {
-    left: 10,
+    left: 15,
+  },
+  feedbackChild5: {
+    left: 129,
+  },
+  feedbackChild6: {
+    left: 261,
     height: 10,
     width: 10,
   },
-  feedbackChild5: {
-    top: 279,
-    left: 129,
-    position: "absolute",
-  },
-  feedbackChild6: {
-    top: 275,
-    left: 261,
-    position: "absolute",
-  },
   reasonableNeutralUnreasonabl: {
-    top: 334,
-    left: 0,
+    top: 329,
+    left: 8,
     position: "absolute",
   },
   feedbackChild7: {
-    left: 8,
+    top: 328,
+    left: 15,
+    position: "absolute",
   },
   feedbackChild8: {
+    top: 324,
     left: 129,
+    position: "absolute",
   },
   feedbackChild9: {
-    left: 256,
+    top: 327,
+    position: "absolute",
   },
   goodAveragePoor: {
+    top: 399,
+    left: 19,
     width: 347,
-    height: 11,
-    left: 9,
     fontSize: FontSize.size_3xs,
     color: Color.miscellaneousFloatingTabTextUnselected,
+    fontFamily: FontFamily.poppinsRegular,
     textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
   },
   feedbackChild10: {
-    left: 9,
-    height: 10,
-    width: 10,
+    left: 15,
   },
   feedbackChild11: {
     left: 129,
   },
   feedbackChild12: {
-    left: 261,
+    top: 392,
+    position: "absolute",
   },
   didYouEncounter: {
     fontSize: FontSize.size_smi,
@@ -472,66 +455,62 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_3xs,
   },
   didYouEncounterContainer: {
-    top: 420,
+    top: 422,
+    left: 9,
     width: 318,
     height: 82,
-    left: 10,
     position: "absolute",
   },
   feedbackChild13: {
-    left: 9,
-    height: 10,
-    width: 10,
-  },
-  feedbackChild14: {
-    top: 479,
-    left: 170,
+    top: 467,
+    left: 15,
     position: "absolute",
   },
-  no: {
+  feedbackChild14: {
+    top: 464,
+    position: "absolute",
+  },
+  text: {
+    top: 478,
     left: 186,
     width: 30,
     height: 9,
     fontSize: FontSize.size_3xs,
-    color: Color.miscellaneousFloatingTabTextUnselected,
-    textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
+    position: "absolute",
   },
   satisfiedNeutralDissatisfied3: {
-    top: 552,
-    left: -5,
+    top: 549,
+    left: 0,
     position: "absolute",
   },
   feedbackChild15: {
-    top: 554,
-    left: 9,
-    position: "absolute",
+    left: 15,
   },
   feedbackChild16: {
     left: 124,
   },
   feedbackChild17: {
-    left: 254,
-  },
-  feedbackChild18: {
-    top: 617,
-    left: 14,
+    top: 544,
     position: "absolute",
   },
+  feedbackChild18: {
+    left: 15,
+  },
   feedbackChild19: {
-    left: 134,
+    left: 124,
   },
   feedbackChild20: {
-    left: 266,
+    left: 256,
   },
   rectangleView: {
     top: 686,
+    backgroundColor: Color.colorSnow_200,
     left: 12,
   },
   feedbackChild21: {
     top: 743,
     left: 10,
+    backgroundColor: "#fffefe",
   },
   icon: {
     borderRadius: Border.br_8xs,
@@ -554,33 +533,31 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   howClearAnd: {
-    top: 149,
+    top: 140,
     width: 392,
-    left: 12,
   },
   howDoYou: {
-    top: 221,
+    top: 209,
     width: 484,
-    left: 14,
   },
   howReasonableDo: {
-    top: 298,
+    top: 283,
     width: 394,
-    height: 29,
-    fontSize: FontSize.size_smi,
-    left: 13,
-    color: Color.miscellaneousFloatingTabTextUnselected,
-    position: "absolute",
   },
   howWouldYou: {
     top: 352,
     width: 477,
     height: 41,
+    left: 11,
+    color: Color.miscellaneousFloatingTabTextUnselected,
+    fontFamily: FontFamily.poppinsRegular,
+    fontSize: FontSize.size_smi,
+    textAlign: "left",
+    position: "absolute",
   },
   howSatisfiedAre1: {
-    top: 502,
+    top: 497,
     width: 405,
-    height: 29,
   },
   howLikelyAre: {
     top: 572,
@@ -600,16 +577,24 @@ const styles = StyleSheet.create({
     width: 368,
     left: 8,
   },
-  likelyNeutralUnlikely: {
-    top: 616,
-    left: 35,
+  likelyUnlikelyNeutral: {
+    top: 621,
+    left: 25,
     width: 400,
     height: 19,
     fontSize: FontSize.size_3xs,
     position: "absolute",
   },
+  no: {
+    top: 469,
+    left: 275,
+    width: 36,
+    height: 13,
+    fontSize: FontSize.size_3xs,
+    position: "absolute",
+  },
   feedback: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

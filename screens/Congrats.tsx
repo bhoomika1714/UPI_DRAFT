@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const Congrats = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.congrats, styles.iconLayout]}>
@@ -16,7 +14,7 @@ const Congrats = () => {
       </Text>
       <Image
         style={[styles.image20Icon, styles.image20IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-20.png")}
       />
       <Pressable
@@ -25,24 +23,25 @@ const Congrats = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left1.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left4.png")}
         />
       </Pressable>
       <Image
         style={[styles.bankLogosSmall, styles.image20IconLayout]}
-        contentFit="cover"
-        source={require("../assets/bank-logos-small.png")}
+        resizeMode="cover"
+        source={require("../assets/bank-logos-small1.png")}
       />
       <Text style={[styles.sbiLoan, styles.sbiLoanTypo]}>SBI LOAN</Text>
       <Text style={[styles.incomeDetails, styles.sbiLoanTypo]}>
         <Text style={styles.text}>{`5/5  `}</Text>
+        <Text style={styles.text1}>{`       `}</Text>
         <Text style={styles.incomeDetails1}> Income Details</Text>
       </Text>
       <View style={[styles.congratsItem, styles.congratsPosition]} />
       <Image
         style={styles.image45Icon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-45.png")}
       />
       <Text
@@ -51,15 +50,12 @@ const Congrats = () => {
                 
 Your application form has been submited successfully,you will get the  amount soon`}</Text>
       <Image
-        style={[
-          styles.httpslottiefilescomanimatIcon,
-          styles.congratsInnerPosition,
-        ]}
-        contentFit="cover"
+        style={styles.httpslottiefilescomanimatIcon}
+        resizeMode="cover"
         source={require("../assets/httpslottiefilescomanimationssuccessiqagdnrrmh.png")}
       />
       <Pressable
-        style={[styles.congratsInner, styles.congratsInnerPosition]}
+        style={styles.congratsInner}
         onPress={() => navigation.navigate("Application")}
       />
       <Text style={[styles.trackForm, styles.sbiLoanTypo]}>Track Form</Text>
@@ -88,11 +84,6 @@ const styles = StyleSheet.create({
     width: 20,
     position: "absolute",
   },
-  congratsInnerPosition: {
-    height: 50,
-    left: "50%",
-    position: "absolute",
-  },
   congratsChild: {
     marginLeft: -180,
     top: 0,
@@ -108,11 +99,11 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
     fontSize: FontSize.size_base,
-    top: 27,
+    top: 23,
   },
   image20Icon: {
     left: 310,
-    top: 27,
+    top: 23,
   },
   icon: {
     height: "100%",
@@ -121,10 +112,10 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   arrowLeft: {
-    left: "-2.22%",
-    top: "-1.5%",
-    right: "88.33%",
-    bottom: "95.25%",
+    left: "-3.06%",
+    top: "1.5%",
+    right: "89.17%",
+    bottom: "92.25%",
     width: "13.89%",
     height: "6.25%",
     position: "absolute",
@@ -141,7 +132,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_smi,
     width: 66,
     height: 15,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
     textAlign: "left",
@@ -149,8 +140,11 @@ const styles = StyleSheet.create({
   text: {
     color: Color.colorMediumseagreen_100,
   },
-  incomeDetails1: {
+  text1: {
     color: Color.miscellaneousFloatingTabTextUnselected,
+  },
+  incomeDetails1: {
+    color: Color.colorDarkslategray_100,
   },
   incomeDetails: {
     top: 160,
@@ -190,29 +184,35 @@ const styles = StyleSheet.create({
   },
   httpslottiefilescomanimatIcon: {
     marginLeft: 31,
-    top: 547,
+    top: 542,
     width: 50,
+    height: 50,
+    left: "50%",
+    position: "absolute",
   },
   congratsInner: {
     marginLeft: -80,
-    top: 702,
+    top: 706,
     borderRadius: Border.br_8xs,
     backgroundColor: Color.colorPaleturquoise_100,
     width: 161,
+    height: 43,
+    left: "50%",
+    position: "absolute",
   },
   trackForm: {
     top: 717,
     left: 135,
     width: 139,
     height: 35,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
     textAlign: "left",
     fontSize: FontSize.size_base,
   },
   congrats: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

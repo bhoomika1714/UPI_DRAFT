@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const ReferralPage = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.referralPage}>
@@ -16,13 +14,13 @@ const ReferralPage = () => {
       </View>
       <Image
         style={styles.frameIcon}
-        contentFit="cover"
-        source={require("../assets/frame1.png")}
+        resizeMode="cover"
+        source={require("../assets/frame19.png")}
       />
       <View style={[styles.frame2, styles.frameLayout2]}>
         <Image
           style={[styles.frameChild, styles.frameLayout2]}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/rectangle-99.png")}
         />
       </View>
@@ -32,16 +30,16 @@ const ReferralPage = () => {
       </View>
       <Image
         style={[styles.frameIcon1, styles.frameIconLayout]}
-        contentFit="cover"
-        source={require("../assets/frame2.png")}
+        resizeMode="cover"
+        source={require("../assets/frame20.png")}
       />
       <View style={styles.frame4}>
         <Text style={styles.refferals}>Refferals</Text>
       </View>
       <Image
         style={[styles.frameIcon2, styles.frameIconLayout]}
-        contentFit="cover"
-        source={require("../assets/frame3.png")}
+        resizeMode="cover"
+        source={require("../assets/frame21.png")}
       />
       <Text style={[styles.inviteFriendsTo1, styles.srfed45Clr]}>
         Invite friends to Upay and get Rs.101 when your friends send their first
@@ -50,8 +48,8 @@ const ReferralPage = () => {
       <View style={[styles.referralPageItem, styles.referralPosition]} />
       <Image
         style={styles.frameIcon3}
-        contentFit="cover"
-        source={require("../assets/frame4.png")}
+        resizeMode="cover"
+        source={require("../assets/frame22.png")}
       />
       <View style={[styles.frame5, styles.frame5Layout]}>
         <Text style={[styles.beckyHills, styles.frame5Layout]}>
@@ -63,14 +61,11 @@ const ReferralPage = () => {
       </View>
       <View style={[styles.frame7, styles.frame7Layout]}>
         <View style={[styles.rectangleParent, styles.frame7Layout]}>
-          <Pressable
-            style={[styles.frameInner, styles.wrapperLayout]}
-            onPress={() => navigation.navigate("Transactions")}
-          />
+          <View style={[styles.frameInner, styles.wrapperLayout]} />
           <Image
             style={[styles.vectorIcon, styles.wrapperLayout]}
-            contentFit="cover"
-            source={require("../assets/vector3.png")}
+            resizeMode="cover"
+            source={require("../assets/vector4.png")}
           />
           <Pressable
             style={[styles.wrapper, styles.wrapperLayout]}
@@ -78,7 +73,7 @@ const ReferralPage = () => {
           >
             <Image
               style={styles.icon}
-              contentFit="cover"
+              resizeMode="cover"
               source={require("../assets/rectangle-34.png")}
             />
           </Pressable>
@@ -95,18 +90,18 @@ const ReferralPage = () => {
           >
             <Image
               style={styles.icon}
-              contentFit="cover"
-              source={require("../assets/rectangle-33.png")}
+              resizeMode="cover"
+              source={require("../assets/rectangle-331.png")}
             />
           </Pressable>
           <Pressable
             style={[styles.rectanglePressable, styles.wrapperLayout]}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Home1")}
           >
             <Image
               style={styles.icon}
-              contentFit="cover"
-              source={require("../assets/rectangle-37.png")}
+              resizeMode="cover"
+              source={require("../assets/rectangle-371.png")}
             />
           </Pressable>
           <Pressable
@@ -115,7 +110,7 @@ const ReferralPage = () => {
           >
             <Image
               style={styles.icon}
-              contentFit="cover"
+              resizeMode="cover"
               source={require("../assets/rectangle-35.png")}
             />
           </Pressable>

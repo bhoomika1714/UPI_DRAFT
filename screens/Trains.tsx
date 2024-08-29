@@ -1,38 +1,36 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Pressable, Text, View } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
-import { Color, FontSize, FontFamily, Border } from "../GlobalStyles";
+import { Image, StyleSheet, Pressable, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const Trains = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.trains}>
       <Image
         style={styles.trainsChild}
-        contentFit="cover"
-        source={require("../assets/rectangle-25.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-1.png")}
       />
       <Pressable
         style={[styles.wrapper, styles.frameLayout]}
-        onPress={() => navigation.navigate("Notifications7")}
+        onPress={() => navigation.navigate("Notifications")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-26.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-2.png")}
         />
       </Pressable>
       <Pressable
         style={[styles.container, styles.frameLayout]}
-        onPress={() => navigation.navigate("Help4")}
+        onPress={() => navigation.navigate("Help1")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-27.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-3.png")}
         />
       </Pressable>
       <Pressable
@@ -41,28 +39,23 @@ const Trains = () => {
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-28.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-4.png")}
         />
       </Pressable>
       <View style={styles.rectangleParent}>
+        <Image
+          style={[styles.frameChild, styles.wrapperLayout]}
+          resizeMode="cover"
+          source={require("../assets/rectangle-321.png")}
+        />
         <Pressable
           style={[styles.rectanglePressable, styles.wrapperLayout]}
-          onPress={() => navigation.navigate("Transactions")}
-        >
-          <Image
-            style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-324.png")}
-          />
-        </Pressable>
-        <Pressable
-          style={[styles.wrapper1, styles.wrapperLayout]}
           onPress={() => navigation.navigate("History1")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/rectangle-34.png")}
           />
         </Pressable>
@@ -72,43 +65,43 @@ const Trains = () => {
         <Text style={[styles.transac, styles.homeTypo]}>Transac...</Text>
         <Text style={[styles.cards, styles.homeTypo]}>Cards</Text>
         <Pressable
-          style={styles.wrapper2}
+          style={styles.wrapper1}
           onPress={() => navigation.navigate("")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/rectangle-35.png")}
           />
         </Pressable>
         <Pressable
-          style={[styles.wrapper3, styles.wrapperLayout]}
+          style={[styles.wrapper2, styles.wrapperLayout]}
           onPress={() => navigation.navigate("MyCardsBalance")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-33.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-331.png")}
           />
         </Pressable>
-        <View style={styles.frameChild} />
+        <View style={styles.frameItem} />
         <Pressable
-          style={[styles.wrapper4, styles.wrapperLayout]}
-          onPress={() => navigation.navigate("Home")}
+          style={[styles.wrapper3, styles.wrapperLayout]}
+          onPress={() => navigation.navigate("Home1")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-37.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-371.png")}
           />
         </Pressable>
       </View>
       <Text style={[styles.train, styles.trainFlexBox]}>Train</Text>
       <Pressable style={styles.arrowLeft} onPress={() => navigation.goBack()}>
         <Image
-          style={[styles.icon8, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left13.png")}
+          style={[styles.icon7, styles.iconLayout]}
+          resizeMode="cover"
+          source={require("../assets/arrow-left2.png")}
         />
       </Pressable>
       <View style={[styles.trainsItem, styles.trainsLayout1]} />
@@ -117,17 +110,17 @@ const Trains = () => {
       <View style={[styles.trainsChild1, styles.trainsLayout]} />
       <Image
         style={[styles.arrow11, styles.arrow11Layout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/arrow-1-1.png")}
       />
       <Image
         style={[styles.arrow1Icon, styles.arrow11Layout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/arrow-1.png")}
       />
       <Image
         style={styles.calendarMonth24dp000000FilIcon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/calendar-month-24dp-000000-fill0-wght200-grad0-opsz24-1.png")}
       />
       <Text style={[styles.enterFrom, styles.enterTypo]}>Enter From</Text>
@@ -157,12 +150,12 @@ const Trains = () => {
       </Text>
       <Image
         style={[styles.addUser1Icon, styles.iconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/adduser-1.png")}
       />
       <Image
         style={[styles.resetPassword1Icon, styles.iconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/resetpassword-1.png")}
       />
     </View>
@@ -184,10 +177,10 @@ const styles = StyleSheet.create({
   homeTypo: {
     height: 20,
     color: Color.schemesOnPrimary,
+    fontFamily: FontFamily.interBold,
     fontSize: FontSize.size_smi,
     top: 43,
     textAlign: "left",
-    fontFamily: FontFamily.interBold,
     fontWeight: "700",
     position: "absolute",
   },
@@ -250,7 +243,6 @@ const styles = StyleSheet.create({
   },
   todayTypo: {
     fontSize: FontSize.size_lg,
-    fontFamily: FontFamily.interMedium,
     fontWeight: "500",
     position: "absolute",
   },
@@ -259,7 +251,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   irctcTypo: {
-    fontFamily: FontFamily.interSemiBold,
+    fontFamily: FontFamily.poppinsSemiBold,
     fontWeight: "600",
     fontSize: FontSize.size_base,
     top: 624,
@@ -268,7 +260,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   trainTypo: {
-    fontFamily: FontFamily.interBlack,
+    fontFamily: FontFamily.poppinsBlack,
     fontWeight: "900",
     fontSize: FontSize.size_5xl,
   },
@@ -294,12 +286,12 @@ const styles = StyleSheet.create({
   frame: {
     left: 276,
   },
-  rectanglePressable: {
+  frameChild: {
     left: 165,
     top: 11,
     width: 25,
   },
-  wrapper1: {
+  rectanglePressable: {
     left: 234,
     top: 11,
     width: 25,
@@ -308,6 +300,7 @@ const styles = StyleSheet.create({
     width: 38,
     height: 20,
     color: Color.schemesOnPrimary,
+    fontFamily: FontFamily.interBold,
     fontSize: FontSize.size_smi,
     top: 43,
     left: 31,
@@ -325,6 +318,7 @@ const styles = StyleSheet.create({
     width: 63,
     height: 20,
     color: Color.schemesOnPrimary,
+    fontFamily: FontFamily.interBold,
     fontSize: FontSize.size_smi,
     top: 43,
   },
@@ -333,22 +327,23 @@ const styles = StyleSheet.create({
     width: 38,
     height: 20,
     color: Color.schemesOnPrimary,
+    fontFamily: FontFamily.interBold,
     fontSize: FontSize.size_smi,
     top: 43,
   },
-  wrapper2: {
+  wrapper1: {
     left: 292,
     top: 13,
     height: 31,
     width: 25,
     position: "absolute",
   },
-  wrapper3: {
+  wrapper2: {
     left: 101,
     top: 11,
     width: 25,
   },
-  frameChild: {
+  frameItem: {
     backgroundColor: Color.colorTurquoise,
     height: 32,
     borderRadius: Border.br_3xs,
@@ -357,7 +352,7 @@ const styles = StyleSheet.create({
     left: 31,
     position: "absolute",
   },
-  wrapper4: {
+  wrapper3: {
     left: 37,
     top: 14,
   },
@@ -375,11 +370,11 @@ const styles = StyleSheet.create({
     left: 29,
     width: 90,
     height: 36,
-    fontFamily: FontFamily.interBlack,
+    fontFamily: FontFamily.poppinsBlack,
     fontWeight: "900",
     fontSize: FontSize.size_5xl,
   },
-  icon8: {
+  icon7: {
     overflow: "hidden",
   },
   arrowLeft: {
@@ -460,6 +455,7 @@ const styles = StyleSheet.create({
     color: Color.colorDarkslategray_100,
     top: 375,
     fontSize: FontSize.size_lg,
+    fontFamily: FontFamily.interMedium,
     textAlign: "center",
   },
   today: {
@@ -469,6 +465,7 @@ const styles = StyleSheet.create({
     height: 28,
     top: 375,
     fontSize: FontSize.size_lg,
+    fontFamily: FontFamily.interMedium,
     textAlign: "center",
   },
   trainsChild3: {
@@ -483,6 +480,7 @@ const styles = StyleSheet.create({
   optForFree: {
     top: 431,
     left: 50,
+    fontFamily: FontFamily.poppinsMedium,
     width: 297,
     color: Color.miscellaneousFloatingTabTextUnselected,
     textAlign: "left",
@@ -497,9 +495,9 @@ const styles = StyleSheet.create({
   },
   searchTrains: {
     top: 493,
-    left: 68,
+    left: 62,
     fontSize: FontSize.size_13xl,
-    fontFamily: FontFamily.interBold,
+    fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
     textAlign: "center",
   },

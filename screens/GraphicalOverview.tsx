@@ -1,33 +1,31 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Text, View, Pressable } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Image, StyleSheet, Text, View, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const GraphicalOverview = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.graphicalOverview, styles.iconLayout1]}>
       <Image
         style={[styles.image33Icon, styles.iconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-33.png")}
       />
       <Image
         style={[styles.image34Icon, styles.iconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-34.png")}
       />
       <Image
         style={[styles.image35Icon, styles.iconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-35.png")}
       />
       <Image
         style={[styles.image36Icon, styles.iconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-36.png")}
       />
       <Text style={styles.saveToGoogle}>{`Save to Google         
@@ -45,8 +43,8 @@ const GraphicalOverview = () => {
       </Text>
       <Image
         style={styles.imageIcon}
-        contentFit="cover"
-        source={require("../assets/image1.png")}
+        resizeMode="cover"
+        source={require("../assets/image11.png")}
       />
       <View style={[styles.graphicalOverviewChild, styles.graphicalBg]} />
       <View style={[styles.graphicalOverviewItem, styles.graphicalBg]} />
@@ -60,8 +58,8 @@ const GraphicalOverview = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout1]}
-          contentFit="cover"
-          source={require("../assets/arrow-left7.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left12.png")}
         />
       </Pressable>
       <Text style={[styles.january2021, styles.january2021Typo]}>
@@ -218,7 +216,7 @@ const styles = StyleSheet.create({
     height: 33,
   },
   graphicalOverview: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
   },

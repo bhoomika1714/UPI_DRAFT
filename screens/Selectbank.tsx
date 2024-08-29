@@ -1,22 +1,15 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
-import { FontSize, Color, Border, FontFamily } from "../GlobalStyles";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Color, FontSize, Border, FontFamily } from "../GlobalStyles";
 
 const Selectbank = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
-    <View style={styles.selectbank}>
-      <Image
-        style={styles.imageIcon}
-        contentFit="cover"
-        source={require("../assets/image.png")}
-      />
-      <View style={styles.selectbankChild} />
-      <Text style={styles.selectYourBankContainer}>
+    <View style={[styles.selectbank, styles.iconLayout]}>
+      <View style={[styles.selectbankChild, styles.selectbankChildPosition]} />
+      <Text style={[styles.selectYourBankContainer, styles.bankFlexBox]}>
         <Text style={styles.selectYour}>{`      Select Your `}</Text>
         <Text style={styles.bank}>Bank</Text>
       </Text>
@@ -24,34 +17,34 @@ const Selectbank = () => {
         <View style={styles.componentChild} />
         <Image
           style={styles.bankPosition}
-          contentFit="cover"
-          source={require("../assets/bank-logos-small1.png")}
+          resizeMode="cover"
+          source={require("../assets/bank-logos-small5.png")}
         />
-        <Text style={[styles.axisBank, styles.axisBankTypo]}> Axis Bank</Text>
+        <Text style={[styles.axisBank, styles.bankTypo]}> Axis Bank</Text>
         <Image
           style={styles.outlineinterfacecaretRightIcon}
-          contentFit="cover"
-          source={require("../assets/outlineinterfacecaret-right.png")}
+          resizeMode="cover"
+          source={require("../assets/outlineinterfacecaret-right5.png")}
         />
       </View>
       <View style={[styles.rectangleGroup, styles.rectanglePosition]}>
         <View style={styles.componentChild} />
         <Image
           style={[styles.bankLogosSmall1, styles.bankPosition]}
-          contentFit="cover"
-          source={require("../assets/bank-logos-small1.png")}
+          resizeMode="cover"
+          source={require("../assets/bank-logos-small5.png")}
         />
-        <Text style={[styles.axisBank, styles.axisBankTypo]}> ICICI Bank</Text>
+        <Text style={[styles.axisBank, styles.bankTypo]}> ICICI Bank</Text>
         <Image
           style={styles.outlineinterfacecaretRightIcon}
-          contentFit="cover"
-          source={require("../assets/outlineinterfacecaret-right.png")}
+          resizeMode="cover"
+          source={require("../assets/outlineinterfacecaret-right5.png")}
         />
       </View>
       <Image
         style={[styles.bankLogosSmall2, styles.bankLayout]}
-        contentFit="cover"
-        source={require("../assets/bank-logos-small2.png")}
+        resizeMode="cover"
+        source={require("../assets/bank-logos-small6.png")}
       />
       <Pressable
         style={[styles.rectangleContainer, styles.rectanglePosition]}
@@ -60,44 +53,67 @@ const Selectbank = () => {
         <View style={styles.componentChild} />
         <Image
           style={[styles.bankLogosSmall1, styles.bankPosition]}
-          contentFit="cover"
-          source={require("../assets/bank-logos-small1.png")}
+          resizeMode="cover"
+          source={require("../assets/bank-logos-small5.png")}
         />
-        <Text style={[styles.axisBank, styles.axisBankTypo]}> State Bank</Text>
+        <Text style={[styles.axisBank, styles.bankTypo]}> State Bank</Text>
         <Image
           style={styles.outlineinterfacecaretRightIcon}
-          contentFit="cover"
-          source={require("../assets/outlineinterfacecaret-right.png")}
+          resizeMode="cover"
+          source={require("../assets/outlineinterfacecaret-right5.png")}
         />
       </Pressable>
       <Image
         style={[styles.bankLogosSmall4, styles.bankLayout]}
-        contentFit="cover"
-        source={require("../assets/bank-logos-small.png")}
+        resizeMode="cover"
+        source={require("../assets/bank-logos-small1.png")}
       />
       <View style={styles.selectbankItem} />
       <Image
-        style={styles.image40Icon}
-        contentFit="cover"
-        source={require("../assets/image-40.png")}
+        style={styles.search24dp434343Fill0Wght4Icon}
+        resizeMode="cover"
+        source={require("../assets/search-24dp-434343-fill0-wght400-grad0-opsz24-1.png")}
       />
-      <Text
-        style={[styles.searchForYour, styles.axisBankTypo]}
-      >{`Search for your bank `}</Text>
+      <Text style={[styles.searchByBank, styles.bankTypo]}>
+        Search by Bank Name
+      </Text>
+      <Pressable
+        style={styles.vector}
+        onPress={() => navigation.navigate("Map4")}
+      >
+        <Image
+          style={[styles.icon, styles.iconLayout]}
+          resizeMode="cover"
+          source={require("../assets/vector13.png")}
+        />
+      </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  axisBankTypo: {
-    fontSize: FontSize.size_xl,
+  iconLayout: {
+    overflow: "hidden",
+    width: "100%",
+  },
+  selectbankChildPosition: {
+    width: 349,
+    marginLeft: -175,
+    position: "absolute",
+  },
+  bankFlexBox: {
     textAlign: "left",
+    color: Color.colorDarkcyan,
+    left: "50%",
+  },
+  bankTypo: {
+    fontSize: FontSize.size_xl,
     position: "absolute",
   },
   rectanglePosition: {
     marginLeft: -174,
     height: 43,
-    width: 349,
+    width: 360,
     left: "50%",
     position: "absolute",
   },
@@ -114,23 +130,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     overflow: "hidden",
   },
-  imageIcon: {
-    marginLeft: -90,
-    bottom: 507,
-    width: 180,
-    height: 180,
-    left: "50%",
-    position: "absolute",
-  },
   selectbankChild: {
     top: 319,
+    backgroundColor: "#f6f9f9",
     height: 60,
-    width: 349,
-    marginLeft: -175,
-    backgroundColor: Color.colorDarkcyan,
     borderRadius: Border.br_8xs,
+    width: 349,
     left: "50%",
-    position: "absolute",
+    marginLeft: -175,
   },
   selectYour: {
     fontFamily: FontFamily.interRegular,
@@ -141,49 +148,48 @@ const styles = StyleSheet.create({
   selectYourBankContainer: {
     top: 331,
     fontSize: FontSize.size_11xl,
-    color: Color.schemesOnPrimary,
     height: 37,
-    textAlign: "left",
     width: 349,
     marginLeft: -175,
+    position: "absolute",
+    color: Color.colorDarkcyan,
+  },
+  componentChild: {
+    marginLeft: -180,
+    top: "0%",
+    bottom: "0%",
+    backgroundColor: Color.colorWhitesmoke_300,
+    height: "100%",
+    width: 360,
+    borderRadius: Border.br_8xs,
     left: "50%",
     position: "absolute",
   },
-  componentChild: {
-    height: "100%",
-    top: "0%",
-    right: "0%",
-    bottom: "0%",
-    left: "0%",
-    backgroundColor: Color.colorDarkcyan,
-    borderRadius: Border.br_8xs,
-    position: "absolute",
-    width: "100%",
-  },
   axisBank: {
-    marginLeft: -66.5,
+    marginLeft: -67,
     top: "23.26%",
-    color: Color.colorWhitesmoke_400,
     width: 132,
     height: "69.77%",
     fontFamily: FontFamily.poppinsRegular,
+    textAlign: "left",
+    color: Color.colorDarkcyan,
     left: "50%",
   },
   outlineinterfacecaretRightIcon: {
     top: "13.95%",
     right: 0,
     bottom: "16.28%",
-    maxHeight: "100%",
     width: 29,
+    maxHeight: "100%",
     height: "69.77%",
     position: "absolute",
   },
   rectangleParent: {
     top: 420,
     height: 43,
-    width: 349,
-    marginLeft: -175,
+    width: 360,
     left: "50%",
+    marginLeft: -175,
     position: "absolute",
   },
   bankLogosSmall1: {
@@ -204,34 +210,48 @@ const styles = StyleSheet.create({
     left: 19,
   },
   selectbankItem: {
-    top: 16,
-    left: -1,
-    backgroundColor: Color.colorGainsboro_200,
-    width: 360,
-    height: 30,
+    marginLeft: -172,
+    top: 28,
+    borderRadius: Border.br_11xl,
+    backgroundColor: Color.schemesOnPrimary,
+    width: 344,
+    height: 44,
+    left: "50%",
     position: "absolute",
   },
-  image40Icon: {
-    top: 18,
-    left: 6,
-    width: 25,
+  search24dp434343Fill0Wght4Icon: {
+    top: 42,
+    left: 20,
+    width: 24,
     height: 25,
     position: "absolute",
   },
-  searchForYour: {
-    top: 20,
-    left: 48,
-    color: "#b6a0a0",
-    width: 278,
-    height: 44,
+  searchByBank: {
+    top: 43,
+    left: 27,
+    color: Color.colorGainsboro_100,
+    textAlign: "center",
+    width: 254,
     fontFamily: FontFamily.interRegular,
   },
+  icon: {
+    maxWidth: "100%",
+    maxHeight: "100%",
+    height: "100%",
+  },
+  vector: {
+    left: "31.39%",
+    top: "15%",
+    right: "26.94%",
+    bottom: "66.25%",
+    width: "41.67%",
+    height: "18.75%",
+    position: "absolute",
+  },
   selectbank: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
-    overflow: "hidden",
-    width: "100%",
   },
 });
 

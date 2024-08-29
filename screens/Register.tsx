@@ -1,100 +1,66 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Text, Pressable, View } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
-import { FontSize, FontFamily, Color, Border } from "../GlobalStyles";
+import { Image, StyleSheet, Text, Pressable, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { FontFamily, FontSize, Color, Border } from "../GlobalStyles";
 
 const Register = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.register}>
       <Image
         style={styles.bankLogosSmall}
-        contentFit="cover"
-        source={require("../assets/bank-logos-small3.png")}
+        resizeMode="cover"
+        source={require("../assets/bank-logos-small.png")}
       />
-      <Text style={styles.stateBankOf}> State Bank Of India</Text>
-      <Text style={[styles.register1, styles.registerTypo]}>Register</Text>
-      <Pressable style={styles.wrapper} onPress={() => navigation.navigate("")}>
+      <Text style={styles.register1}>Register</Text>
+      <Pressable
+        style={[styles.wrapper, styles.wrapperLayout]}
+        onPress={() => navigation.navigate("")}
+      >
         <Image
           style={styles.icon}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/rectangle-35.png")}
         />
       </Pressable>
       <Image
         style={styles.registerChild}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-226.png")}
       />
-      <Text style={[styles.register2, styles.registerTypo]}>Register</Text>
-      <Pressable
-        style={[styles.image, styles.imagePosition1]}
-        onPress={() => navigation.navigate("")}
-      >
-        <Image
-          style={styles.icon}
-          contentFit="cover"
-          source={require("../assets/image14.png")}
-        />
-      </Pressable>
-      <Image
-        style={[styles.imageIcon, styles.imagePosition]}
-        contentFit="cover"
-        source={require("../assets/image15.png")}
-      />
-      <Pressable
-        style={[styles.image1, styles.imagePosition]}
-        onPress={() => navigation.navigate("")}
-      >
-        <Image
-          style={styles.icon}
-          contentFit="cover"
-          source={require("../assets/image12.png")}
-        />
-      </Pressable>
+      <Text style={[styles.register2, styles.register2Typo]}>Register</Text>
       <Text style={[styles.userName, styles.userNameTypo]}>User Name</Text>
       <Image
         style={[styles.registerItem, styles.registerPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/line-27.png")}
       />
       <Text style={[styles.emailAddress, styles.userNameTypo]}>
+        {" "}
         Email address
       </Text>
       <Image
         style={[styles.registerInner, styles.registerPosition]}
-        contentFit="cover"
-        source={require("../assets/line-27.png")}
+        resizeMode="cover"
+        source={require("../assets/line-28.png")}
       />
       <Text style={[styles.password, styles.passwordTypo]}>Password</Text>
       <Image
         style={[styles.lineIcon, styles.registerPosition]}
-        contentFit="cover"
-        source={require("../assets/line-27.png")}
+        resizeMode="cover"
+        source={require("../assets/line-29.png")}
       />
-      <Pressable
-        style={[styles.image2, styles.imagePosition1]}
-        onPress={() => navigation.navigate("")}
-      >
-        <Image
-          style={styles.icon}
-          contentFit="cover"
-          source={require("../assets/image14.png")}
-        />
-      </Pressable>
       <Text style={[styles.confirmPassword, styles.passwordTypo]}>
         Confirm Password
       </Text>
       <Image
         style={[styles.registerChild1, styles.registerPosition]}
-        contentFit="cover"
-        source={require("../assets/line-27.png")}
+        resizeMode="cover"
+        source={require("../assets/line-30.png")}
       />
       <Pressable
-        style={[styles.rectanglePressable, styles.register3Position]}
+        style={styles.rectanglePressable}
         onPress={() => navigation.navigate("Bankkpage")}
       />
       <Text style={[styles.register3, styles.text1Typo]}>
@@ -103,17 +69,17 @@ const Register = () => {
       </Text>
       <Image
         style={styles.image41Icon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-41.png")}
       />
       <Image
-        style={[styles.image42Icon, styles.iconPosition]}
-        contentFit="cover"
+        style={[styles.image42Icon, styles.iconLayout]}
+        resizeMode="cover"
         source={require("../assets/image-42.png")}
       />
       <Image
-        style={[styles.image43Icon, styles.iconPosition]}
-        contentFit="cover"
+        style={[styles.image43Icon, styles.iconLayout]}
+        resizeMode="cover"
         source={require("../assets/image-43.png")}
       />
       <Pressable
@@ -125,26 +91,49 @@ const Register = () => {
           <Text style={styles.logIn}>Log in</Text>
         </Text>
       </Pressable>
+      <Pressable
+        style={[styles.container, styles.wrapperLayout]}
+        onPress={() => navigation.navigate("")}
+      >
+        <Image
+          style={styles.icon}
+          resizeMode="cover"
+          source={require("../assets/rectangle-35.png")}
+        />
+      </Pressable>
+      <Image
+        style={[styles.communicationMail, styles.editLayout]}
+        resizeMode="cover"
+        source={require("../assets/communication--mail.png")}
+      />
+      <Image
+        style={[styles.editHide, styles.editLayout]}
+        resizeMode="cover"
+        source={require("../assets/edit--hide.png")}
+      />
+      <Image
+        style={[styles.editHide1, styles.editLayout]}
+        resizeMode="cover"
+        source={require("../assets/edit--hide.png")}
+      />
+      <View style={styles.rectangleView} />
+      <Text style={[styles.stateBankOf, styles.register2Typo]}>
+        {" "}
+        State Bank Of India
+      </Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  registerTypo: {
-    textDecoration: "underline",
-    fontSize: FontSize.size_13xl,
-    textAlign: "left",
-    position: "absolute",
-  },
-  imagePosition1: {
-    left: 32,
+  wrapperLayout: {
     height: 31,
     width: 25,
     position: "absolute",
   },
-  imagePosition: {
-    height: 20,
-    left: 32,
+  register2Typo: {
+    fontFamily: FontFamily.poppinsRegular,
+    textAlign: "left",
     position: "absolute",
   },
   userNameTypo: {
@@ -170,21 +159,22 @@ const styles = StyleSheet.create({
     textAlign: "left",
     position: "absolute",
   },
-  register3Position: {
-    marginLeft: -80,
-    left: "50%",
-    position: "absolute",
-  },
   text1Typo: {
     fontFamily: FontFamily.interBold,
     fontWeight: "700",
     textAlign: "left",
   },
-  iconPosition: {
-    top: 708,
+  iconLayout: {
     height: 20,
     width: 20,
+    top: 708,
     position: "absolute",
+  },
+  editLayout: {
+    width: 31,
+    height: 31,
+    position: "absolute",
+    overflow: "hidden",
   },
   bankLogosSmall: {
     marginLeft: -75,
@@ -195,18 +185,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     overflow: "hidden",
   },
-  stateBankOf: {
-    marginLeft: -162,
-    top: 169,
-    fontSize: FontSize.size_xl,
-    color: Color.miscellaneousFloatingTabTextUnselected,
-    width: 282,
-    height: 16,
-    textAlign: "left",
-    fontFamily: FontFamily.poppinsRegular,
-    left: "50%",
-    position: "absolute",
-  },
   register1: {
     top: 224,
     left: 48,
@@ -214,6 +192,10 @@ const styles = StyleSheet.create({
     color: Color.schemesOnPrimary,
     width: 188,
     height: 41,
+    textAlign: "left",
+    textDecoration: "underline",
+    fontSize: FontSize.size_13xl,
+    position: "absolute",
   },
   icon: {
     height: "100%",
@@ -222,9 +204,6 @@ const styles = StyleSheet.create({
   wrapper: {
     left: 52,
     top: 296,
-    height: 31,
-    width: 25,
-    position: "absolute",
   },
   registerChild: {
     bottom: 128,
@@ -236,63 +215,44 @@ const styles = StyleSheet.create({
   },
   register2: {
     top: 236,
-    left: 23,
-    color: Color.colorSnow_400,
+    color: Color.colorSnow_800,
     width: 197,
     height: 39,
-    fontFamily: FontFamily.poppinsRegular,
+    left: 23,
     textDecoration: "underline",
     fontSize: FontSize.size_13xl,
-  },
-  image: {
-    top: 446,
-  },
-  imageIcon: {
-    width: 20,
-    height: 20,
-    top: 336,
-  },
-  image1: {
-    top: 394,
-    height: 20,
-    width: 25,
+    fontFamily: FontFamily.poppinsRegular,
   },
   userName: {
-    color: "#fff2f2",
+    top: 336,
+    color: "#fff7f7",
     width: 184,
     height: 19,
-    top: 336,
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
-    left: 62,
   },
   registerItem: {
     top: 362,
   },
   emailAddress: {
-    color: Color.colorLavenderblush_200,
+    top: 394,
+    color: "#f8f4f4",
     width: 148,
     height: 24,
-    top: 394,
   },
   registerInner: {
     top: 422,
   },
   password: {
     top: 452,
-    color: "#efe1e1",
+    color: Color.colorWhitesmoke_100,
     width: 118,
     height: 19,
   },
   lineIcon: {
     top: 483,
   },
-  image2: {
-    top: 505,
-  },
   confirmPassword: {
     top: 510,
-    color: "#f6f2f2",
+    color: Color.colorWhitesmoke_200,
     width: 157,
     height: 21,
   },
@@ -300,27 +260,30 @@ const styles = StyleSheet.create({
     top: 545,
   },
   rectanglePressable: {
-    top: 644,
+    marginLeft: -115,
+    top: 651,
     borderRadius: Border.br_8xs,
     backgroundColor: Color.colorPaleturquoise_100,
-    width: 161,
-    height: 50,
+    width: 236,
+    height: 43,
+    left: "50%",
+    position: "absolute",
   },
   text: {
     color: "#fbf2f2",
   },
   register4: {
-    color: Color.colorGray_200,
+    color: Color.colorDarkcyan,
   },
   register3: {
+    marginLeft: -80,
     top: 660,
     width: 145,
     height: 25,
-    marginLeft: -80,
-    left: "50%",
-    position: "absolute",
     fontSize: FontSize.size_base,
     fontFamily: FontFamily.interBold,
+    left: "50%",
+    position: "absolute",
   },
   image41Icon: {
     top: 703,
@@ -353,8 +316,42 @@ const styles = StyleSheet.create({
     left: "50%",
     position: "absolute",
   },
+  container: {
+    top: 327,
+    left: 27,
+  },
+  communicationMail: {
+    top: 391,
+    left: 23,
+  },
+  editHide: {
+    top: 451,
+    left: 27,
+  },
+  editHide1: {
+    top: 505,
+    left: 27,
+  },
+  rectangleView: {
+    top: 167,
+    left: -10,
+    borderRadius: Border.br_3xs,
+    backgroundColor: Color.colorSnow_300,
+    width: 379,
+    height: 35,
+    position: "absolute",
+  },
+  stateBankOf: {
+    marginLeft: -162,
+    top: 168,
+    fontSize: FontSize.size_xl,
+    color: Color.colorPaleturquoise_100,
+    width: 282,
+    height: 16,
+    left: "50%",
+  },
   register: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",
