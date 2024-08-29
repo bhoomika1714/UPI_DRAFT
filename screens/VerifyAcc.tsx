@@ -1,17 +1,15 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const VerifyAcc = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.verifyAcc, styles.iconLayout]}>
       <View style={[styles.verifyAccChild, styles.verifyPosition]} />
-      <Text style={[styles.applyingForPersonal, styles.verifyAccountTypo]}>
+      <Text style={[styles.applyingForPersonal, styles.verifyAccountFlexBox]}>
         APPLYING FOR PERSONAL LOAN
       </Text>
       <Pressable
@@ -20,24 +18,30 @@ const VerifyAcc = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left1.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left4.png")}
         />
       </Pressable>
       <Image
         style={[styles.image20Icon, styles.image20IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-20.png")}
       />
       <Text style={styles.sbiLoan}>SBI LOAN</Text>
       <Image
         style={[styles.bankLogosSmall, styles.image20IconLayout]}
-        contentFit="cover"
-        source={require("../assets/bank-logos-small.png")}
+        resizeMode="cover"
+        source={require("../assets/bank-logos-small1.png")}
       />
-      <Text style={[styles.verifyAccount, styles.verifyAccountTypo]}>
-        <Text style={styles.text}>{`2/5 `}</Text>
-        <Text style={styles.verifyAccount1}> Verify Account</Text>
+      <Text style={[styles.verifyAccount, styles.verifyAccountFlexBox]}>
+        <Text style={styles.text}>
+          <Text style={styles.text1}>{`2/5 `}</Text>
+          <Text style={styles.text2}>{`      `}</Text>
+        </Text>
+        <Text style={styles.verifyAccount1}>
+          <Text style={styles.text}>{` `}</Text>
+          <Text style={styles.verifyAccount2Typo}>Verify Account</Text>
+        </Text>
       </Text>
       <View style={[styles.verifyAccItem, styles.verifyPosition]} />
       <Text style={[styles.fullName, styles.nameTypo]}>Full Name</Text>
@@ -57,7 +61,7 @@ const VerifyAcc = () => {
         onPress={() => navigation.navigate("IncomeDetails")}
       />
       <Text style={[styles.next, styles.nextTypo]}>
-        <Text style={styles.text1}>{`       `}</Text>
+        <Text style={styles.text4}>{`       `}</Text>
         <Text style={styles.next1}>Next</Text>
       </Text>
       <Text style={[styles.change, styles.nextTypo]}>Change</Text>
@@ -75,10 +79,8 @@ const styles = StyleSheet.create({
     left: "50%",
     position: "absolute",
   },
-  verifyAccountTypo: {
+  verifyAccountFlexBox: {
     textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
     position: "absolute",
   },
   image20IconLayout: {
@@ -99,7 +101,6 @@ const styles = StyleSheet.create({
     height: 1,
     width: 331,
     borderTopWidth: 1,
-    borderColor: Color.colorGray_400,
     borderStyle: "solid",
     marginLeft: -165.5,
     left: "50%",
@@ -134,6 +135,8 @@ const styles = StyleSheet.create({
     color: Color.schemesOnPrimary,
     width: 315,
     height: 28,
+    fontFamily: FontFamily.poppinsBold,
+    fontWeight: "700",
     fontSize: FontSize.size_base,
     top: 27,
   },
@@ -144,10 +147,10 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   arrowLeft: {
-    left: "-2.5%",
-    top: "-1.12%",
-    right: "88.61%",
-    bottom: "94.88%",
+    left: "-2.78%",
+    top: "1.63%",
+    right: "88.89%",
+    bottom: "92.13%",
     width: "13.89%",
     height: "6.25%",
     position: "absolute",
@@ -161,7 +164,7 @@ const styles = StyleSheet.create({
     left: 58,
     width: 66,
     height: 15,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     fontSize: FontSize.size_smi,
     textAlign: "left",
     fontFamily: FontFamily.poppinsBold,
@@ -174,11 +177,21 @@ const styles = StyleSheet.create({
     left: "50%",
     overflow: "hidden",
   },
-  text: {
+  text1: {
     color: "#4fb74d",
   },
-  verifyAccount1: {
+  text2: {
     color: Color.miscellaneousFloatingTabTextUnselected,
+  },
+  text: {
+    fontFamily: FontFamily.poppinsRegular,
+  },
+  verifyAccount2Typo: {
+    fontFamily: FontFamily.poppinsBold,
+    fontWeight: "700",
+  },
+  verifyAccount1: {
+    color: Color.colorDarkslategray_100,
   },
   verifyAccount: {
     top: 138,
@@ -196,15 +209,16 @@ const styles = StyleSheet.create({
   },
   fullName: {
     top: 211,
-    color: Color.colorSnow_500,
+    color: Color.colorSnow_1000,
     width: 154,
   },
   verifyAccInner: {
     top: 239,
+    borderColor: Color.colorWhitesmoke_800,
   },
   bankName: {
     top: 266,
-    color: Color.colorSnow_600,
+    color: Color.colorSnow_1100,
     width: 126,
   },
   accountNumber: {
@@ -221,13 +235,13 @@ const styles = StyleSheet.create({
   },
   ifscCode: {
     top: 383,
-    color: "#fffcfc",
+    color: Color.colorSnow_100,
     width: 153,
     fontSize: FontSize.size_base,
   },
   branchLocation: {
     top: 440,
-    color: Color.colorWhitesmoke_200,
+    color: Color.colorWhitesmoke_500,
     height: 12,
     left: 16,
     textAlign: "left",
@@ -237,15 +251,19 @@ const styles = StyleSheet.create({
   },
   lineView: {
     top: 294,
+    borderColor: Color.colorWhitesmoke_600,
   },
   verifyAccChild1: {
     top: 349,
+    borderColor: "#f7f4f4",
   },
   verifyAccChild2: {
     top: 413,
+    borderColor: "#f5f3f3",
   },
   verifyAccChild3: {
     top: 477,
+    borderColor: Color.colorSnow_300,
   },
   rectanglePressable: {
     marginLeft: -80,
@@ -253,11 +271,11 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_8xs,
     backgroundColor: Color.colorPaleturquoise_100,
     width: 161,
-    height: 50,
+    height: 43,
     left: "50%",
     position: "absolute",
   },
-  text1: {
+  text4: {
     fontSize: FontSize.size_smi,
   },
   next1: {
@@ -268,7 +286,7 @@ const styles = StyleSheet.create({
     top: 602,
     width: 120,
     height: 22,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     left: "50%",
   },
   change: {
@@ -280,7 +298,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_base,
   },
   verifyAcc: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

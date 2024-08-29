@@ -1,209 +1,223 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Text, Pressable, View } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
-import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
+import { StyleSheet, View, Image, Pressable, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Color, Border, FontSize, FontFamily } from "../GlobalStyles";
 
 const Rewards2 = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
-    <View style={styles.rewards5}>
+    <View style={[styles.rewards4, styles.rewards4Transform]}>
+      <View style={[styles.rewards4Child, styles.rewards4Position]} />
+      <View style={[styles.rewards4Child, styles.rewards4Position]} />
       <Image
-        style={[styles.pocketsIcon, styles.footerLayout]}
-        contentFit="cover"
-        source={require("../assets/pockets1.png")}
+        style={[styles.rewards4Inner, styles.rewards4Position]}
+        resizeMode="cover"
+        source={require("../assets/rectangle-41.png")}
       />
       <Pressable
-        style={styles.hide}
-        onPress={() => navigation.navigate("Rewards1")}
+        style={[styles.rectanglePressable, styles.rectanglePressablePosition]}
+        onPress={() => navigation.navigate("Rewards")}
+      />
+      <Pressable
+        style={[
+          styles.backToRewardsContainer,
+          styles.rectanglePressablePosition,
+        ]}
+        onPress={() => navigation.navigate("Rewards")}
       >
-        <Text style={styles.hide1}>HIDE</Text>
+        <Text
+          style={[styles.backToRewards, styles.backToRewardsFlexBox]}
+        >{`BACK TO REWARDS `}</Text>
       </Pressable>
-      <View style={[styles.footer, styles.footerLayout]}>
-        <Pressable
-          style={[styles.wrapper, styles.frameLayout]}
-          onPress={() => navigation.navigate("History1")}
-        >
-          <Image
-            style={styles.icon}
-            contentFit="cover"
-            source={require("../assets/rectangle-34.png")}
-          />
-        </Pressable>
-        <Text style={[styles.home, styles.homeTypo]}>Home</Text>
-        <Text style={[styles.profile, styles.profileTypo]}>Profile</Text>
-        <Text style={[styles.history, styles.profileTypo]}>History</Text>
-        <Text style={[styles.loans, styles.homeTypo]}>{`Loans
+      <View style={styles.rectangleView} />
+      <Text
+        style={[
+          styles.congratulationsYouContainer,
+          styles.backToRewardsFlexBox,
+        ]}
+      >
+        <Text style={styles.congratulations}>
+          <Text style={styles.congratulations1}>{`      
+      CONGRATULATIONS !!!
+          You   have   availed 
+               this reward 
 `}</Text>
-        <Text style={[styles.cards, styles.homeTypo]}>Cards</Text>
-        <Pressable
-          style={[styles.container, styles.frameLayout]}
-          onPress={() => navigation.navigate("MyCardsBalance")}
-        >
-          <Image
-            style={styles.icon}
-            contentFit="cover"
-            source={require("../assets/rectangle-33.png")}
-          />
-        </Pressable>
-        <Pressable
-          style={[styles.frame, styles.frameLayout]}
-          onPress={() => navigation.navigate("Home")}
-        >
-          <Image
-            style={styles.icon}
-            contentFit="cover"
-            source={require("../assets/rectangle-37.png")}
-          />
-        </Pressable>
-        <Pressable
-          style={[styles.rectanglePressable, styles.frameLayout]}
-          onPress={() => navigation.navigate("")}
-        >
-          <Image
-            style={styles.icon}
-            contentFit="cover"
-            source={require("../assets/rectangle-35.png")}
-          />
-        </Pressable>
-        <Image
-          style={[styles.vectorIcon, styles.frameLayout]}
-          contentFit="cover"
-          source={require("../assets/vector3.png")}
-        />
-      </View>
+          <Text style={styles.text}>{`    
+      `}</Text>
+        </Text>
+        <Text style={styles.text}>
+          <Text style={styles.refrenceIdabcd12341}>{`Refrence ID:ABCD1234
+`}</Text>
+          <Text style={styles.congratulations}>{`
+     `}</Text>
+        </Text>
+      </Text>
+      <Image
+        style={[styles.frameIcon, styles.rewards4Position]}
+        resizeMode="cover"
+        source={require("../assets/frame-143.png")}
+      />
+      <Image
+        style={[
+          styles.httpslottiefilescomanimatIcon,
+          styles.rectanglePressablePosition,
+        ]}
+        resizeMode="cover"
+        source={require("../assets/httpslottiefilescomanimationsrewardswithconfettiea78qtmu0q.png")}
+      />
+      <Image
+        style={styles.whatsappImage20240814At0}
+        resizeMode="cover"
+        source={require("../assets/whatsapp-image-20240814-at-005623-1a241f1e-3.png")}
+      />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  footerLayout: {
+  rewards4Transform: {
     overflow: "hidden",
-    width: 364,
+    transform: [
+      {
+        rotate: "-0.3deg",
+      },
+    ],
+  },
+  rewards4Position: {
+    left: 0,
     position: "absolute",
   },
-  frameLayout: {
-    height: 31,
-    width: 25,
+  rectanglePressablePosition: {
+    left: "50%",
     position: "absolute",
   },
-  homeTypo: {
-    height: 20,
+  backToRewardsFlexBox: {
     textAlign: "left",
     color: Color.schemesOnPrimary,
-    fontFamily: FontFamily.interBold,
-    fontSize: FontSize.size_smi,
-    top: 43,
-    fontWeight: "700",
-    position: "absolute",
+    transform: [
+      {
+        rotate: "-0.3deg",
+      },
+    ],
   },
-  profileTypo: {
-    top: 44,
-    height: 20,
-    textAlign: "left",
-    color: Color.schemesOnPrimary,
-    fontFamily: FontFamily.interBold,
-    fontSize: FontSize.size_smi,
-    fontWeight: "700",
-    position: "absolute",
+  rewards4Child: {
+    top: 2,
+    backgroundColor: Color.colorMidnightblue,
+    width: 360,
+    height: 148,
   },
-  pocketsIcon: {
-    top: -12,
-    left: -59,
-    borderRadius: Border.br_5xs,
-    height: 801,
-  },
-  hide1: {
-    fontSize: FontSize.size_xl,
-    fontFamily: FontFamily.poppinsBold,
-    color: Color.colorWhitesmoke_100,
-    textAlign: "center",
-    width: 77,
-    height: 44,
-    fontWeight: "700",
-  },
-  hide: {
-    left: 202,
-    top: 350,
-    position: "absolute",
-  },
-  icon: {
-    height: "100%",
-    width: "100%",
-  },
-  wrapper: {
-    left: 234,
-    top: 11,
-    width: 25,
-  },
-  home: {
-    left: 31,
-    width: 38,
-    height: 20,
-    textAlign: "left",
-    color: Color.schemesOnPrimary,
-    fontFamily: FontFamily.interBold,
-    fontSize: FontSize.size_smi,
-    top: 43,
-  },
-  profile: {
-    left: 286,
-    width: 42,
-  },
-  history: {
-    left: 223,
-    width: 47,
-  },
-  loans: {
-    left: 155,
-    width: 63,
-    height: 20,
-    textAlign: "left",
-    color: Color.schemesOnPrimary,
-    fontFamily: FontFamily.interBold,
-    fontSize: FontSize.size_smi,
-    top: 43,
-  },
-  cards: {
-    left: 93,
-    width: 38,
-    height: 20,
-    textAlign: "left",
-    color: Color.schemesOnPrimary,
-    fontFamily: FontFamily.interBold,
-    fontSize: FontSize.size_smi,
-    top: 43,
-  },
-  container: {
-    left: 101,
-    top: 11,
-    width: 25,
-  },
-  frame: {
-    left: 37,
-    top: 14,
+  rewards4Inner: {
+    top: -4,
+    width: 361,
+    height: 204,
+    transform: [
+      {
+        rotate: "-0.3deg",
+      },
+    ],
   },
   rectanglePressable: {
-    left: 294,
-    top: 11,
-    width: 25,
+    marginLeft: -100.9,
+    top: 638,
+    borderRadius: Border.br_mini,
+    backgroundColor: Color.colorDarkslategray_200,
+    width: 200,
+    height: 43,
+    transform: [
+      {
+        rotate: "-0.3deg",
+      },
+    ],
   },
-  vectorIcon: {
-    top: 9,
-    left: 162,
+  backToRewards: {
+    marginLeft: -91,
+    fontSize: FontSize.size_xl,
+    fontFamily: FontFamily.poppinsRegular,
+    width: 189,
+    height: 36,
   },
-  footer: {
-    top: 720,
-    left: -57,
-    backgroundColor: Color.colorDarkslategray_100,
-    height: 81,
+  backToRewardsContainer: {
+    top: 645,
   },
-  rewards5: {
+  rectangleView: {
+    top: 275,
+    left: -62,
+    backgroundColor: Color.colorDarkcyan,
+    width: 487,
+    height: 162,
+    position: "absolute",
+    transform: [
+      {
+        rotate: "-0.3deg",
+      },
+    ],
+  },
+  congratulations1: {
+    fontFamily: FontFamily.poppinsMedium,
+    fontWeight: "500",
+  },
+  text: {
+    fontFamily: FontFamily.montserratMedium,
+    fontWeight: "500",
+  },
+  congratulations: {
+    fontSize: FontSize.size_3xl,
+  },
+  refrenceIdabcd12341: {
+    fontSize: 19,
+  },
+  congratulationsYouContainer: {
+    top: 248,
+    left: 21,
+    width: 327,
+    height: 108,
+    position: "absolute",
+  },
+  frameIcon: {
+    top: 724,
+    width: 371,
+    height: 77,
+    transform: [
+      {
+        rotate: "-0.3deg",
+      },
+    ],
+    overflow: "hidden",
+  },
+  httpslottiefilescomanimatIcon: {
+    marginLeft: -129.1,
+    top: 455,
+    width: 257,
+    height: 152,
+    transform: [
+      {
+        rotate: "-0.3deg",
+      },
+    ],
+  },
+  whatsappImage20240814At0: {
+    top: 492,
+    left: 6,
+    width: 364,
+    height: 131,
+    position: "absolute",
+    transform: [
+      {
+        rotate: "-0.3deg",
+      },
+    ],
+  },
+  rewards4: {
+    backgroundColor: Color.schemesOnPrimary,
     flex: 1,
-    height: 801,
     width: "100%",
+    height: 801,
+    transform: [
+      {
+        rotate: "-0.3deg",
+      },
+    ],
   },
 });
 

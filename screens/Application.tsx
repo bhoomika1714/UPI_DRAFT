@@ -1,78 +1,91 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { FontFamily, FontSize, Color, Border } from "../GlobalStyles";
 
 const Application = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.application}>
       <View style={[styles.applicationChild, styles.applicationPosition1]} />
-      <Text style={[styles.helloBecklyWelcome, styles.completedTypo]}>
+      <Text style={[styles.helloBecklyWelcome, styles.loanIdTypo]}>
         HELLO BECKLY! WELCOME TO SBI LOANS
       </Text>
       <Image
         style={styles.image20Icon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-20.png")}
       />
       <View style={[styles.applicationItem, styles.applicationPosition1]} />
       <Text style={[styles.loanId32894u3, styles.loanId32894u3Layout]}>
-        <Text style={styles.loanIdTypo}>Loan ID:</Text>
-        <Text style={styles.u3}>32894u3</Text>
+        <Text style={styles.loanIdTypo}>
+          <Text style={styles.loanId1}>Loan ID</Text>
+          <Text style={styles.text}>:</Text>
+        </Text>
+        <Text style={styles.text}>
+          <Text style={styles.u31}>32894u3</Text>
+        </Text>
       </Text>
       <Text style={[styles.amount20000, styles.amount20000Position]}>
-        <Text style={styles.loanIdTypo}>Amount:</Text>
-        <Text style={styles.u3}>20,000</Text>
+        <Text style={styles.loanIdTypo}>
+          <Text style={styles.loanId1}>Amount</Text>
+          <Text style={styles.text}>:</Text>
+        </Text>
+        <Text style={styles.text}>
+          <Text style={styles.u31}>20,000</Text>
+        </Text>
       </Text>
       <Text style={[styles.applyDate20082024, styles.loanId32894u3Layout]}>
-        <Text style={styles.loanIdTypo}>Apply date:</Text>
-        <Text style={styles.u3}>20/08/2024</Text>
+        <Text style={styles.loanIdTypo}>
+          <Text style={styles.loanId1}>Apply date</Text>
+          <Text style={styles.text}>:</Text>
+        </Text>
+        <Text style={styles.text}>
+          <Text style={styles.u31}>20/08/2024</Text>
+        </Text>
       </Text>
       <Text style={[styles.loanTypepersonal, styles.amount20000Position]}>
-        <Text style={styles.loanIdTypo}>Loan type:</Text>
-        <Text style={styles.u3}>{`Personal `}</Text>
+        <Text style={styles.loanIdTypo}>
+          <Text style={styles.loanId1}>Loan type</Text>
+          <Text style={styles.text7}>:</Text>
+        </Text>
+        <Text style={styles.text7}>
+          <Text style={styles.u31}>{`Personal `}</Text>
+        </Text>
       </Text>
       <Image
         style={[styles.applicationInner, styles.applicationPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-80.png")}
       />
-      <Text style={[styles.text2, styles.textTypo3]}>1</Text>
-      <Text
-        style={[
-          styles.applicationFormSubmitted,
-          styles.asPerBankfinancialPosition,
-        ]}
-      >
+      <Text style={[styles.text8, styles.textTypo3]}>1</Text>
+      <Text style={[styles.applicationFormSubmitted, styles.applicationTypo]}>
         Application form submitted
       </Text>
-      <Text style={[styles.text3, styles.textTypo2]}>-</Text>
-      <Text style={[styles.text4, styles.textTypo2]}>-</Text>
-      <Text style={[styles.text5, styles.textTypo2]}>-</Text>
-      <Text style={[styles.text6, styles.textTypo2]}>-</Text>
-      <Text style={[styles.text7, styles.textTypo2]}>-</Text>
+      <Text style={[styles.text9, styles.textTypo2]}>-</Text>
+      <Text style={[styles.text10, styles.textTypo2]}>-</Text>
+      <Text style={[styles.text11, styles.textTypo2]}>-</Text>
+      <Text style={[styles.text12, styles.textTypo2]}>-</Text>
+      <Text style={[styles.text13, styles.textTypo2]}>-</Text>
       <Image
         style={[styles.ellipseIcon, styles.applicationPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-81.png")}
       />
-      <Text style={[styles.text8, styles.textTypo3]}>2</Text>
+      <Text style={[styles.text14, styles.textTypo3]}>2</Text>
       <Text style={[styles.documentsSubmitted, styles.documentsSubmittedTypo]}>
         Documents submitted
       </Text>
-      <Text style={[styles.text9, styles.textTypo1]}>-</Text>
-      <Text style={[styles.text10, styles.textTypo1]}>-</Text>
+      <Text style={[styles.text15, styles.textTypo1]}>-</Text>
+      <Text style={[styles.text16, styles.textTypo1]}>-</Text>
       <Text style={styles.textTypo}>-</Text>
-      <Text style={[styles.text12, styles.textTypo1]}>-</Text>
+      <Text style={[styles.text18, styles.textTypo1]}>-</Text>
       <Text style={styles.textTypo}>-</Text>
-      <Text style={[styles.text14, styles.text14Position]}>-</Text>
+      <Text style={[styles.text20, styles.text20Position]}>-</Text>
       <Image
-        style={[styles.applicationChild1, styles.text14Position]}
-        contentFit="cover"
+        style={[styles.applicationChild1, styles.text20Position]}
+        resizeMode="cover"
         source={require("../assets/ellipse-82.png")}
       />
       <Text style={[styles.applicationUnderReview, styles.itMayTakeLayout]}>
@@ -83,12 +96,12 @@ const Application = () => {
       </Text>
       <Image
         style={[styles.screenshot202408200835041, styles.screenshotLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/screenshot-20240820-083504-1.png")}
       />
       <Image
         style={styles.applicationChild2}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-73.png")}
       />
       <Text style={[styles.approved, styles.approvedLayout]}>Approved</Text>
@@ -98,12 +111,12 @@ const Application = () => {
 provided report`}</Text>
       <Image
         style={[styles.screenshot202408200835043, styles.screenshotLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/screenshot-20240820-083504-1.png")}
       />
       <Image
         style={[styles.applicationChild3, styles.applicationChild3Position]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-73.png")}
       />
       <Text
@@ -113,31 +126,31 @@ provided report`}</Text>
       </Text>
       <Image
         style={[styles.screenshot202408200835042, styles.screenshotLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/screenshot-20240820-083504-1.png")}
       />
       <Image
         style={styles.image46Icon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-46.png")}
       />
       <Image
         style={styles.applicationChild4}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-73.png")}
       />
-      <Text style={[styles.completed, styles.completedTypo]}>Completed</Text>
+      <Text style={[styles.completed, styles.applicationTypo]}>Completed</Text>
       <View style={styles.homeParent}>
         <Text style={[styles.home, styles.homeTypo]}>Home</Text>
         <Text style={[styles.profile, styles.goBackTypo]}>Profile</Text>
         <Pressable
           style={[styles.wrapper, styles.wrapperLayout]}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("Home1")}
         >
           <Image
             style={styles.icon}
-            contentFit="cover"
-            source={require("../assets/rectangle-372.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-373.png")}
           />
         </Pressable>
         <Pressable
@@ -146,8 +159,8 @@ provided report`}</Text>
         >
           <Image
             style={styles.icon}
-            contentFit="cover"
-            source={require("../assets/rectangle-352.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-353.png")}
           />
         </Pressable>
         <Pressable
@@ -156,7 +169,7 @@ provided report`}</Text>
         >
           <Image
             style={styles.icon}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/icon--thumbs-up-like-vote--negative.png")}
           />
         </Pressable>
@@ -167,14 +180,14 @@ provided report`}</Text>
         >
           <Image
             style={styles.icon}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/icon--back-arrow-reset-reply--neg.png")}
           />
         </Pressable>
         <Text style={[styles.goBack, styles.goBackTypo]}>Go back</Text>
         <Image
           style={styles.locationIcon}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/location.png")}
         />
         <Text style={[styles.track, styles.homeTypo]}>Track</Text>
@@ -190,15 +203,12 @@ const styles = StyleSheet.create({
     left: "50%",
     position: "absolute",
   },
-  completedTypo: {
-    textAlign: "left",
+  loanIdTypo: {
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
-    fontSize: FontSize.size_base,
   },
   loanId32894u3Layout: {
     height: 19,
-    color: Color.miscellaneousFloatingTabTextUnselected,
     textAlign: "left",
     position: "absolute",
   },
@@ -216,7 +226,7 @@ const styles = StyleSheet.create({
   },
   textTypo3: {
     width: 14,
-    color: Color.colorSnow_100,
+    color: Color.colorSnow_200,
     fontFamily: FontFamily.interBold,
     left: 33,
     height: 14,
@@ -225,9 +235,10 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     position: "absolute",
   },
-  asPerBankfinancialPosition: {
-    left: 57,
-    position: "absolute",
+  applicationTypo: {
+    fontFamily: FontFamily.poppinsSemiBold,
+    fontWeight: "600",
+    fontSize: FontSize.size_base,
   },
   textTypo2: {
     transform: [
@@ -245,8 +256,8 @@ const styles = StyleSheet.create({
   },
   documentsSubmittedTypo: {
     left: 52,
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
+    fontFamily: FontFamily.poppinsSemiBold,
+    fontWeight: "600",
     fontSize: FontSize.size_base,
   },
   textTypo1: {
@@ -263,7 +274,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     fontWeight: "700",
   },
-  text14Position: {
+  text20Position: {
     top: 303,
     width: 20,
     position: "absolute",
@@ -321,7 +332,10 @@ const styles = StyleSheet.create({
     left: 12,
     width: 335,
     height: 42,
+    textAlign: "left",
     color: Color.schemesOnPrimary,
+    fontSize: FontSize.size_base,
+    fontWeight: "700",
     position: "absolute",
   },
   image20Icon: {
@@ -337,11 +351,13 @@ const styles = StyleSheet.create({
     backgroundColor: Color.colorPaleturquoise_100,
     height: 100,
   },
-  loanIdTypo: {
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
+  loanId1: {
+    color: Color.colorDarkslategray_100,
   },
-  u3: {
+  text: {
+    color: Color.miscellaneousFloatingTabTextUnselected,
+  },
+  u31: {
     fontFamily: FontFamily.poppinsRegular,
   },
   loanId32894u3: {
@@ -353,7 +369,6 @@ const styles = StyleSheet.create({
   },
   amount20000: {
     top: 96,
-    color: Color.miscellaneousFloatingTabTextUnselected,
   },
   applyDate20082024: {
     top: 134,
@@ -362,50 +377,51 @@ const styles = StyleSheet.create({
     height: 19,
     fontSize: FontSize.size_base,
   },
+  text7: {
+    color: Color.colorGray_300,
+  },
   loanTypepersonal: {
     top: 136,
-    color: "#1c1818",
   },
   applicationInner: {
     top: 207,
     width: 20,
     position: "absolute",
   },
-  text2: {
+  text8: {
     top: 210,
     height: 14,
   },
   applicationFormSubmitted: {
     top: 205,
     width: 159,
+    left: 57,
+    position: "absolute",
     color: Color.miscellaneousFloatingTabTextUnselected,
     height: 20,
     textAlign: "left",
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
-    fontSize: FontSize.size_base,
   },
-  text3: {
+  text9: {
     top: 238,
     width: 66,
     height: 14,
   },
-  text4: {
+  text10: {
     top: 244,
     height: 4,
     width: 20,
   },
-  text5: {
+  text11: {
     top: 254,
     height: 14,
     width: 20,
   },
-  text6: {
+  text12: {
     top: 249,
     height: 14,
     width: 20,
   },
-  text7: {
+  text13: {
     top: 232,
     height: 14,
     width: 20,
@@ -415,24 +431,24 @@ const styles = StyleSheet.create({
     width: 20,
     position: "absolute",
   },
-  text8: {
+  text14: {
     top: 261,
     height: 14,
   },
   documentsSubmitted: {
     top: 257,
     width: 221,
-    height: 19,
     color: Color.miscellaneousFloatingTabTextUnselected,
+    height: 19,
     textAlign: "left",
     position: "absolute",
   },
-  text9: {
+  text15: {
     top: 286,
     width: 20,
     position: "absolute",
   },
-  text10: {
+  text16: {
     top: 298,
     width: 20,
     position: "absolute",
@@ -454,12 +470,12 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     position: "absolute",
   },
-  text12: {
+  text18: {
     top: 281,
     width: 20,
     position: "absolute",
   },
-  text14: {
+  text20: {
     color: Color.colorLightgray,
     transform: [
       {
@@ -479,8 +495,8 @@ const styles = StyleSheet.create({
   },
   applicationUnderReview: {
     top: 302,
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
+    fontFamily: FontFamily.poppinsSemiBold,
+    fontWeight: "600",
     fontSize: FontSize.size_base,
   },
   itMayTake: {
@@ -502,8 +518,8 @@ const styles = StyleSheet.create({
   approved: {
     top: 353,
     left: 59,
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
+    fontFamily: FontFamily.poppinsSemiBold,
+    fontWeight: "600",
     fontSize: FontSize.size_base,
     position: "absolute",
   },
@@ -529,8 +545,8 @@ const styles = StyleSheet.create({
     color: Color.miscellaneousFloatingTabTextUnselected,
     textAlign: "left",
     left: 52,
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
+    fontFamily: FontFamily.poppinsSemiBold,
+    fontWeight: "600",
     fontSize: FontSize.size_base,
   },
   screenshot202408200835042: {
@@ -557,6 +573,7 @@ const styles = StyleSheet.create({
     width: 187,
     height: 17,
     color: Color.miscellaneousFloatingTabTextUnselected,
+    textAlign: "left",
     position: "absolute",
   },
   home: {
@@ -606,7 +623,7 @@ const styles = StyleSheet.create({
   },
   goBack: {
     left: 297,
-    color: Color.colorSnow_200,
+    color: Color.colorSnow_500,
     width: 74,
     height: 15,
   },
@@ -625,7 +642,7 @@ const styles = StyleSheet.create({
   track: {
     top: 46,
     left: 96,
-    color: Color.colorSnow_300,
+    color: Color.colorSnow_600,
     width: 69,
     height: 13,
   },
@@ -640,7 +657,7 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   application: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

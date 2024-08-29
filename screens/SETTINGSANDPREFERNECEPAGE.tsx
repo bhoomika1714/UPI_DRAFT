@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Pressable, Text } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Image, Pressable, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const SETTINGSANDPREFERNECEPAGE = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.settingsAndPrefernecePage}>
@@ -17,13 +15,13 @@ const SETTINGSANDPREFERNECEPAGE = () => {
           styles.settingsAndPrefernecePageInner,
           styles.rectangleChildLayout,
         ]}
-        contentFit="cover"
-        source={require("../assets/rectangle-23.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-231.png")}
       />
       <Image
         style={[styles.alignLeftIcon, styles.iconLayout2]}
-        contentFit="cover"
-        source={require("../assets/align-left.png")}
+        resizeMode="cover"
+        source={require("../assets/align-left1.png")}
       />
       <Pressable
         style={[styles.arrowLeft, styles.arrowLeftPosition]}
@@ -31,8 +29,8 @@ const SETTINGSANDPREFERNECEPAGE = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout1]}
-          contentFit="cover"
-          source={require("../assets/arrow-left2.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left3.png")}
         />
       </Pressable>
       <Text
@@ -40,15 +38,15 @@ const SETTINGSANDPREFERNECEPAGE = () => {
       >{`Settings And  Preferences `}</Text>
       <Image
         style={[styles.rectangleIcon, styles.rectangleChildLayout]}
-        contentFit="cover"
-        source={require("../assets/rectangle-23.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-231.png")}
       />
       <Image
         style={[
           styles.settingsAndPrefernecePageChild1,
           styles.rectangleChildLayout,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-21.png")}
       />
       <Text style={styles.languages}>Languages</Text>
@@ -60,8 +58,8 @@ const SETTINGSANDPREFERNECEPAGE = () => {
           styles.settingsAndPrefernecePageChild2,
           styles.rectangleChildLayout,
         ]}
-        contentFit="cover"
-        source={require("../assets/rectangle-23.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-231.png")}
       />
       <Text style={[styles.billNotifications, styles.themeTypo]}>
         Bill Notifications
@@ -78,8 +76,8 @@ const SETTINGSANDPREFERNECEPAGE = () => {
           styles.settingsAndPrefernecePageChild3,
           styles.rectangleChildLayout,
         ]}
-        contentFit="cover"
-        source={require("../assets/rectangle-23.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-231.png")}
       />
       <Text style={[styles.theme, styles.themeTypo]}>Theme</Text>
       <Text style={[styles.chooseBetweenLight, styles.recieveAlertsWhenTypo]}>
@@ -88,8 +86,8 @@ const SETTINGSANDPREFERNECEPAGE = () => {
       <View style={[styles.rectangleView, styles.rectangleChildLayout]} />
       <Image
         style={[styles.userIcon, styles.iconLayout2]}
-        contentFit="cover"
-        source={require("../assets/user.png")}
+        resizeMode="cover"
+        source={require("../assets/user1.png")}
       />
       <Text style={[styles.dataPreferences, styles.themeTypo]}>
         Data Preferences
@@ -99,8 +97,8 @@ const SETTINGSANDPREFERNECEPAGE = () => {
       </Text>
       <Image
         style={[styles.playArrowIcon, styles.playIconLayout]}
-        contentFit="cover"
-        source={require("../assets/play-arrow.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow4.png")}
       />
       <Pressable
         style={[styles.rectanglePressable, styles.logOutPosition]}
@@ -109,8 +107,8 @@ const SETTINGSANDPREFERNECEPAGE = () => {
       <Text style={[styles.logOut, styles.logOutPosition]}>LOG OUT</Text>
       <Image
         style={[styles.boldIcon, styles.iconLayout2]}
-        contentFit="cover"
-        source={require("../assets/bold.png")}
+        resizeMode="cover"
+        source={require("../assets/bold1.png")}
       />
       <Pressable
         style={[styles.playArrow, styles.playIconLayout]}
@@ -118,29 +116,29 @@ const SETTINGSANDPREFERNECEPAGE = () => {
       >
         <Image
           style={styles.iconLayout1}
-          contentFit="cover"
-          source={require("../assets/play-arrow1.png")}
+          resizeMode="cover"
+          source={require("../assets/play-arrow5.png")}
         />
       </Pressable>
       <Image
         style={[styles.pickerButtonIcon, styles.iconLayout]}
-        contentFit="cover"
-        source={require("../assets/picker-button.png")}
+        resizeMode="cover"
+        source={require("../assets/picker-button1.png")}
       />
       <Image
         style={[styles.playArrowIcon1, styles.playIconLayout]}
-        contentFit="cover"
-        source={require("../assets/play-arrow.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow4.png")}
       />
       <Image
         style={[styles.playArrowIcon2, styles.iconPosition]}
-        contentFit="cover"
-        source={require("../assets/play-arrow.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow4.png")}
       />
       <Image
         style={[styles.creditCardIcon, styles.iconPosition]}
-        contentFit="cover"
-        source={require("../assets/credit-card.png")}
+        resizeMode="cover"
+        source={require("../assets/credit-card1.png")}
       />
       <Pressable
         style={[styles.playArrow1, styles.playIconLayout]}
@@ -148,14 +146,14 @@ const SETTINGSANDPREFERNECEPAGE = () => {
       >
         <Image
           style={styles.iconLayout1}
-          contentFit="cover"
-          source={require("../assets/play-arrow.png")}
+          resizeMode="cover"
+          source={require("../assets/play-arrow4.png")}
         />
       </Pressable>
       <Image
         style={[styles.frameIcon, styles.arrowLeftPosition]}
-        contentFit="cover"
-        source={require("../assets/frame-14.png")}
+        resizeMode="cover"
+        source={require("../assets/frame-142.png")}
       />
     </View>
   );

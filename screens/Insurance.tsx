@@ -1,12 +1,10 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Pressable, Text, View } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Image, StyleSheet, Pressable, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const Insurance = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.insurance}>
@@ -17,7 +15,7 @@ const Insurance = () => {
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/rectangle-34.png")}
           />
         </Pressable>
@@ -32,7 +30,7 @@ const Insurance = () => {
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/rectangle-35.png")}
           />
         </Pressable>
@@ -42,78 +40,83 @@ const Insurance = () => {
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-33.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-331.png")}
           />
         </Pressable>
         <View style={[styles.frameChild, styles.containerPosition]} />
         <Pressable
           style={[styles.rectanglePressable, styles.frameLayout]}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("Home1")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-37.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-371.png")}
           />
         </Pressable>
+        <Image
+          style={[styles.vectorIcon, styles.frameLayout]}
+          resizeMode="cover"
+          source={require("../assets/vector4.png")}
+        />
       </View>
       <Image
         style={[styles.insuranceChild, styles.insuranceChildLayout]}
-        contentFit="cover"
-        source={require("../assets/rectangle-160.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-162.png")}
       />
       <View style={[styles.insuranceItem, styles.insuranceBg]} />
       <Pressable
         style={[styles.life, styles.carPosition]}
-        onPress={() => navigation.navigate("Life")}
+        onPress={() => navigation.navigate("Life1")}
       >
         <Text style={styles.carTypo}>Life</Text>
       </Pressable>
       <Pressable
         style={[styles.ellipsePressable, styles.insuranceChildLayout]}
-        onPress={() => navigation.navigate("Life")}
+        onPress={() => navigation.navigate("Life1")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/ellipse-45.png")}
         />
       </Pressable>
       <Image
         style={[styles.insuranceInner, styles.insurancePosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Text style={styles.insurance1}>Insurance</Text>
       <Image
         style={[styles.ellipseIcon, styles.insurancePosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.insuranceChild1, styles.insurancePosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.insuranceChild2, styles.insuranceChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.insuranceChild3, styles.insuranceChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.insuranceChild4, styles.insuranceChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.insuranceChild5, styles.insuranceChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Text style={[styles.car, styles.carTypo]}>Car</Text>
@@ -123,33 +126,33 @@ const Insurance = () => {
       <Pressable style={styles.arrowLeft} onPress={() => navigation.goBack()}>
         <Image
           style={[styles.icon5, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left8.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left13.png")}
         />
       </Pressable>
       <Image
         style={[styles.motorcycle16dp006270Fill0WIcon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/motorcycle-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
         style={[styles.heartCheck16dp006270Fill0Icon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/heart-check-16dp-006270-fill0-wght300-grad0-opsz20-11.png")}
       />
       <Image
         style={[styles.healthAndSafety16dp006270Icon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/health-and-safety-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
         style={[styles.noCrash16dp006270Fill0WghIcon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/no-crash-16dp-006270-fill0-wght300-grad0-opsz20-11.png")}
       />
       <Image
         style={[styles.carCrash16dp006270Fill0WgIcon, styles.fill0IconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/car-crash-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
@@ -157,12 +160,12 @@ const Insurance = () => {
           styles.store16dp006270Fill0Wght30Icon,
           styles.fill0IconPosition,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/store-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
         style={[styles.creditScore16dp006270Fill0Icon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/credit-score-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
@@ -170,7 +173,7 @@ const Insurance = () => {
           styles.travel16dp006270Fill0Wght3Icon,
           styles.fill0IconPosition,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/travel-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Text style={[styles.travel, styles.shopTypo]}>Travel</Text>
@@ -178,32 +181,32 @@ const Insurance = () => {
       <Text style={[styles.accident, styles.shopTypo]}>Accident</Text>
       <Image
         style={[styles.rectangleIcon, styles.rectanglePosition]}
-        contentFit="cover"
-        source={require("../assets/rectangle-25.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-1.png")}
       />
       <Image
         style={styles.insuranceChild6}
-        contentFit="cover"
-        source={require("../assets/ellipse-44.png")}
+        resizeMode="cover"
+        source={require("../assets/ellipse-11.png")}
       />
       <Pressable
         style={[styles.wrapper1, styles.wrapperLayout]}
-        onPress={() => navigation.navigate("Notifications7")}
+        onPress={() => navigation.navigate("Notifications")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-26.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-2.png")}
         />
       </Pressable>
       <Pressable
         style={[styles.wrapper2, styles.wrapperLayout]}
-        onPress={() => navigation.navigate("Help4")}
+        onPress={() => navigation.navigate("Help1")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-27.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-3.png")}
         />
       </Pressable>
       <Pressable
@@ -212,15 +215,15 @@ const Insurance = () => {
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-28.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-4.png")}
         />
       </Pressable>
       <View style={[styles.rectangleView, styles.rectangleViewLayout]} />
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.insuranceChild7, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -232,7 +235,7 @@ const Insurance = () => {
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.insuranceChild7, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -244,7 +247,7 @@ const Insurance = () => {
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.insuranceChild7, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -256,7 +259,7 @@ const Insurance = () => {
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.insuranceChild7, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -268,7 +271,7 @@ const Insurance = () => {
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.insuranceChild7, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -280,7 +283,7 @@ const Insurance = () => {
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.insuranceChild7, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -292,7 +295,7 @@ const Insurance = () => {
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.insuranceChild7, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -304,7 +307,7 @@ const Insurance = () => {
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.insuranceChild7, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -312,15 +315,15 @@ const Insurance = () => {
       <Text style={[styles.wallet14, styles.walletPosition]}>Wallet</Text>
       <Pressable
         style={[styles.insuranceChild22, styles.insuranceBg]}
-        onPress={() => navigation.navigate("Ai1")}
+        onPress={() => navigation.navigate("Ai")}
       />
       <Image
         style={[
           styles.robot224dp006270Fill0WghtIcon,
           styles.insuranceChildPosition1,
         ]}
-        contentFit="cover"
-        source={require("../assets/robot-2-24dp-006270-fill0-wght300-grad0-opsz24-5.png")}
+        resizeMode="cover"
+        source={require("../assets/robot-2-24dp-006270-fill0-wght300-grad0-opsz24-1.png")}
       />
     </View>
   );
@@ -463,7 +466,7 @@ const styles = StyleSheet.create({
     width: 47,
   },
   loans: {
-    left: 143,
+    left: 145,
     width: 63,
     textAlign: "center",
     height: 20,
@@ -499,6 +502,12 @@ const styles = StyleSheet.create({
   rectanglePressable: {
     left: 37,
     top: 14,
+    position: "absolute",
+  },
+  vectorIcon: {
+    left: 168,
+    top: 11,
+    width: 25,
     position: "absolute",
   },
   rectangleParent: {

@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontSize, FontFamily, Border } from "../GlobalStyles";
 
 const IncomeDetails = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.incomeDetails}>
@@ -16,7 +14,7 @@ const IncomeDetails = () => {
       </Text>
       <Image
         style={[styles.image20Icon, styles.image20IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-20.png")}
       />
       <Pressable
@@ -25,29 +23,30 @@ const IncomeDetails = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left1.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left4.png")}
         />
       </Pressable>
       <Image
         style={[styles.bankLogosSmall, styles.image20IconLayout]}
-        contentFit="cover"
-        source={require("../assets/bank-logos-small.png")}
+        resizeMode="cover"
+        source={require("../assets/bank-logos-small1.png")}
       />
       <Text style={[styles.sbiLoan, styles.nextFlexBox]}>SBI LOAN</Text>
       <Text style={[styles.incomeDetails1, styles.nextFlexBox]}>
         <Text style={styles.text}>{`3/5  `}</Text>
+        <Text style={styles.text1}>{`       `}</Text>
         <Text style={styles.incomeDetails2}> Income Details</Text>
       </Text>
       <View style={[styles.incomeDetailsItem, styles.incomePosition]} />
       <Image
         style={[styles.incomeDetailsInner, styles.wrapperPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-73.png")}
       />
       <Image
         style={[styles.ellipseIcon, styles.wrapperPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-73.png")}
       />
       <Pressable
@@ -56,7 +55,7 @@ const IncomeDetails = () => {
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/ellipse-73.png")}
         />
       </Pressable>
@@ -81,11 +80,11 @@ const IncomeDetails = () => {
         onPress={() => navigation.navigate("Incomedetails2")}
       />
       <Text style={[styles.next, styles.nextFlexBox]}>
-        <Text style={styles.text1Typo}>{`       `}</Text>
+        <Text style={styles.text2Typo}>{`       `}</Text>
         <Text style={styles.next1Typo}>Next</Text>
       </Text>
       <Text style={[styles.change, styles.nextFlexBox]}>Change</Text>
-      <Text style={[styles.student, styles.text1Typo]}>Student</Text>
+      <Text style={[styles.student, styles.text2Typo]}>Student</Text>
     </View>
   );
 };
@@ -134,13 +133,12 @@ const styles = StyleSheet.create({
     height: 1,
     width: 311,
     borderTopWidth: 1,
-    borderColor: Color.colorGray_400,
     borderStyle: "solid",
     marginLeft: -155.5,
     left: "50%",
     position: "absolute",
   },
-  text1Typo: {
+  text2Typo: {
     fontFamily: FontFamily.interBold,
     fontWeight: "700",
   },
@@ -171,10 +169,10 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   arrowLeft: {
-    left: "-2.22%",
-    top: "-1.5%",
-    right: "88.33%",
-    bottom: "95.25%",
+    left: "-3.33%",
+    top: "1.13%",
+    right: "89.44%",
+    bottom: "92.63%",
     width: "13.89%",
     height: "6.25%",
     position: "absolute",
@@ -191,15 +189,18 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_smi,
     width: 66,
     height: 15,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
   },
   text: {
     color: Color.colorMediumseagreen_100,
   },
-  incomeDetails2: {
+  text1: {
     color: Color.miscellaneousFloatingTabTextUnselected,
+  },
+  incomeDetails2: {
+    color: Color.colorDarkslategray_100,
   },
   incomeDetails1: {
     top: 160,
@@ -249,12 +250,12 @@ const styles = StyleSheet.create({
   },
   totalWorkExperience: {
     top: 325,
-    color: Color.colorWhitesmoke_300,
+    color: Color.colorWhitesmoke_700,
     width: 231,
   },
   grossSalary: {
     top: 382,
-    color: "#fbf5f5",
+    color: Color.colorSnow_900,
     width: 107,
     height: 16,
     left: 30,
@@ -266,12 +267,15 @@ const styles = StyleSheet.create({
   },
   lineView: {
     top: 297,
+    borderColor: Color.colorSnow_300,
   },
   incomeDetailsChild1: {
     top: 352,
+    borderColor: "#f8f1f1",
   },
   incomeDetailsChild2: {
     top: 411,
+    borderColor: Color.colorSnow_200,
   },
   rectanglePressable: {
     marginLeft: -80,
@@ -279,7 +283,7 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_8xs,
     backgroundColor: Color.colorPaleturquoise_100,
     width: 161,
-    height: 50,
+    height: 43,
     left: "50%",
     position: "absolute",
   },
@@ -292,7 +296,7 @@ const styles = StyleSheet.create({
     top: 471,
     width: 120,
     height: 22,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     fontSize: FontSize.size_base,
     textAlign: "left",
     left: "50%",
@@ -319,7 +323,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   incomeDetails: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

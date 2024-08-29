@@ -1,8 +1,6 @@
 import * as React from "react";
-import { Text, StyleSheet, View, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Text, StyleSheet, View, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import {
   Color,
   FontFamily,
@@ -13,7 +11,7 @@ import {
 } from "../GlobalStyles";
 
 const PermissionsPage = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.permissionsPage}>
@@ -25,8 +23,8 @@ const PermissionsPage = () => {
       <View style={styles.whatsappImage20240801At2} />
       <Image
         style={styles.permissionsPageChild}
-        contentFit="cover"
-        source={require("../assets/rectangle-22.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-221.png")}
       />
       <Text style={[styles.home, styles.homeTypo]}>Home</Text>
       <Text style={[styles.profile1, styles.historyTypo]}>Profile</Text>
@@ -35,41 +33,43 @@ const PermissionsPage = () => {
       <Text style={[styles.cards, styles.homeTypo]}>Cards</Text>
       <Image
         style={styles.whatsappImage20240801At21}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/whatsapp-image-20240801-at-215327-99b2b4d4-1.png")}
       />
-      <View style={[styles.permissionsPageItem, styles.deviceStatePosition]} />
-      <Text style={styles.permissions}>Permissions</Text>
+      <View style={styles.permissionsPageItem} />
+      <Text style={[styles.permissions, styles.permissionsFlexBox]}>
+        Permissions
+      </Text>
       <Pressable
         style={[styles.arrowLeft, styles.loanLayout]}
         onPress={() => navigation.goBack()}
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left10.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left11.png")}
         />
       </Pressable>
       <Image
         style={[styles.helpCircleIcon, styles.loanLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/help-circle.png")}
       />
-      <View
-        style={[styles.permissionsPageInner, styles.permissionsChildLayout]}
-      />
-      <View style={[styles.rectangleView, styles.permissionsChildLayout]} />
+      <View style={styles.permissionsPageInner} />
+      <View style={[styles.rectangleView, styles.permissionsChildPosition]} />
       <Text
         style={[styles.allowUpayitTo, styles.allowTypo]}
       >{`Allow UpayIt to send SMSs (for UPI
 registration) and read your transactional messages (for OTPs)
 `}</Text>
       <Text style={[styles.deviceState, styles.smsTypo]}>Device State</Text>
-      <Text style={[styles.secureUpiPayments, styles.secureUpiPaymentsTypo]}>
+      <Text
+        style={[styles.secureUpiPayments, styles.secureUpiPaymentsPosition]}
+      >
         Secure UPI Payemnts
       </Text>
       <Text
-        style={[styles.allowUpayitTo1, styles.allowTypo]}
+        style={[styles.allowUpayitTo1, styles.allowUpayitTo1Position]}
       >{`Allow UPayIt to access verify your device and SIM details for using UPI
 payments (as mandated by NPCI)
 `}</Text>
@@ -78,7 +78,7 @@ payments (as mandated by NPCI)
           <View style={styles.container} />
           <Image
             style={[styles.checkSmallIcon, styles.frame5Position]}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/check-small.png")}
           />
         </View>
@@ -88,14 +88,14 @@ payments (as mandated by NPCI)
           <View style={styles.container} />
           <Image
             style={[styles.checkSmallIcon, styles.frame5Position]}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/check-small.png")}
           />
         </View>
       </View>
-      <Text style={[styles.sms, styles.smsPosition]}>SMS</Text>
+      <Text style={[styles.sms, styles.smsTypo]}>SMS</Text>
       <Text
-        style={[styles.billPaymentReminders, styles.smsPosition]}
+        style={[styles.billPaymentReminders, styles.secureUpiPaymentsPosition]}
       >{`Bill Payment Reminders
 `}</Text>
       <Text
@@ -104,24 +104,24 @@ payments (as mandated by NPCI)
 `}</Text>
       <Image
         style={[styles.checkBoxOutlineBlankIcon, styles.checkIconPosition]}
-        contentFit="cover"
-        source={require("../assets/check-box-outline-blank.png")}
+        resizeMode="cover"
+        source={require("../assets/check-box-outline-blank1.png")}
       />
       <View
-        style={[styles.permissionsPageChild1, styles.permissionsChildLayout]}
+        style={[styles.permissionsPageChild1, styles.permissionsChildPosition]}
       />
       <Image
         style={[
           styles.checkBoxOutlineBlankIcon1,
           styles.allowUpayitTo2Position,
         ]}
-        contentFit="cover"
-        source={require("../assets/check-box-outline-blank1.png")}
+        resizeMode="cover"
+        source={require("../assets/check-box-outline-blank2.png")}
       />
       <Image
         style={[styles.checkBoxOutlineBlankIcon2, styles.checkIconPosition]}
-        contentFit="cover"
-        source={require("../assets/check-box-outline-blank.png")}
+        resizeMode="cover"
+        source={require("../assets/check-box-outline-blank1.png")}
       />
       <Text
         style={[styles.addressContact, styles.addressContactTypo]}
@@ -147,20 +147,20 @@ payments (as mandated by NPCI)
 `}</Text>
       <Image
         style={[styles.checkBoxOutlineBlankIcon3, styles.checkIconLayout]}
-        contentFit="cover"
-        source={require("../assets/check-box-outline-blank2.png")}
+        resizeMode="cover"
+        source={require("../assets/check-box-outline-blank3.png")}
       />
       <View style={[styles.frameParent, styles.stateLayerFlexBox]}>
         <View style={[styles.frame, styles.frameFlexBox]}>
           <View style={styles.frame1}>
             <Pressable
               style={styles.wrapper}
-              onPress={() => navigation.navigate("Home")}
+              onPress={() => navigation.navigate("Home1")}
             >
               <Image
                 style={styles.iconLayout}
-                contentFit="cover"
-                source={require("../assets/rectangle-373.png")}
+                resizeMode="cover"
+                source={require("../assets/rectangle-372.png")}
               />
             </Pressable>
             <Text style={[styles.home1, styles.loanTypo]}>Home</Text>
@@ -174,8 +174,8 @@ payments (as mandated by NPCI)
                 >
                   <Image
                     style={styles.iconLayout}
-                    contentFit="cover"
-                    source={require("../assets/rectangle-331.png")}
+                    resizeMode="cover"
+                    source={require("../assets/rectangle-33.png")}
                   />
                 </Pressable>
                 <Text style={[styles.cards1, styles.loanTypo]}>Cards</Text>
@@ -183,13 +183,10 @@ payments (as mandated by NPCI)
               <View style={[styles.frame5, styles.frameLayout1]}>
                 <Image
                   style={styles.wrapper}
-                  contentFit="cover"
-                  source={require("../assets/vector3.png")}
+                  resizeMode="cover"
+                  source={require("../assets/vector4.png")}
                 />
-                <Pressable
-                  style={styles.wrapper}
-                  onPress={() => navigation.navigate("Transactions")}
-                />
+                <View style={styles.wrapper} />
                 <Text style={[styles.transac1, styles.loanTypo]}>
                   Transac...
                 </Text>
@@ -204,7 +201,7 @@ payments (as mandated by NPCI)
               >
                 <Image
                   style={styles.iconLayout}
-                  contentFit="cover"
+                  resizeMode="cover"
                   source={require("../assets/rectangle-341.png")}
                 />
               </Pressable>
@@ -219,8 +216,8 @@ payments (as mandated by NPCI)
           >
             <Image
               style={styles.iconLayout}
-              contentFit="cover"
-              source={require("../assets/rectangle-353.png")}
+              resizeMode="cover"
+              source={require("../assets/rectangle-352.png")}
             />
           </Pressable>
           <Text style={[styles.profile2, styles.loanTypo]}>Profile</Text>
@@ -261,8 +258,8 @@ const styles = StyleSheet.create({
     color: Color.schemesOnPrimary,
     position: "absolute",
   },
-  deviceStatePosition: {
-    left: 0,
+  permissionsFlexBox: {
+    textAlign: "center",
     position: "absolute",
   },
   loanLayout: {
@@ -273,11 +270,11 @@ const styles = StyleSheet.create({
     height: "100%",
     width: "100%",
   },
-  permissionsChildLayout: {
+  permissionsChildPosition: {
+    marginLeft: -165,
     width: 330,
     backgroundColor: Color.schemesOnPrimary,
     borderRadius: Border.br_mini,
-    marginLeft: -165,
     left: "50%",
   },
   allowTypo: {
@@ -290,9 +287,16 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.poppinsMedium,
     fontWeight: "500",
   },
-  secureUpiPaymentsTypo: {
-    fontFamily: FontFamily.poppinsRegular,
+  secureUpiPaymentsPosition: {
+    left: 19,
+    color: Color.colorDarkcyan,
     textAlign: "center",
+    fontSize: FontSize.size_xl,
+    position: "absolute",
+  },
+  allowUpayitTo1Position: {
+    left: 12,
+    position: "absolute",
   },
   checkboxesFlexBox: {
     padding: Padding.p_9xs,
@@ -307,12 +311,6 @@ const styles = StyleSheet.create({
   },
   frame5Position: {
     zIndex: 1,
-    position: "absolute",
-  },
-  smsPosition: {
-    left: 30,
-    color: Color.colorDarkcyan,
-    fontSize: FontSize.size_xl,
     position: "absolute",
   },
   checkIconPosition: {
@@ -353,13 +351,13 @@ const styles = StyleSheet.create({
     color: Color.schemesOnPrimary,
   },
   frameLayout1: {
-    gap: Gap.gap_7xs,
+    gap: Gap.gap_8xs,
     height: 52,
     alignItems: "center",
     overflow: "hidden",
   },
   frameLayout: {
-    gap: Gap.gap_6xs,
+    gap: Gap.gap_7xs,
     height: 53,
     alignItems: "center",
     overflow: "hidden",
@@ -423,6 +421,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   permissionsPageItem: {
+    left: 0,
     backgroundColor: Color.colorDarkcyan,
     width: 362,
     height: 81,
@@ -432,6 +431,7 @@ const styles = StyleSheet.create({
       },
     ],
     top: 0,
+    position: "absolute",
   },
   permissions: {
     top: 20,
@@ -440,9 +440,8 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.interRegular,
     width: 229,
     height: 47,
-    textAlign: "center",
     color: Color.schemesOnPrimary,
-    position: "absolute",
+    textAlign: "center",
   },
   icon: {
     overflow: "hidden",
@@ -461,8 +460,13 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   permissionsPageInner: {
-    top: 93,
+    marginLeft: -166,
+    top: 90,
     height: 138,
+    width: 330,
+    backgroundColor: Color.schemesOnPrimary,
+    borderRadius: Border.br_mini,
+    left: "50%",
     position: "absolute",
   },
   rectangleView: {
@@ -471,40 +475,37 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   allowUpayitTo: {
-    top: 263,
-    width: 263,
+    top: 272,
+    left: 15,
+    width: 274,
     height: 75,
     color: Color.colorDarkcyan,
-    left: 18,
-    fontFamily: FontFamily.montserratRegular,
     position: "absolute",
   },
   deviceState: {
     top: 102,
+    left: 6,
     width: 178,
     height: 20,
     color: Color.colorDarkcyan,
-    left: 0,
-    position: "absolute",
     textAlign: "center",
+    position: "absolute",
     fontSize: FontSize.size_xl,
   },
   secureUpiPayments: {
     top: 124,
-    left: 19,
+    fontFamily: FontFamily.poppinsRegular,
     width: 223,
-    height: 12,
-    color: Color.colorDarkcyan,
-    fontSize: FontSize.size_xl,
-    position: "absolute",
+    height: 16,
   },
   allowUpayitTo1: {
-    left: 12,
     width: 292,
     height: 67,
     top: 158,
     color: Color.colorDarkcyan,
-    position: "absolute",
+    fontFamily: FontFamily.montserratRegular,
+    fontSize: FontSize.size_mini,
+    textAlign: "center",
   },
   container: {
     borderRadius: Border.br_11xs,
@@ -538,26 +539,27 @@ const styles = StyleSheet.create({
   },
   sms: {
     top: 237,
+    left: 30,
     width: 69,
     height: 25,
-    fontFamily: FontFamily.poppinsMedium,
-    fontWeight: "500",
+    color: Color.colorDarkcyan,
     textAlign: "left",
+    fontSize: FontSize.size_xl,
+    position: "absolute",
   },
   billPaymentReminders: {
-    top: 336,
-    width: 235,
-    fontFamily: FontFamily.poppinsRegular,
-    textAlign: "center",
+    top: 337,
+    width: 254,
+    fontFamily: FontFamily.poppinsMedium,
+    fontWeight: "500",
     height: 23,
   },
   allowUsTo: {
+    left: 18,
     width: 307,
     height: 74,
     top: 376,
     color: Color.colorDarkcyan,
-    left: 18,
-    fontFamily: FontFamily.montserratRegular,
     position: "absolute",
   },
   checkBoxOutlineBlankIcon: {
@@ -577,16 +579,16 @@ const styles = StyleSheet.create({
     top: 662,
   },
   addressContact: {
-    top: 454,
-    left: -10,
-    width: 326,
+    top: 456,
+    width: 287,
     height: 31,
-    fontSize: FontSize.size_xl,
+    left: 12,
     position: "absolute",
+    fontSize: FontSize.size_xl,
   },
   orderdeliveryByExternal: {
-    top: 485,
-    left: 29,
+    top: 487,
+    left: 23,
     width: 270,
     height: 20,
     fontSize: FontSize.size_mini,
@@ -604,10 +606,10 @@ const styles = StyleSheet.create({
   },
   permissionsPageChild2: {
     height: 104,
+    marginLeft: -165,
     width: 330,
     backgroundColor: Color.schemesOnPrimary,
     borderRadius: Border.br_mini,
-    marginLeft: -165,
     left: "50%",
   },
   creditInformation: {
@@ -687,7 +689,7 @@ const styles = StyleSheet.create({
   },
   frame3: {
     width: 113,
-    gap: Gap.gap_md,
+    gap: Gap.gap_sm,
     height: 52,
     flexDirection: "row",
     alignItems: "center",
@@ -703,11 +705,11 @@ const styles = StyleSheet.create({
   },
   frame2: {
     width: 177,
-    gap: Gap.gap_2xl,
+    gap: Gap.gap_xl,
   },
   frame: {
     width: 239,
-    gap: Gap.gap_5xl,
+    gap: Gap.gap_4xl,
   },
   profile2: {
     height: 20,
@@ -725,7 +727,7 @@ const styles = StyleSheet.create({
     height: 77,
     paddingHorizontal: Padding.p_12xl,
     paddingBottom: Padding.p_2xs,
-    gap: Gap.gap_xl,
+    gap: Gap.gap_lg,
     position: "absolute",
     overflow: "hidden",
   },

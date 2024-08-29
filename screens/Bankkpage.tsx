@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Border, FontSize, FontFamily, Color } from "../GlobalStyles";
 
 const Bankkpage = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.bankkpage}>
@@ -16,23 +14,23 @@ const Bankkpage = () => {
       </Text>
       <Image
         style={styles.image20Icon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-20.png")}
       />
       <Image
         style={[styles.imageIcon, styles.imageIconLayout2]}
-        contentFit="cover"
-        source={require("../assets/image2.png")}
+        resizeMode="cover"
+        source={require("../assets/image1.png")}
       />
       <Image
         style={[styles.imageIcon1, styles.imageIconLayout2]}
-        contentFit="cover"
-        source={require("../assets/image3.png")}
+        resizeMode="cover"
+        source={require("../assets/image2.png")}
       />
       <Image
         style={[styles.imageIcon2, styles.imageIconLayout2]}
-        contentFit="cover"
-        source={require("../assets/image4.png")}
+        resizeMode="cover"
+        source={require("../assets/image3.png")}
       />
       <Text
         style={[styles.personalizedSolutions, styles.convienientAccessTypo]}
@@ -42,13 +40,13 @@ Solutions`}</Text>
       <View style={[styles.bankkpageInner, styles.bankkpageLayout]} />
       <Image
         style={[styles.outlineinterfacecaretRightIcon, styles.iconLayout1]}
-        contentFit="cover"
-        source={require("../assets/outlineinterfacecaret-right2.png")}
+        resizeMode="cover"
+        source={require("../assets/outlineinterfacecaret-right4.png")}
       />
       <Image
         style={[styles.outlineinterfacecaretRightIcon1, styles.iconLayout1]}
-        contentFit="cover"
-        source={require("../assets/outlineinterfacecaret-right2.png")}
+        resizeMode="cover"
+        source={require("../assets/outlineinterfacecaret-right4.png")}
       />
       <View style={[styles.rectangleView, styles.viewLayout]} />
       <Pressable
@@ -57,62 +55,62 @@ Solutions`}</Text>
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/image5.png")}
+          resizeMode="cover"
+          source={require("../assets/image4.png")}
         />
       </Pressable>
       <Image
         style={[styles.imageIcon3, styles.imageIconLayout]}
-        contentFit="cover"
-        source={require("../assets/image6.png")}
+        resizeMode="cover"
+        source={require("../assets/image5.png")}
       />
       <Image
         style={[styles.imageIcon4, styles.imageIconLayout]}
-        contentFit="cover"
-        source={require("../assets/image7.png")}
+        resizeMode="cover"
+        source={require("../assets/image6.png")}
       />
       <Image
         style={[styles.imageIcon5, styles.imageIconLayout]}
-        contentFit="cover"
-        source={require("../assets/image8.png")}
+        resizeMode="cover"
+        source={require("../assets/image7.png")}
       />
       <Image
         style={[styles.imageIcon6, styles.imageIconPosition]}
-        contentFit="cover"
-        source={require("../assets/image9.png")}
+        resizeMode="cover"
+        source={require("../assets/image8.png")}
       />
       <Image
         style={[styles.imageIcon7, styles.imageIconPosition]}
-        contentFit="cover"
-        source={require("../assets/image10.png")}
+        resizeMode="cover"
+        source={require("../assets/image9.png")}
       />
       <View style={[styles.frameView, styles.viewLayout]} />
       <Image
         style={[styles.imageIcon8, styles.imageIconPosition]}
-        contentFit="cover"
-        source={require("../assets/image11.png")}
+        resizeMode="cover"
+        source={require("../assets/image10.png")}
       />
       <View style={[styles.bankkpageChild1, styles.bankkpageChildLayout]} />
       <View style={[styles.bankkpageChild2, styles.bankkpageChildLayout]} />
       <View style={[styles.bankkpageChild3, styles.bankkpageChildLayout]} />
       <Image
         style={styles.ellipseIcon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-67.png")}
       />
       <Image
         style={[styles.bankkpageChild4, styles.bankkpageChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-68.png")}
       />
       <Image
         style={[styles.bankkpageChild5, styles.bankkpageChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-69.png")}
       />
       <Image
         style={[styles.bankkpageChild6, styles.bankkpageChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-69.png")}
       />
       <View style={styles.homeParent}>
@@ -120,12 +118,12 @@ Solutions`}</Text>
         <Text style={[styles.profile, styles.goBackPosition]}>Profile</Text>
         <Pressable
           style={[styles.wrapper, styles.wrapperLayout]}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("Home1")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-372.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-373.png")}
           />
         </Pressable>
         <Pressable
@@ -134,19 +132,19 @@ Solutions`}</Text>
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-352.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-353.png")}
           />
         </Pressable>
         <Image
           style={[styles.iconThumbsUpLikeVoteN, styles.imageIconLayout]}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/icon--thumbs-up-like-vote--negative.png")}
         />
         <Text style={[styles.feedback, styles.goBackPosition]}>Feedback</Text>
         <Image
           style={styles.iconBackArrowResetReply}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/icon--back-arrow-reset-reply--neg.png")}
         />
         <Text style={[styles.goBack, styles.goBackTypo]}>Go back</Text>
@@ -156,7 +154,7 @@ Solutions`}</Text>
         >
           <Image
             style={[styles.icon3, styles.iconLayout]}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/location.png")}
           />
         </Pressable>
@@ -171,10 +169,10 @@ Solutions`}</Text>
         <Text style={styles.lookingForSomething}>{`Looking for something more?
 `}</Text>
         <Text style={styles.ourTypo}>
-          <Text style={styles.ourClr}>
-            Explore our range of financial solutions designed to meet your
-            unique needs
-          </Text>
+          <Text
+            style={styles.exploreOurRange}
+          >{`Explore our range of financial solutions designed to
+meet your unique needs`}</Text>
           <Text style={styles.text}>.</Text>
         </Text>
       </Text>
@@ -183,15 +181,12 @@ Solutions`}</Text>
       </Text>
       <Text style={[styles.fastService, styles.goBackTypo]}>Fast Service</Text>
       <Text style={[styles.x7HelpAndContainer, styles.containerPosition]}>
-        <Text style={styles.x7HelpAndSupport}>
-          <Text style={styles.x7HelpAnd}>{`24x7 Help and Support
+        <Text style={styles.lookingForSomething}>{`24x7 Help and Support
 `}</Text>
-          <Text style={styles.text1}></Text>
-        </Text>
         <Text
-          style={[styles.ourDedicatedTeam, styles.ourClr]}
-        >{`Our dedicated team is available around the clock to assist you with your loan
-   needs`}</Text>
+          style={[styles.ourDedicatedTeam, styles.ourTypo]}
+        >{`Our dedicated team is available around the clock to
+ assist you with your loan needs`}</Text>
       </Text>
       <Text style={[styles.inviteYourFriendsContainer, styles.profileFlexBox]}>
         <Text style={styles.inviteYourFriendsToSbiLoa}>
@@ -200,7 +195,7 @@ Solutions`}</Text>
           >{`Invite Your Friends to SBI Loans!
 `}</Text>
         </Text>
-        <Text style={styles.ourClr}>
+        <Text style={styles.exploreOurRange}>
           <Text style={styles.inviteYourFriendsToSbiLoa}> </Text>
           <Text
             style={styles.ourTypo}
@@ -239,7 +234,7 @@ const styles = StyleSheet.create({
     height: 1,
     width: 36,
     borderTopWidth: 1,
-    borderColor: Color.miscellaneousFloatingTabTextUnselected,
+    borderColor: Color.colorDarkcyan,
     borderStyle: "solid",
     position: "absolute",
   },
@@ -264,11 +259,11 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   bankkpageChildLayout: {
-    height: 55,
     width: 254,
     backgroundColor: Color.colorPaleturquoise_100,
     left: 80,
     borderRadius: Border.br_8xs,
+    height: 60,
     position: "absolute",
   },
   bankkpageChildPosition: {
@@ -306,24 +301,26 @@ const styles = StyleSheet.create({
   },
   personalLoanTypo: {
     height: 10,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     textAlign: "left",
     fontWeight: "700",
     position: "absolute",
   },
   containerPosition: {
     left: 90,
+    color: Color.colorDarkcyan,
     textAlign: "left",
     position: "absolute",
   },
-  ourClr: {
-    color: Color.colorDimgray_200,
-    fontSize: FontSize.size_7xs,
+  ourTypo: {
+    fontFamily: FontFamily.poppinsExtraBoldItalic,
+    fontWeight: "800",
+    fontStyle: "italic",
   },
   loanTypo: {
     top: 340,
     fontSize: FontSize.size_2xs,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     textAlign: "left",
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
@@ -378,7 +375,7 @@ const styles = StyleSheet.create({
   },
   personalizedSolutions: {
     left: 267,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontSize: FontSize.size_smi,
     textAlign: "left",
     position: "absolute",
@@ -532,7 +529,7 @@ const styles = StyleSheet.create({
   },
   goBack: {
     left: 297,
-    color: Color.colorSnow_200,
+    color: Color.colorSnow_500,
     width: 74,
     top: 45,
     fontFamily: FontFamily.interBold,
@@ -554,7 +551,7 @@ const styles = StyleSheet.create({
   track: {
     top: 46,
     left: 96,
-    color: Color.colorSnow_300,
+    color: Color.colorSnow_600,
     width: 69,
     height: 13,
   },
@@ -576,19 +573,15 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.interBold,
   },
   lookingForSomething: {
-    color: Color.miscellaneousFloatingTabTextUnselected,
     fontSize: FontSize.size_smi,
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
   },
+  exploreOurRange: {
+    fontSize: FontSize.size_7xs,
+  },
   text: {
     fontSize: FontSize.size_3xs,
-    color: Color.miscellaneousFloatingTabTextUnselected,
-  },
-  ourTypo: {
-    fontFamily: FontFamily.poppinsExtraBoldItalic,
-    fontWeight: "800",
-    fontStyle: "italic",
   },
   lookingForSomethingContainer: {
     top: 401,
@@ -603,27 +596,15 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.poppinsBold,
   },
   fastService: {
-    top: 184,
-    left: 48,
-    width: 71,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    top: 186,
+    left: 22,
+    width: 92,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.poppinsBold,
-  },
-  x7HelpAnd: {
-    fontSize: FontSize.size_smi,
-  },
-  text1: {
-    fontSize: FontSize.size_3xs,
-  },
-  x7HelpAndSupport: {
-    color: Color.miscellaneousFloatingTabTextUnselected,
-    fontFamily: FontFamily.poppinsBold,
-    fontWeight: "700",
   },
   ourDedicatedTeam: {
-    fontFamily: FontFamily.poppinsExtraBoldItalic,
-    fontWeight: "800",
-    fontStyle: "italic",
+    letterSpacing: 0.7,
+    fontSize: FontSize.size_7xs,
   },
   x7HelpAndContainer: {
     top: 509,
@@ -631,7 +612,6 @@ const styles = StyleSheet.create({
     height: 38,
   },
   inviteYourFriends: {
-    color: Color.miscellaneousFloatingTabTextUnselected,
     fontSize: FontSize.size_smi,
   },
   inviteYourFriendsToSbiLoa: {
@@ -643,6 +623,7 @@ const styles = StyleSheet.create({
     left: 83,
     width: 345,
     height: 41,
+    color: Color.colorDarkcyan,
   },
   businessLoan: {
     left: 99,
@@ -662,7 +643,7 @@ const styles = StyleSheet.create({
   loanTypes: {
     top: 245,
     left: 38,
-    color: Color.colorSnow_500,
+    color: Color.colorSnow_1000,
     width: 79,
     height: 14,
     fontSize: FontSize.size_smi,
@@ -670,7 +651,7 @@ const styles = StyleSheet.create({
     fontWeight: "700",
   },
   bankkpage: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

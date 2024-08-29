@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Pressable, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, Border, FontFamily, FontSize } from "../GlobalStyles";
 
 const StatementYear = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.statementYear, styles.iconLayout]}>
@@ -78,8 +76,8 @@ const StatementYear = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left5.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left6.png")}
         />
       </Pressable>
     </View>
@@ -94,14 +92,14 @@ const styles = StyleSheet.create({
   statementChildLayout3: {
     height: 33,
     width: 275,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_500,
     borderRadius: Border.br_xl,
     position: "absolute",
   },
   year2021Typo: {
     height: 29,
     textAlign: "left",
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
     position: "absolute",
   },
@@ -113,19 +111,19 @@ const styles = StyleSheet.create({
     width: 153,
     borderRadius: Border.br_3xs,
     height: 29,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_500,
     position: "absolute",
   },
   julyTypo: {
     height: 23,
     textAlign: "left",
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
   },
   octoberTypo: {
     height: 27,
     textAlign: "left",
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
     position: "absolute",
   },
@@ -134,7 +132,7 @@ const styles = StyleSheet.create({
     width: 153,
     borderRadius: Border.br_3xs,
     height: 29,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_500,
     position: "absolute",
   },
   statementChildLayout1: {
@@ -142,7 +140,7 @@ const styles = StyleSheet.create({
     width: 153,
     borderRadius: Border.br_3xs,
     height: 29,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_500,
     position: "absolute",
   },
   statementChildLayout: {
@@ -150,14 +148,14 @@ const styles = StyleSheet.create({
     width: 153,
     borderRadius: Border.br_3xs,
     height: 29,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorSnow_500,
     position: "absolute",
   },
   juneTypo: {
     height: 24,
     fontSize: FontSize.size_base,
     textAlign: "left",
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
     position: "absolute",
   },
@@ -259,7 +257,7 @@ const styles = StyleSheet.create({
     left: 114,
     width: 177,
     height: 28,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
     textAlign: "left",
     fontSize: FontSize.size_xl,
@@ -273,7 +271,7 @@ const styles = StyleSheet.create({
     left: 101,
     width: 132,
     height: 31,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
     textAlign: "left",
     fontSize: FontSize.size_xl,
@@ -284,7 +282,7 @@ const styles = StyleSheet.create({
   },
   year2024: {
     top: 535,
-    left: 69,
+    left: 64,
     width: 228,
     fontSize: FontSize.size_xl,
   },
@@ -304,7 +302,7 @@ const styles = StyleSheet.create({
     width: 133,
     height: 30,
     fontSize: FontSize.size_base,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
     textAlign: "left",
   },
@@ -326,7 +324,7 @@ const styles = StyleSheet.create({
     width: 111,
     height: 26,
     fontSize: FontSize.size_base,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkcyan,
     fontFamily: FontFamily.interRegular,
     textAlign: "left",
   },
@@ -367,7 +365,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   statementYear: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
   },

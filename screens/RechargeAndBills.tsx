@@ -1,12 +1,10 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Pressable, Text, View } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Image, StyleSheet, Pressable, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const RechargeAndBills = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.rechargeAndBills}>
@@ -17,7 +15,7 @@ const RechargeAndBills = () => {
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/rectangle-34.png")}
           />
         </Pressable>
@@ -32,7 +30,7 @@ const RechargeAndBills = () => {
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/rectangle-35.png")}
           />
         </Pressable>
@@ -42,26 +40,31 @@ const RechargeAndBills = () => {
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-33.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-331.png")}
           />
         </Pressable>
         <View style={[styles.frameChild, styles.homePosition]} />
         <Pressable
           style={[styles.rectanglePressable, styles.frameLayout]}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("Home1")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-37.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-371.png")}
           />
         </Pressable>
+        <Image
+          style={[styles.vectorIcon, styles.frameLayout]}
+          resizeMode="cover"
+          source={require("../assets/vector4.png")}
+        />
       </View>
       <Image
         style={[styles.rechargeAndBillsChild, styles.rechargeChildLayout]}
-        contentFit="cover"
-        source={require("../assets/rectangle-160.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-162.png")}
       />
       <View style={styles.rechargeAndBillsItem} />
       <Text style={styles.rechargeAndBills1}>Recharge and Bills</Text>
@@ -71,58 +74,58 @@ const RechargeAndBills = () => {
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/ellipse-45.png")}
         />
       </Pressable>
       <Image
         style={[styles.rechargeAndBillsInner, styles.rechargeChildLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.ellipseIcon, styles.ellipseIconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild1, styles.rechargeChildPosition2]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild2, styles.rechargeChildPosition1]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild3, styles.rechargeChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild4, styles.rechargeChildLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild5, styles.rechargeChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild6, styles.rechargeChildPosition1]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild7, styles.rechargeChildPosition2]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild8, styles.ellipseIconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Pressable
@@ -151,37 +154,37 @@ band`}</Text>
       <Pressable style={styles.arrowLeft} onPress={() => navigation.goBack()}>
         <Image
           style={[styles.icon5, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left8.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left13.png")}
         />
       </Pressable>
       <Image
         style={[styles.call16dp006270Fill0Wght300Icon, styles.fill0IconLayout]}
-        contentFit="cover"
-        source={require("../assets/call-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
+        resizeMode="cover"
+        source={require("../assets/call-16dp-006270-fill0-wght300-grad0-opsz20-3.png")}
       />
       <Image
         style={[styles.grocery16dp006270Fill0WghtIcon, styles.fill0IconLayout]}
-        contentFit="cover"
-        source={require("../assets/grocery-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
+        resizeMode="cover"
+        source={require("../assets/grocery-16dp-006270-fill0-wght300-grad0-opsz20-3.png")}
       />
       <Image
         style={[styles.waterDrop16dp006270Fill0WIcon, styles.fill0IconLayout]}
-        contentFit="cover"
-        source={require("../assets/water-drop-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
+        resizeMode="cover"
+        source={require("../assets/water-drop-16dp-006270-fill0-wght300-grad0-opsz20-3.png")}
       />
       <Image
         style={[styles.tv16dp006270Fill0Wght300GIcon, styles.fill0IconLayout]}
-        contentFit="cover"
-        source={require("../assets/tv-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
+        resizeMode="cover"
+        source={require("../assets/tv-16dp-006270-fill0-wght300-grad0-opsz20-3.png")}
       />
       <Image
         style={[
           styles.house16dp006270Fill0Wght30Icon,
           styles.rechargeAndBillsChild21Position,
         ]}
-        contentFit="cover"
-        source={require("../assets/house-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
+        resizeMode="cover"
+        source={require("../assets/house-16dp-006270-fill0-wght300-grad0-opsz20-3.png")}
       />
       <Pressable
         style={[styles.ellipsePressable, styles.rechargeChildLayout]}
@@ -189,28 +192,28 @@ band`}</Text>
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/ellipse-45.png")}
         />
       </Pressable>
       <Image
         style={[styles.rechargeAndBillsChild5, styles.rechargeChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild6, styles.rechargeChildPosition1]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild7, styles.rechargeChildPosition2]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.rechargeAndBillsChild8, styles.ellipseIconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Pressable
@@ -227,48 +230,48 @@ band`}</Text>
       <Text style={[styles.houseRent, styles.billTypo]}>House Rent</Text>
       <Image
         style={[styles.call16dp006270Fill0Wght300Icon, styles.fill0IconLayout]}
-        contentFit="cover"
-        source={require("../assets/call-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
+        resizeMode="cover"
+        source={require("../assets/call-16dp-006270-fill0-wght300-grad0-opsz20-3.png")}
       />
       <Image
         style={[styles.grocery16dp006270Fill0WghtIcon, styles.fill0IconLayout]}
-        contentFit="cover"
-        source={require("../assets/grocery-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
+        resizeMode="cover"
+        source={require("../assets/grocery-16dp-006270-fill0-wght300-grad0-opsz20-3.png")}
       />
       <Image
         style={[styles.waterDrop16dp006270Fill0WIcon, styles.fill0IconLayout]}
-        contentFit="cover"
-        source={require("../assets/water-drop-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
+        resizeMode="cover"
+        source={require("../assets/water-drop-16dp-006270-fill0-wght300-grad0-opsz20-3.png")}
       />
       <Image
         style={[styles.tv16dp006270Fill0Wght300GIcon, styles.fill0IconLayout]}
-        contentFit="cover"
-        source={require("../assets/tv-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
+        resizeMode="cover"
+        source={require("../assets/tv-16dp-006270-fill0-wght300-grad0-opsz20-3.png")}
       />
       <Image
         style={[
           styles.house16dp006270Fill0Wght30Icon,
           styles.rechargeAndBillsChild21Position,
         ]}
-        contentFit="cover"
-        source={require("../assets/house-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
+        resizeMode="cover"
+        source={require("../assets/house-16dp-006270-fill0-wght300-grad0-opsz20-3.png")}
       />
       <Image
         style={[
           styles.bolt16dp006270Fill0Wght300Icon,
           styles.fill0IconPosition,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/bolt-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
         style={[styles.propaneTank16dp006270Fill0Icon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/propane-tank-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
         style={[styles.cellTower16dp006270Fill0WIcon, styles.fill0IconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/cell-tower-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
@@ -276,7 +279,7 @@ band`}</Text>
           styles.valve16dp006270Fill0Wght30Icon,
           styles.fill0IconPosition,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/valve-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
@@ -284,43 +287,43 @@ band`}</Text>
           styles.mobileFriendly16dp006270FiIcon,
           styles.fill0IconPosition,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/mobile-friendly-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
         style={[styles.realEstateAgent16dp006270Icon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/real-estate-agent-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Text style={styles.loanRepayment}>Loan Repayment</Text>
       <Image
         style={[styles.rectangleIcon, styles.rectanglePosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-188.png")}
       />
       <Image
         style={styles.rechargeAndBillsChild13}
-        contentFit="cover"
-        source={require("../assets/ellipse-44.png")}
+        resizeMode="cover"
+        source={require("../assets/ellipse-11.png")}
       />
       <Pressable
         style={[styles.wrapper2, styles.wrapperLayout]}
-        onPress={() => navigation.navigate("Notifications7")}
+        onPress={() => navigation.navigate("Notifications")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-26.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-2.png")}
         />
       </Pressable>
       <Pressable
         style={[styles.wrapper3, styles.wrapperLayout]}
-        onPress={() => navigation.navigate("Help4")}
+        onPress={() => navigation.navigate("Help1")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-27.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-3.png")}
         />
       </Pressable>
       <Pressable
@@ -329,15 +332,15 @@ band`}</Text>
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-28.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-4.png")}
         />
       </Pressable>
       <View style={[styles.rectangleView, styles.rectangleViewLayout]} />
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.rechargeAndBillsChild14, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -349,7 +352,7 @@ band`}</Text>
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.rechargeAndBillsChild14, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -361,7 +364,7 @@ band`}</Text>
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.rechargeAndBillsChild14, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -373,7 +376,7 @@ band`}</Text>
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.rechargeAndBillsChild14, styles.rectangleViewLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdLayout]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -384,15 +387,15 @@ band`}</Text>
           styles.rechargeAndBillsChild21,
           styles.rechargeAndBillsChild21Position,
         ]}
-        onPress={() => navigation.navigate("Ai1")}
+        onPress={() => navigation.navigate("Ai")}
       />
       <Image
         style={[
           styles.robot224dp006270Fill0WghtIcon,
           styles.rechargeAndBillsChildPosition,
         ]}
-        contentFit="cover"
-        source={require("../assets/robot-2-24dp-006270-fill0-wght300-grad0-opsz24-5.png")}
+        resizeMode="cover"
+        source={require("../assets/robot-2-24dp-006270-fill0-wght300-grad0-opsz24-1.png")}
       />
     </View>
   );
@@ -549,7 +552,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
   },
   loans: {
-    left: 143,
+    left: 145,
     width: 63,
     textAlign: "center",
   },
@@ -574,6 +577,9 @@ const styles = StyleSheet.create({
   },
   rectanglePressable: {
     left: 37,
+  },
+  vectorIcon: {
+    left: 168,
   },
   rectangleParent: {
     top: 723,
