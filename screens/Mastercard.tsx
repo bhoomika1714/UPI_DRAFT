@@ -1,48 +1,46 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Image, Text, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import {
-  Border,
   Color,
   FontFamily,
+  Border,
   FontSize,
   Gap,
   Padding,
 } from "../GlobalStyles";
 
 const Mastercard = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.mastercard}>
-      <View style={[styles.mastercardChild, styles.rectangleViewLayout]} />
+      <View style={[styles.mastercardChild, styles.mastercardChildShadowBox]} />
       <Image
         style={styles.image3Icon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-3.png")}
       />
       <Text style={[styles.text, styles.textTypo]}>{`02/24
 `}</Text>
       <Image
         style={[styles.mastercardItem, styles.mastercardLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-1.png")}
       />
       <Image
         style={[styles.mastercardInner, styles.mastercardLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-2.png")}
       />
       <Image
         style={[styles.ellipseIcon, styles.mastercardLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-3.png")}
       />
       <Pressable
-        style={[styles.rectanglePressable, styles.mastercardChild2Layout]}
-        onPress={() => navigation.navigate("MakePayment10")}
+        style={[styles.rectanglePressable, styles.mastercardChild2ShadowBox]}
+        onPress={() => navigation.navigate("MakePayment")}
       />
       <Text style={[styles.makePayment430Container, styles.cardsTypo]}>
         <Text
@@ -50,58 +48,60 @@ const Mastercard = () => {
         >{`Make Payment                    `}</Text>
         <Text style={styles.text1}>$430</Text>
       </Text>
-      <Text style={[styles.dueMarch7, styles.textTypo]}>Due March 7 2024</Text>
+      <Text style={styles.dueMarch7}>Due March 7 2024</Text>
       <Image
         style={styles.rectangleIcon}
-        contentFit="cover"
-        source={require("../assets/rectangle-3.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-36.png")}
       />
       <View style={[styles.rectangleView, styles.expiryDateLayout]} />
       <Pressable
         style={styles.setting}
-        onPress={() => navigation.navigate("Settings3")}
+        onPress={() => navigation.navigate("Settings")}
       >
-        <Text style={[styles.setting1, styles.homeTypo]}>Setting</Text>
+        <Text style={styles.setting1}>Setting</Text>
       </Pressable>
-      <Text style={[styles.transactions, styles.loanTypo]}>Transactions</Text>
+      <Text style={styles.transactions}>Transactions</Text>
       <View style={styles.mastercardChild1} />
-      <View style={[styles.mastercardChild2, styles.mastercardChild2Layout]} />
+      <View
+        style={[styles.mastercardChild2, styles.mastercardChild2ShadowBox]}
+      />
       <Image
-        style={[styles.mastercardChild3, styles.mastercardChildLayout]}
-        contentFit="cover"
+        style={[styles.mastercardChild3, styles.mastercardChildLayout1]}
+        resizeMode="cover"
         source={require("../assets/ellipse-4.png")}
       />
       <Image
-        style={[styles.mastercardChild4, styles.mastercardChildLayout]}
-        contentFit="cover"
+        style={[styles.mastercardChild4, styles.mastercardChildLayout1]}
+        resizeMode="cover"
         source={require("../assets/ellipse-5.png")}
       />
       <Image
-        style={[styles.mastercardChild5, styles.mastercardChildLayout]}
-        contentFit="cover"
+        style={[styles.mastercardChild5, styles.mastercardChildLayout1]}
+        resizeMode="cover"
         source={require("../assets/ellipse-6.png")}
       />
       <View style={[styles.lineView, styles.linePosition]} />
       <Image
         style={[styles.lineIcon, styles.linePosition]}
-        contentFit="cover"
-        source={require("../assets/line-2.png")}
+        resizeMode="cover"
+        source={require("../assets/line-21.png")}
       />
       <Image
         style={[styles.menuIcon, styles.iconLayout1]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/menu.png")}
       />
       <View style={styles.frameView} />
       <Image
         style={[styles.outlineinterfaceother1Icon, styles.iconLayout1]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/outlineinterfaceother-1.png")}
       />
       <Image
         style={[styles.removeIcon, styles.iconLayout1]}
-        contentFit="cover"
-        source={require("../assets/remove.png")}
+        resizeMode="cover"
+        source={require("../assets/remove1.png")}
       />
       <Pressable
         style={styles.viewStatement}
@@ -118,15 +118,15 @@ const Mastercard = () => {
           styles.outlineinterfacecaretRightIcon,
           styles.outlineinterfacecaretIconLayout,
         ]}
-        contentFit="cover"
-        source={require("../assets/outlineinterfacecaret-right1.png")}
+        resizeMode="cover"
+        source={require("../assets/outlineinterfacecaret-right.png")}
       />
       <Image
         style={[
           styles.outlineinterfacecaretRightIcon1,
           styles.outlineinterfacecaretIconLayout,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/outlineinterfacecaret-right1.png")}
       />
       <Image
@@ -134,29 +134,23 @@ const Mastercard = () => {
           styles.outlineinterfacecaretRightIcon2,
           styles.outlineinterfacecaretIconLayout,
         ]}
-        contentFit="cover"
-        source={require("../assets/outlineinterfacecaret-right1.png")}
+        resizeMode="cover"
+        source={require("../assets/outlineinterfacecaret-right2.png")}
       />
-      <View style={[styles.mastercardChild6, styles.viewCardsPosition]} />
+      <View style={[styles.mastercardChild6, styles.mastercardChildLayout]} />
       <Pressable
-        style={[styles.viewCards, styles.viewCardsPosition]}
-        onPress={() => navigation.navigate("Cards2")}
+        style={styles.viewCards}
+        onPress={() => navigation.navigate("Cards")}
       >
         <Text style={[styles.viewCards1, styles.cardsTypo]}>View Cards</Text>
       </Pressable>
       <Text style={[styles.text2, styles.cardsTypo]}>** *** ***** 1452</Text>
-      <Pressable
-        style={styles.checkBalance}
-        onPress={() => navigation.navigate("Bankorwallet2")}
-      >
-        <Text style={[styles.checkBalance1, styles.expiryDateTypo]}>
-          Check Balance
-        </Text>
-      </Pressable>
       <Text style={[styles.expiryDate, styles.expiryDateTypo]}>
         Expiry Date
       </Text>
-      <View style={styles.mastercardChild7} />
+      <View
+        style={[styles.mastercardChild7, styles.mastercardChildShadowBox]}
+      />
       <Text style={[styles.myCards, styles.cardsTypo]}> My Cards</Text>
       <Pressable
         style={styles.vector}
@@ -164,8 +158,8 @@ const Mastercard = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/vector19.png")}
+          resizeMode="cover"
+          source={require("../assets/vector3.png")}
         />
       </Pressable>
       <View style={[styles.frameParent, styles.frameFlexBox1]}>
@@ -173,12 +167,12 @@ const Mastercard = () => {
           <View style={[styles.frame1, styles.frameFlexBox1]}>
             <Pressable
               style={styles.wrapper}
-              onPress={() => navigation.navigate("Home")}
+              onPress={() => navigation.navigate("Home1")}
             >
               <Image
                 style={styles.iconLayout}
-                contentFit="cover"
-                source={require("../assets/rectangle-373.png")}
+                resizeMode="cover"
+                source={require("../assets/rectangle-372.png")}
               />
             </Pressable>
             <Text style={[styles.home, styles.homeTypo]}>Home</Text>
@@ -192,8 +186,8 @@ const Mastercard = () => {
                 >
                   <Image
                     style={styles.iconLayout}
-                    contentFit="cover"
-                    source={require("../assets/rectangle-331.png")}
+                    resizeMode="cover"
+                    source={require("../assets/rectangle-33.png")}
                   />
                 </Pressable>
                 <Text style={[styles.cards, styles.homeTypo]}>Cards</Text>
@@ -201,18 +195,15 @@ const Mastercard = () => {
               <View style={[styles.frame5, styles.frameLayout]}>
                 <Image
                   style={styles.wrapper}
-                  contentFit="cover"
-                  source={require("../assets/vector3.png")}
+                  resizeMode="cover"
+                  source={require("../assets/vector1.png")}
                 />
-                <Pressable
-                  style={styles.wrapper}
-                  onPress={() => navigation.navigate("Transactions")}
-                />
+                <View style={styles.wrapper} />
                 <Text style={[styles.transac, styles.homeTypo]}>
                   Transac...
                 </Text>
               </View>
-              <Text style={[styles.loan, styles.loanTypo]}>{`Loan
+              <Text style={styles.loan}>{`Loan
 `}</Text>
             </View>
             <View style={[styles.frame6, styles.frameFlexBox]}>
@@ -222,7 +213,7 @@ const Mastercard = () => {
               >
                 <Image
                   style={styles.iconLayout}
-                  contentFit="cover"
+                  resizeMode="cover"
                   source={require("../assets/rectangle-341.png")}
                 />
               </Pressable>
@@ -237,26 +228,45 @@ const Mastercard = () => {
           >
             <Image
               style={styles.iconLayout}
-              contentFit="cover"
-              source={require("../assets/rectangle-353.png")}
+              resizeMode="cover"
+              source={require("../assets/rectangle-352.png")}
             />
           </Pressable>
           <Text style={[styles.profile, styles.homeTypo]}>Profile</Text>
         </View>
       </View>
+      <View style={[styles.mastercardChild8, styles.mastercardChildLayout]} />
+      <Pressable
+        style={styles.checkBalance}
+        onPress={() => navigation.navigate("Bankorwallet")}
+      >
+        <Text style={[styles.checkBalance1, styles.expiryDateTypo]}>
+          Check Balance
+        </Text>
+      </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  rectangleViewLayout: {
-    borderRadius: Border.br_xl,
+  mastercardChildShadowBox: {
+    borderWidth: 1,
+    borderColor: Color.miscellaneousFloatingTabTextUnselected,
     backgroundColor: Color.colorDarkcyan,
+    shadowOpacity: 1,
+    elevation: 4,
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    borderStyle: "solid",
   },
   textTypo: {
     textAlign: "left",
-    fontFamily: FontFamily.interRegular,
-    color: Color.schemesOnPrimary,
+    fontFamily: FontFamily.poppinsRegular,
+    color: Color.colorWhitesmoke_900,
   },
   mastercardLayout: {
     width: 14,
@@ -264,14 +274,25 @@ const styles = StyleSheet.create({
     height: 14,
     position: "absolute",
   },
-  mastercardChild2Layout: {
+  mastercardChild2ShadowBox: {
     width: 326,
+    borderWidth: 1,
+    borderColor: Color.miscellaneousFloatingTabTextUnselected,
+    borderStyle: "solid",
     backgroundColor: Color.colorDarkcyan,
     borderRadius: Border.br_xl,
+    shadowOpacity: 1,
+    elevation: 4,
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowColor: "rgba(0, 0, 0, 0.25)",
     position: "absolute",
   },
   cardsTypo: {
-    fontFamily: FontFamily.interBold,
+    fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
     textAlign: "left",
   },
@@ -279,22 +300,7 @@ const styles = StyleSheet.create({
     width: 175,
     position: "absolute",
   },
-  homeTypo: {
-    height: 20,
-    fontFamily: FontFamily.interBold,
-    fontWeight: "700",
-    textAlign: "left",
-    color: Color.schemesOnPrimary,
-  },
-  loanTypo: {
-    height: 29,
-    fontFamily: FontFamily.interBold,
-    fontWeight: "700",
-    textAlign: "left",
-    color: Color.schemesOnPrimary,
-    position: "absolute",
-  },
-  mastercardChildLayout: {
+  mastercardChildLayout1: {
     height: 38,
     width: 40,
     left: 36,
@@ -315,8 +321,8 @@ const styles = StyleSheet.create({
     left: 93,
     fontSize: FontSize.size_xl,
     textAlign: "left",
-    color: Color.schemesOnPrimary,
-    fontFamily: FontFamily.interRegular,
+    color: Color.colorWhitesmoke_900,
+    fontFamily: FontFamily.poppinsRegular,
     position: "absolute",
   },
   outlineinterfacecaretIconLayout: {
@@ -325,13 +331,14 @@ const styles = StyleSheet.create({
     height: 30,
     position: "absolute",
   },
-  viewCardsPosition: {
-    top: 221,
+  mastercardChildLayout: {
+    borderRadius: Border.br_3xs,
+    backgroundColor: Color.colorDarkcyan,
     position: "absolute",
   },
   expiryDateTypo: {
     height: 16,
-    fontFamily: FontFamily.interBold,
+    fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
     textAlign: "left",
     fontSize: FontSize.size_sm,
@@ -344,14 +351,22 @@ const styles = StyleSheet.create({
     alignItems: "center",
     overflow: "hidden",
   },
+  homeTypo: {
+    color: Color.schemesOnPrimary,
+    fontFamily: FontFamily.interBold,
+    height: 20,
+    fontSize: FontSize.size_smi,
+    fontWeight: "700",
+    textAlign: "left",
+  },
   frameLayout: {
-    gap: Gap.gap_7xs,
+    gap: Gap.gap_8xs,
     height: 52,
     alignItems: "center",
     overflow: "hidden",
   },
   frameFlexBox: {
-    gap: Gap.gap_6xs,
+    gap: Gap.gap_7xs,
     alignItems: "center",
     height: 53,
     overflow: "hidden",
@@ -360,7 +375,17 @@ const styles = StyleSheet.create({
     top: 100,
     width: 329,
     height: 114,
+    borderRadius: Border.br_xl,
+    borderColor: Color.miscellaneousFloatingTabTextUnselected,
     backgroundColor: Color.colorDarkcyan,
+    shadowOpacity: 1,
+    elevation: 4,
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowColor: "rgba(0, 0, 0, 0.25)",
     left: 16,
     position: "absolute",
   },
@@ -407,7 +432,7 @@ const styles = StyleSheet.create({
     left: 48,
     width: 279,
     height: 30,
-    color: Color.schemesOnPrimary,
+    color: Color.colorWhitesmoke_900,
     position: "absolute",
   },
   dueMarch7: {
@@ -416,6 +441,9 @@ const styles = StyleSheet.create({
     width: 119,
     height: 10,
     fontSize: FontSize.size_smi,
+    textAlign: "left",
+    color: Color.colorWhitesmoke_900,
+    fontFamily: FontFamily.poppinsRegular,
     position: "absolute",
   },
   rectangleIcon: {
@@ -429,12 +457,28 @@ const styles = StyleSheet.create({
     top: 385,
     left: 170,
     height: 75,
+    borderWidth: 1,
+    borderColor: Color.miscellaneousFloatingTabTextUnselected,
     backgroundColor: Color.colorDarkcyan,
+    shadowOpacity: 1,
+    elevation: 4,
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowColor: "rgba(0, 0, 0, 0.25)",
+    borderStyle: "solid",
     borderRadius: Border.br_xl,
   },
   setting1: {
     width: 111,
+    height: 20,
     fontSize: FontSize.size_xl,
+    fontFamily: FontFamily.poppinsBold,
+    fontWeight: "700",
+    textAlign: "left",
+    color: Color.colorWhitesmoke_900,
   },
   setting: {
     left: 46,
@@ -444,8 +488,14 @@ const styles = StyleSheet.create({
   transactions: {
     left: 191,
     width: 154,
+    height: 29,
     top: 412,
     fontSize: FontSize.size_xl,
+    fontFamily: FontFamily.poppinsBold,
+    fontWeight: "700",
+    textAlign: "left",
+    color: Color.colorWhitesmoke_900,
+    position: "absolute",
   },
   mastercardChild1: {
     top: 489,
@@ -457,8 +507,8 @@ const styles = StyleSheet.create({
   },
   mastercardChild2: {
     top: 476,
-    left: 17,
     height: 203,
+    left: 17,
   },
   mastercardChild3: {
     top: 495,
@@ -471,10 +521,11 @@ const styles = StyleSheet.create({
   },
   lineView: {
     top: 543,
-    borderStyle: "solid",
-    borderColor: Color.schemesOnPrimary,
+    borderColor: Color.colorWhitesmoke_900,
     borderTopWidth: 1,
     width: 320,
+    borderStyle: "solid",
+    height: 1,
   },
   lineIcon: {
     top: 611,
@@ -527,19 +578,20 @@ const styles = StyleSheet.create({
   },
   mastercardChild6: {
     left: 240,
-    borderRadius: Border.br_3xs,
-    backgroundColor: Color.colorGainsboro_200,
     width: 97,
+    top: 221,
     height: 14,
   },
   viewCards1: {
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorWhitesmoke_600,
     width: 87,
     height: 14,
     fontSize: FontSize.size_sm,
   },
   viewCards: {
     left: 245,
+    top: 221,
+    position: "absolute",
   },
   text2: {
     top: 119,
@@ -547,16 +599,7 @@ const styles = StyleSheet.create({
     width: 184,
     height: 18,
     fontSize: FontSize.size_xl,
-    color: Color.schemesOnPrimary,
-    position: "absolute",
-  },
-  checkBalance1: {
-    color: "#171616",
-    width: 126,
-  },
-  checkBalance: {
-    left: 33,
-    top: 72,
+    color: Color.colorWhitesmoke_900,
     position: "absolute",
   },
   expiryDate: {
@@ -564,21 +607,30 @@ const styles = StyleSheet.create({
     left: 39,
     width: 175,
     position: "absolute",
-    color: Color.schemesOnPrimary,
+    color: Color.colorWhitesmoke_900,
   },
   mastercardChild7: {
     top: -2,
     left: 7,
     width: 345,
     height: 43,
+    borderColor: Color.miscellaneousFloatingTabTextUnselected,
     backgroundColor: Color.colorDarkcyan,
+    shadowOpacity: 1,
+    elevation: 4,
+    shadowRadius: 4,
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowColor: "rgba(0, 0, 0, 0.25)",
     position: "absolute",
   },
   myCards: {
     top: 7,
     left: 63,
     fontSize: FontSize.size_5xl,
-    color: Color.colorWhitesmoke_200,
+    color: Color.colorWhitesmoke_500,
     width: 238,
     height: 53,
     position: "absolute",
@@ -604,7 +656,6 @@ const styles = StyleSheet.create({
   home: {
     marginTop: -2,
     width: 38,
-    fontSize: FontSize.size_smi,
   },
   frame1: {
     height: 49,
@@ -612,7 +663,6 @@ const styles = StyleSheet.create({
   },
   cards: {
     width: 38,
-    fontSize: FontSize.size_smi,
   },
   frame4: {
     zIndex: 0,
@@ -620,7 +670,6 @@ const styles = StyleSheet.create({
   },
   transac: {
     width: 63,
-    fontSize: FontSize.size_smi,
   },
   frame5: {
     top: 0,
@@ -634,11 +683,17 @@ const styles = StyleSheet.create({
     left: 75,
     width: 75,
     zIndex: 2,
+    fontFamily: FontFamily.interBold,
+    height: 29,
     fontSize: FontSize.size_smi,
+    fontWeight: "700",
+    textAlign: "left",
+    color: Color.colorWhitesmoke_900,
+    position: "absolute",
   },
   frame3: {
     width: 113,
-    gap: Gap.gap_md,
+    gap: Gap.gap_sm,
     height: 52,
     alignItems: "center",
     flexDirection: "row",
@@ -646,28 +701,26 @@ const styles = StyleSheet.create({
   },
   history: {
     width: 47,
-    fontSize: FontSize.size_smi,
   },
   frame6: {
     width: 47,
   },
   frame2: {
     width: 177,
-    gap: Gap.gap_2xl,
+    gap: Gap.gap_xl,
     flexDirection: "row",
     alignItems: "center",
     height: 53,
   },
   frame: {
     width: 239,
-    gap: Gap.gap_5xl,
+    gap: Gap.gap_4xl,
     flexDirection: "row",
     alignItems: "center",
     height: 53,
   },
   profile: {
     width: 42,
-    fontSize: FontSize.size_smi,
   },
   frame7: {
     width: 42,
@@ -681,13 +734,28 @@ const styles = StyleSheet.create({
     height: 77,
     paddingHorizontal: Padding.p_12xl,
     paddingBottom: Padding.p_2xs,
-    gap: Gap.gap_xl,
+    gap: Gap.gap_lg,
     flexDirection: "row",
     alignItems: "center",
     position: "absolute",
   },
+  mastercardChild8: {
+    top: 62,
+    width: 160,
+    height: 17,
+    left: 17,
+  },
+  checkBalance1: {
+    color: Color.colorWhitesmoke_100,
+    width: 126,
+  },
+  checkBalance: {
+    left: 25,
+    top: 63,
+    position: "absolute",
+  },
   mastercard: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

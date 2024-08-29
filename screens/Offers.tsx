@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Pressable, Text } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Image, Pressable, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, Border, FontFamily, FontSize } from "../GlobalStyles";
 
 const Offers = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.offers, styles.iconTransform]}>
@@ -17,13 +15,13 @@ const Offers = () => {
       <Pressable style={styles.arrowLeft} onPress={() => navigation.goBack()}>
         <Image
           style={[styles.icon, styles.iconTransform]}
-          contentFit="cover"
-          source={require("../assets/arrow-left2.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left3.png")}
         />
       </Pressable>
       <Image
         style={[styles.rectangleIcon, styles.offersChildLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-322.png")}
       />
       <Text style={[styles.home, styles.homeTypo]}>Home</Text>
@@ -32,38 +30,38 @@ const Offers = () => {
       <Text style={[styles.cards, styles.homeTypo]}>Cards</Text>
       <Image
         style={[styles.accountCircleIcon, styles.iconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/account-circle.png")}
       />
       <Image
         style={[styles.checkSquareIcon, styles.iconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/check-square.png")}
       />
       <View style={[styles.offersChild1, styles.iconChildPosition]} />
       <Image
         style={[styles.offersChild2, styles.iconChildPosition]}
-        contentFit="cover"
-        source={require("../assets/rectangle-281.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-28.png")}
       />
       <Image
         style={[styles.offersChild3, styles.offersChildLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-322.png")}
       />
       <Image
         style={[styles.offersChild4, styles.offersChildLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-322.png")}
       />
       <Image
         style={[styles.offersChild5, styles.offersChildLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-322.png")}
       />
       <Image
         style={[styles.abhibuss1Icon, styles.iconChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/abhibuss-1.png")}
       />
       <Text style={[styles.abhibus, styles.nykaaTypo]}>Abhibus</Text>
@@ -72,13 +70,13 @@ const Offers = () => {
       </Text>
       <Image
         style={[styles.playArrowIcon, styles.playIconLayout]}
-        contentFit="cover"
-        source={require("../assets/play-arrow2.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow3.png")}
       />
       <Text style={styles.offers1}>Offers</Text>
       <Image
         style={[styles.offersChild6, styles.myntra1IconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-30.png")}
       />
       <Text style={[styles.makeMyTrip, styles.nykaaTypo]}>Make my Trip</Text>
@@ -87,12 +85,12 @@ const Offers = () => {
       </Text>
       <Image
         style={[styles.playArrowIcon1, styles.playIconPosition]}
-        contentFit="cover"
-        source={require("../assets/play-arrow.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow4.png")}
       />
       <Image
         style={[styles.nykaaaa1Icon, styles.iconChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/nykaaaa-1.png")}
       />
       <Text style={[styles.nykaa, styles.nykaaTypo]}>NYKAA</Text>
@@ -101,12 +99,12 @@ const Offers = () => {
       </Text>
       <Image
         style={[styles.playArrowIcon2, styles.playIconPosition]}
-        contentFit="cover"
-        source={require("../assets/play-arrow.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow4.png")}
       />
       <Image
         style={[styles.myntra1Icon, styles.myntra1IconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/myntra-1.png")}
       />
       <Text style={[styles.myntra, styles.nykaaTypo]}>Myntra</Text>
@@ -115,17 +113,17 @@ const Offers = () => {
       </Text>
       <Image
         style={[styles.playArrowIcon3, styles.playIconLayout]}
-        contentFit="cover"
-        source={require("../assets/play-arrow.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow4.png")}
       />
       <Image
         style={[styles.frameIcon, styles.iconChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/frame-141.png")}
       />
       <Image
         style={[styles.httpslottiefilescomanimatIcon, styles.iconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/httpslottiefilescomanimationsgiftsandrewardsugnsuqksxg.png")}
       />
     </View>
@@ -205,7 +203,6 @@ const styles = StyleSheet.create({
   },
   get40DicountTypo: {
     fontSize: FontSize.size_mini,
-    left: 136,
     color: Color.colorDarkcyan,
     fontFamily: FontFamily.poppinsRegular,
     textAlign: "center",
@@ -337,13 +334,14 @@ const styles = StyleSheet.create({
     left: 44,
   },
   abhibus: {
-    top: 196,
-    left: 134,
+    top: 199,
     height: 12,
     width: 152,
+    left: 125,
   },
   saveUptoRs500: {
-    top: 243,
+    top: 231,
+    left: 130,
     height: 58,
     width: 152,
   },
@@ -415,6 +413,7 @@ const styles = StyleSheet.create({
   },
   get40Dicount: {
     top: 633,
+    left: 136,
     width: 167,
     height: 44,
   },

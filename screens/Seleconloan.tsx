@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const Seleconloan = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.seleconloan, styles.iconLayout]}>
@@ -14,7 +12,7 @@ const Seleconloan = () => {
       <Text style={styles.applyingForPersonal}>APPLYING FOR PERSONAL LOAN</Text>
       <Image
         style={[styles.image20Icon, styles.image20IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-20.png")}
       />
       <Pressable
@@ -23,42 +21,44 @@ const Seleconloan = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left1.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left4.png")}
         />
       </Pressable>
       <Image
         style={[styles.bankLogosSmall, styles.image20IconLayout]}
-        contentFit="cover"
-        source={require("../assets/bank-logos-small.png")}
+        resizeMode="cover"
+        source={require("../assets/bank-logos-small1.png")}
       />
       <Text style={[styles.sbiLoan, styles.loanFlexBox]}>SBI LOAN</Text>
       <Text style={[styles.selectLoanAmountContainer, styles.loanFlexBox]}>
         <Text style={styles.text}>{`4/5  `}</Text>
-        <Text style={styles.selectLoanAmount}> Select Loan Amount</Text>
+        <Text style={styles.text1}>{`     `}</Text>
+        <Text style={styles.selectLoan}>{` Select Loan `}</Text>
+        <Text style={styles.text1}>Amount</Text>
       </Text>
       <Text style={[styles.notWorking, styles.loanFlexBox]}>Not Working</Text>
       <View style={[styles.seleconloanItem, styles.seleconloanPosition]} />
       <Image
         style={[styles.seleconloanInner, styles.ellipseIconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-74.png")}
       />
       <Image
         style={[styles.lineIcon, styles.lineIconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/line-41.png")}
       />
       <Text style={styles.howMuchAmount}>How much amount needed? Rs.5000</Text>
       <Text style={[styles.k, styles.kTypo]}>5k</Text>
       <Image
         style={[styles.ellipseIcon, styles.ellipseIconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-74.png")}
       />
       <Image
         style={[styles.seleconloanChild1, styles.lineIconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/line-41.png")}
       />
       <Text
@@ -87,32 +87,32 @@ const Seleconloan = () => {
       <Text style={[styles.upload5, styles.uploadTypo]}> Upload</Text>
       <Image
         style={[styles.image44Icon, styles.image44IconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-44.png")}
       />
       <Image
         style={[styles.image44Icon1, styles.image44IconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-44.png")}
       />
       <Image
         style={[styles.image44Icon2, styles.image44IconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-44.png")}
       />
       <Image
         style={[styles.image44Icon3, styles.image44IconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-44.png")}
       />
       <Image
         style={[styles.image44Icon4, styles.image44IconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-44.png")}
       />
       <Image
         style={[styles.image44Icon5, styles.image44IconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-44.png")}
       />
       <Pressable
@@ -120,7 +120,7 @@ const Seleconloan = () => {
         onPress={() => navigation.navigate("Congrats")}
       />
       <Text style={[styles.next, styles.loanFlexBox]}>
-        <Text style={styles.text1}>{`       `}</Text>
+        <Text style={styles.text2}>{`       `}</Text>
         <Text style={styles.next1}>Next</Text>
       </Text>
       <Text style={[styles.change, styles.loanFlexBox]}>Change</Text>
@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     height: 29,
     width: 109,
     left: 214,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     textAlign: "left",
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
@@ -207,7 +207,7 @@ const styles = StyleSheet.create({
     left: 212,
     height: 29,
     width: 109,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     textAlign: "left",
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
@@ -227,6 +227,7 @@ const styles = StyleSheet.create({
     height: 60,
   },
   applyingForPersonal: {
+    top: 21,
     left: 35,
     height: 28,
     width: 315,
@@ -235,14 +236,11 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
     fontSize: FontSize.size_base,
-    top: 24,
     position: "absolute",
   },
   image20Icon: {
-    left: 310,
     top: 24,
-    height: 20,
-    width: 20,
+    left: 325,
   },
   icon: {
     height: "100%",
@@ -251,10 +249,10 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   arrowLeft: {
-    left: "-2.22%",
-    top: "-1.5%",
-    right: "88.33%",
-    bottom: "95.25%",
+    left: "-2.5%",
+    top: "1.13%",
+    right: "88.61%",
+    bottom: "92.63%",
     width: "13.89%",
     height: "6.25%",
     position: "absolute",
@@ -271,15 +269,18 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_smi,
     width: 66,
     height: 15,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
   },
   text: {
     color: Color.colorMediumseagreen_100,
   },
-  selectLoanAmount: {
+  text1: {
     color: Color.miscellaneousFloatingTabTextUnselected,
+  },
+  selectLoan: {
+    color: Color.colorDarkslategray_100,
   },
   selectLoanAmountContainer: {
     top: 160,
@@ -447,16 +448,16 @@ const styles = StyleSheet.create({
     top: 614,
   },
   rectanglePressable: {
-    marginLeft: -80,
-    top: 701,
-    height: 50,
+    marginLeft: -79,
+    top: 705,
+    height: 43,
     backgroundColor: Color.colorPaleturquoise_100,
     borderRadius: Border.br_8xs,
     width: 161,
     left: "50%",
     position: "absolute",
   },
-  text1: {
+  text2: {
     fontFamily: FontFamily.interBold,
     fontWeight: "700",
   },
@@ -469,7 +470,7 @@ const styles = StyleSheet.create({
     top: 715,
     width: 120,
     height: 22,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     fontSize: FontSize.size_base,
     left: "50%",
   },
@@ -501,7 +502,7 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.poppinsBold,
   },
   seleconloan: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

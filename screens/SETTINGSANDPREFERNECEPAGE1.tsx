@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Pressable, Text } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Image, Pressable, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const SETTINGSANDPREFERNECEPAGE1 = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.settingsAndPrefernecePage}>
@@ -22,19 +20,19 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
           styles.settingsAndPrefernecePageInner,
           styles.settingsChildLayout2,
         ]}
-        contentFit="cover"
-        source={require("../assets/rectangle-231.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-23.png")}
       />
       <Image
         style={[styles.alignLeftIcon, styles.iconLayout1]}
-        contentFit="cover"
-        source={require("../assets/align-left1.png")}
+        resizeMode="cover"
+        source={require("../assets/align-left.png")}
       />
       <Pressable style={styles.arrowLeft} onPress={() => navigation.goBack()}>
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left12.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left.png")}
         />
       </Pressable>
       <Text style={[styles.settingsAndPreferences, styles.logOutFlexBox]}>
@@ -42,7 +40,7 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
       </Text>
       <Image
         style={[styles.rectangleIcon, styles.settingsChildLayout2]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-20.png")}
       />
       <Image
@@ -50,7 +48,7 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
           styles.settingsAndPrefernecePageChild1,
           styles.settingsChildLayout2,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-21.png")}
       />
       <Text style={styles.languages}>Languages</Text>
@@ -62,8 +60,8 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
           styles.settingsAndPrefernecePageChild2,
           styles.settingsChildLayout2,
         ]}
-        contentFit="cover"
-        source={require("../assets/rectangle-221.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-22.png")}
       />
       <Text style={[styles.billNotifications, styles.themeTypo]}>
         Bill Notifications
@@ -77,8 +75,8 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
           styles.settingsAndPrefernecePageChild3,
           styles.settingsChildLayout2,
         ]}
-        contentFit="cover"
-        source={require("../assets/rectangle-231.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-23.png")}
       />
       <Text style={[styles.theme, styles.themeTypo]}>Theme</Text>
       <Text style={[styles.chooseBetweenLight, styles.recieveAlertsWhenTypo]}>
@@ -87,8 +85,8 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
       <View style={styles.rectangleView} />
       <Image
         style={[styles.userIcon, styles.iconPosition]}
-        contentFit="cover"
-        source={require("../assets/user1.png")}
+        resizeMode="cover"
+        source={require("../assets/user.png")}
       />
       <Text style={styles.dataPreferences}>Data Preferences</Text>
       <Text style={[styles.manageAllShared, styles.manageAllSharedTypo]}>
@@ -96,8 +94,8 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
       </Text>
       <Image
         style={[styles.playArrowIcon, styles.playIconLayout]}
-        contentFit="cover"
-        source={require("../assets/play-arrow3.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow.png")}
       />
       <Pressable
         style={[styles.rectanglePressable, styles.rectanglePressableLayout]}
@@ -106,33 +104,33 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
       <Text style={[styles.logOut, styles.logOutFlexBox]}>LOG OUT</Text>
       <Image
         style={[styles.boldIcon, styles.iconLayout1]}
-        contentFit="cover"
-        source={require("../assets/bold1.png")}
+        resizeMode="cover"
+        source={require("../assets/bold.png")}
       />
       <Image
         style={[styles.playArrowIcon1, styles.playIconLayout]}
-        contentFit="cover"
-        source={require("../assets/play-arrow4.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow1.png")}
       />
       <Image
         style={[styles.pickerButtonIcon, styles.iconPosition]}
-        contentFit="cover"
-        source={require("../assets/picker-button1.png")}
+        resizeMode="cover"
+        source={require("../assets/picker-button.png")}
       />
       <Image
         style={[styles.playArrowIcon2, styles.playIconLayout]}
-        contentFit="cover"
-        source={require("../assets/play-arrow5.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow2.png")}
       />
       <Image
         style={[styles.playArrowIcon3, styles.playIconLayout]}
-        contentFit="cover"
-        source={require("../assets/play-arrow5.png")}
+        resizeMode="cover"
+        source={require("../assets/play-arrow2.png")}
       />
       <Image
         style={[styles.creditCardIcon, styles.iconLayout1]}
-        contentFit="cover"
-        source={require("../assets/credit-card1.png")}
+        resizeMode="cover"
+        source={require("../assets/credit-card.png")}
       />
       <Pressable
         style={[styles.playArrow, styles.playIconLayout]}
@@ -140,21 +138,21 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/play-arrow5.png")}
+          resizeMode="cover"
+          source={require("../assets/play-arrow2.png")}
         />
       </Pressable>
       <Image
         style={styles.frameIcon}
-        contentFit="cover"
-        source={require("../assets/frame-142.png")}
+        resizeMode="cover"
+        source={require("../assets/frame-14.png")}
       />
       <Image
         style={[
           styles.settingsAndPrefernecePageChild4,
           styles.settingsChildLayout2,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-201.png")}
       />
       <Image
@@ -162,7 +160,7 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
           styles.settingsAndPrefernecePageChild5,
           styles.settingsChildPosition,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-202.png")}
       />
       <View style={styles.settingsAndPrefernecePageChild6} />
@@ -174,7 +172,7 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
       />
       <Image
         style={styles.checkBoxIcon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/check-box.png")}
       />
       <Text style={styles.english}>English</Text>
@@ -186,7 +184,7 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
       />
       <Image
         style={styles.image25Icon}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-25.png")}
       />
       <Text style={[styles.text, styles.textTypo1]}>ಕನ್ನಡ</Text>
@@ -198,8 +196,8 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
       />
       <Image
         style={[styles.checkBoxOutlineBlankIcon, styles.checkIconLayout]}
-        contentFit="cover"
-        source={require("../assets/check-box-outline-blank3.png")}
+        resizeMode="cover"
+        source={require("../assets/check-box-outline-blank.png")}
       />
       <View
         style={[
@@ -233,28 +231,28 @@ const SETTINGSANDPREFERNECEPAGE1 = () => {
       />
       <Image
         style={[styles.checkBoxOutlineBlankIcon1, styles.checkIconPosition1]}
-        contentFit="cover"
-        source={require("../assets/check-box-outline-blank3.png")}
+        resizeMode="cover"
+        source={require("../assets/check-box-outline-blank.png")}
       />
       <Image
         style={[styles.checkBoxOutlineBlankIcon2, styles.checkIconPosition]}
-        contentFit="cover"
-        source={require("../assets/check-box-outline-blank3.png")}
+        resizeMode="cover"
+        source={require("../assets/check-box-outline-blank.png")}
       />
       <Image
         style={[styles.checkBoxOutlineBlankIcon3, styles.checkIconPosition1]}
-        contentFit="cover"
-        source={require("../assets/check-box-outline-blank3.png")}
+        resizeMode="cover"
+        source={require("../assets/check-box-outline-blank.png")}
       />
       <Image
         style={[styles.checkBoxOutlineBlankIcon4, styles.checkIconPosition]}
-        contentFit="cover"
-        source={require("../assets/check-box-outline-blank3.png")}
+        resizeMode="cover"
+        source={require("../assets/check-box-outline-blank.png")}
       />
       <Image
         style={[styles.checkBoxOutlineBlankIcon5, styles.checkIconLayout]}
-        contentFit="cover"
-        source={require("../assets/check-box-outline-blank3.png")}
+        resizeMode="cover"
+        source={require("../assets/check-box-outline-blank.png")}
       />
       <Text style={[styles.text2, styles.textTypo]}>తెలుగు </Text>
       <Text style={[styles.text3, styles.textTypo1]}>ગુજરાતી </Text>
@@ -878,7 +876,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_7xl,
   },
   settingsAndPrefernecePage: {
-    backgroundColor: Color.colorWhitesmoke_100,
+    backgroundColor: Color.colorWhitesmoke_400,
     flex: 1,
     height: 796,
     transform: [

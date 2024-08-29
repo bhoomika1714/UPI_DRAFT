@@ -1,24 +1,20 @@
 import * as React from "react";
-import { Text, StyleSheet, View, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Text, StyleSheet, Image, View, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { FontFamily, Color, FontSize, Gap, Border } from "../GlobalStyles";
 
 const TermCondition = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.termCondition}>
-      <Text style={[styles.welcomeToUpay, styles.welcomeToUpayLayout]}>
+      <Text style={styles.welcomeToUpay}>
         Welcome to UPay It, a UPI-based payment application designed to provide
         a seamless and secure digital payment experience. By downloading,
         installing, and using the UPayIt App, you agree to comply with and be
         bound by these Terms and Conditions.
       </Text>
-      <Text
-        style={[styles.eligibilityToUseContainer, styles.welcomeToUpayLayout]}
-      >
+      <Text style={styles.eligibilityToUseContainer}>
         <Text style={styles.eligibilityToUseUpayItYo}>
           <Text style={styles.eligibility}>{`  Eligibility
 `}</Text>
@@ -51,34 +47,34 @@ UPay It may also offer additional services like rewards, offers, and analysis of
       <View style={[styles.statusBar, styles.statusBarPosition]}>
         <Image
           style={[styles.notchIcon, styles.statusBarPosition]}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/notch.png")}
         />
         <View style={[styles.statusIcons, styles.statusIconsFlexBox]}>
           <Image
             style={styles.networkSignalLight}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/network-signal-light.png")}
           />
           <Image
             style={styles.wifiSignalLight}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/wifi-signal--light.png")}
           />
           <Image
             style={styles.batteryLight}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/battery--light.png")}
           />
         </View>
         <Image
           style={styles.indicatorIcon}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/indicator.png")}
         />
         <Image
           style={styles.timeLight}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/time--light.png")}
         />
       </View>
@@ -86,7 +82,7 @@ UPay It may also offer additional services like rewards, offers, and analysis of
         <Pressable style={styles.wrapper} onPress={() => navigation.goBack()}>
           <Image
             style={styles.icon}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/group-42.png")}
           />
         </Pressable>
@@ -97,13 +93,6 @@ UPay It may also offer additional services like rewards, offers, and analysis of
 };
 
 const styles = StyleSheet.create({
-  welcomeToUpayLayout: {
-    textAlign: "left",
-    lineHeight: 24,
-    left: 0,
-    width: 360,
-    position: "absolute",
-  },
   statusBarPosition: {
     top: 0,
     left: 0,
@@ -116,12 +105,16 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   welcomeToUpay: {
-    top: 116,
+    top: 111,
+    left: 5,
     fontFamily: FontFamily.montserratRegular,
+    width: 356,
     height: 144,
-    width: 360,
-    color: Color.colorGray_100,
+    textAlign: "left",
+    lineHeight: 24,
+    color: Color.colorGray_200,
     fontSize: FontSize.size_mini,
+    position: "absolute",
   },
   eligibility: {
     fontWeight: "700",
@@ -138,7 +131,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_xs,
   },
   eligibilityToUseUpayItYo: {
-    color: Color.colorGray_100,
+    color: Color.colorGray_200,
   },
   variousFinancialServicesUp1: {
     color: Color.miscellaneousFloatingTabTextUnselected,
@@ -147,6 +140,10 @@ const styles = StyleSheet.create({
     top: 272,
     height: 599,
     width: 360,
+    left: 0,
+    textAlign: "left",
+    lineHeight: 24,
+    position: "absolute",
   },
   notchIcon: {
     right: 0,
@@ -172,7 +169,7 @@ const styles = StyleSheet.create({
     top: 16,
     right: 14,
     width: 69,
-    gap: Gap.gap_4xs,
+    gap: Gap.gap_5xs,
     height: 14,
   },
   indicatorIcon: {
@@ -219,11 +216,11 @@ const styles = StyleSheet.create({
     top: 23,
     left: 25,
     width: 303,
-    gap: Gap.gap_6xl,
+    gap: Gap.gap_5xl,
     height: 40,
   },
   termCondition: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersOutlineVariantOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

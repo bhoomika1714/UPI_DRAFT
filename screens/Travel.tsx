@@ -1,12 +1,10 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Pressable, Text, View } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Image, StyleSheet, Pressable, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const Travel = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.travel}>
@@ -17,7 +15,7 @@ const Travel = () => {
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/rectangle-34.png")}
           />
         </Pressable>
@@ -32,7 +30,7 @@ const Travel = () => {
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/rectangle-35.png")}
           />
         </Pressable>
@@ -42,52 +40,57 @@ const Travel = () => {
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-33.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-331.png")}
           />
         </Pressable>
         <View style={[styles.frameChild, styles.homePosition]} />
         <Pressable
           style={[styles.rectanglePressable, styles.containerPosition]}
-          onPress={() => navigation.navigate("Home")}
+          onPress={() => navigation.navigate("Home1")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-37.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-371.png")}
           />
         </Pressable>
+        <Image
+          style={[styles.vectorIcon, styles.frameLayout]}
+          resizeMode="cover"
+          source={require("../assets/vector4.png")}
+        />
       </View>
       <View style={[styles.travelChild, styles.travelChildBg]} />
       <Text style={styles.travel1}>Travel</Text>
       <Image
         style={[styles.travelItem, styles.travelLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Pressable
         style={[styles.ellipsePressable, styles.travelLayout]}
-        onPress={() => navigation.navigate("Trains")}
+        onPress={() => navigation.navigate("Trains1")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/ellipse-45.png")}
         />
       </Pressable>
       <Image
         style={[styles.travelInner, styles.travelLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.ellipseIcon, styles.travelLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.travelChild1, styles.travelLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Text style={[styles.flights, styles.taxiTypo]}>Flights</Text>
@@ -95,7 +98,7 @@ const Travel = () => {
       <Text style={[styles.miniVan, styles.hotelsTypo]}>Mini Van</Text>
       <Pressable
         style={[styles.train, styles.taxiPosition]}
-        onPress={() => navigation.navigate("Trains")}
+        onPress={() => navigation.navigate("Trains1")}
       >
         <Text style={[styles.train1, styles.taxiTypo]}>Train</Text>
       </Pressable>
@@ -104,84 +107,84 @@ const Travel = () => {
       <Text style={[styles.boat, styles.taxiTypo]}>Boat</Text>
       <Image
         style={[styles.travelChild2, styles.travelChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Image
         style={[styles.travelChild3, styles.travelChildPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-45.png")}
       />
       <Pressable style={styles.arrowLeft} onPress={() => navigation.goBack()}>
         <Image
           style={[styles.icon5, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left8.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left13.png")}
         />
       </Pressable>
       <Image
         style={[styles.flight16dp006270Fill0Wght3Icon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/flight-16dp-006270-fill0-wght300-grad0-opsz20-2.png")}
       />
       <Image
         style={[styles.train16dp006270Fill0Wght30Icon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/train-16dp-006270-fill0-wght300-grad0-opsz20-31.png")}
       />
       <Image
         style={[styles.train16dp006270Fill0Wght30Icon1, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/train-16dp-006270-fill0-wght300-grad0-opsz20-4.png")}
       />
       <Image
         style={[styles.carRental16dp006270Fill0WIcon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/car-rental-16dp-006270-fill0-wght300-grad0-opsz20-2.png")}
       />
       <Image
         style={[styles.directionsBoat16dp006270FiIcon, styles.fill0IconLayout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/directions-boat-16dp-006270-fill0-wght300-grad0-opsz20-2.png")}
       />
       <Image
         style={[styles.airportShuttle16dp006270FiIcon, styles.iconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/airport-shuttle-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
         style={[styles.locationCity16dp006270FillIcon, styles.iconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/location-city-16dp-006270-fill0-wght300-grad0-opsz20-1.png")}
       />
       <Image
         style={[styles.rectangleIcon, styles.travelChild6Position]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/rectangle-188.png")}
       />
       <Image
         style={styles.travelChild4}
-        contentFit="cover"
-        source={require("../assets/ellipse-44.png")}
+        resizeMode="cover"
+        source={require("../assets/ellipse-11.png")}
       />
       <Pressable
         style={[styles.wrapper1, styles.wrapperLayout]}
-        onPress={() => navigation.navigate("Notifications7")}
+        onPress={() => navigation.navigate("Notifications")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-26.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-2.png")}
         />
       </Pressable>
       <Pressable
         style={[styles.wrapper2, styles.wrapperLayout]}
-        onPress={() => navigation.navigate("Help4")}
+        onPress={() => navigation.navigate("Help1")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-27.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-3.png")}
         />
       </Pressable>
       <Pressable
@@ -190,15 +193,15 @@ const Travel = () => {
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-28.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-4.png")}
         />
       </Pressable>
       <View style={[styles.rectangleView, styles.travelChildLayout]} />
       <Text style={[styles.text, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.travelChild5, styles.travelChildLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId, styles.upiIdTypo]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -212,32 +215,32 @@ const Travel = () => {
 `}</Text>
       <Image
         style={[styles.travelChild6, styles.travelChild6Position]}
-        contentFit="cover"
-        source={require("../assets/rectangle-25.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-1.png")}
       />
       <Image
         style={styles.travelChild4}
-        contentFit="cover"
-        source={require("../assets/ellipse-44.png")}
+        resizeMode="cover"
+        source={require("../assets/ellipse-11.png")}
       />
       <Pressable
         style={[styles.wrapper1, styles.wrapperLayout]}
-        onPress={() => navigation.navigate("Notifications7")}
+        onPress={() => navigation.navigate("Notifications")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-26.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-2.png")}
         />
       </Pressable>
       <Pressable
         style={[styles.wrapper2, styles.wrapperLayout]}
-        onPress={() => navigation.navigate("Help4")}
+        onPress={() => navigation.navigate("Help1")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-27.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-3.png")}
         />
       </Pressable>
       <Pressable
@@ -246,15 +249,15 @@ const Travel = () => {
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-28.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-4.png")}
         />
       </Pressable>
       <View style={[styles.travelChild8, styles.travelChildLayout]} />
       <Text style={[styles.text1, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.travelChild9, styles.travelChildLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId2, styles.upiId2Typo]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -266,7 +269,7 @@ const Travel = () => {
       <Text style={[styles.text1, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.travelChild9, styles.travelChildLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId2, styles.upiId2Typo]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -278,7 +281,7 @@ const Travel = () => {
       <Text style={[styles.text1, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.travelChild9, styles.travelChildLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId2, styles.upiId2Typo]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -290,7 +293,7 @@ const Travel = () => {
       <Text style={[styles.text1, styles.textTypo]}>*****</Text>
       <Pressable
         style={[styles.travelChild9, styles.travelChildLayout]}
-        onPress={() => navigation.navigate("Pockets7")}
+        onPress={() => navigation.navigate("Pockets")}
       />
       <Text style={[styles.upiId2, styles.upiId2Typo]}>
         <Text style={styles.upiId1}>UPI ID</Text>:
@@ -298,12 +301,12 @@ const Travel = () => {
       <Text style={[styles.wallet8, styles.wallet8Typo]}>Wallet</Text>
       <Pressable
         style={[styles.travelChild16, styles.travelChildBg]}
-        onPress={() => navigation.navigate("Ai1")}
+        onPress={() => navigation.navigate("Ai")}
       />
       <Image
         style={styles.robot224dp006270Fill0WghtIcon}
-        contentFit="cover"
-        source={require("../assets/robot-2-24dp-006270-fill0-wght300-grad0-opsz24-5.png")}
+        resizeMode="cover"
+        source={require("../assets/robot-2-24dp-006270-fill0-wght300-grad0-opsz24-1.png")}
       />
     </View>
   );
@@ -454,7 +457,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
   },
   loans: {
-    left: 143,
+    left: 145,
     width: 63,
     textAlign: "center",
   },
@@ -480,6 +483,9 @@ const styles = StyleSheet.create({
   },
   rectanglePressable: {
     left: 37,
+  },
+  vectorIcon: {
+    left: 168,
   },
   rectangleParent: {
     top: 723,

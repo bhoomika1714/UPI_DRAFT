@@ -1,19 +1,17 @@
 import * as React from "react";
-import { Text, StyleSheet, Pressable, View } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Text, StyleSheet, Pressable, View, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const Rewards1 = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.rewards2}>
       <View style={styles.frame}>
         <Pressable
           style={styles.show}
-          onPress={() => navigation.navigate("Rewards2")}
+          onPress={() => navigation.navigate("Rewards3")}
         >
           <Text style={styles.show1}>SHOW</Text>
         </Pressable>
@@ -22,7 +20,7 @@ const Rewards1 = () => {
         <View style={styles.frame2}>
           <Image
             style={styles.pocketsIcon}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/pockets.png")}
           />
         </View>
@@ -35,7 +33,7 @@ const Rewards1 = () => {
             >
               <Image
                 style={styles.icon}
-                contentFit="cover"
+                resizeMode="cover"
                 source={require("../assets/rectangle-35.png")}
               />
             </Pressable>
@@ -45,12 +43,12 @@ const Rewards1 = () => {
               <Text style={[styles.home, styles.framePosition]}>Home</Text>
               <Pressable
                 style={[styles.container, styles.wrapperLayout]}
-                onPress={() => navigation.navigate("Home")}
+                onPress={() => navigation.navigate("Home1")}
               >
                 <Image
                   style={styles.icon}
-                  contentFit="cover"
-                  source={require("../assets/rectangle-37.png")}
+                  resizeMode="cover"
+                  source={require("../assets/rectangle-371.png")}
                 />
               </Pressable>
             </View>
@@ -62,7 +60,7 @@ const Rewards1 = () => {
                 >
                   <Image
                     style={styles.icon}
-                    contentFit="cover"
+                    resizeMode="cover"
                     source={require("../assets/rectangle-34.png")}
                   />
                 </Pressable>
@@ -79,8 +77,8 @@ const Rewards1 = () => {
                   >
                     <Image
                       style={styles.icon}
-                      contentFit="cover"
-                      source={require("../assets/rectangle-33.png")}
+                      resizeMode="cover"
+                      source={require("../assets/rectangle-331.png")}
                     />
                   </Pressable>
                 </View>
@@ -89,8 +87,8 @@ const Rewards1 = () => {
 `}</Text>
                   <Image
                     style={[styles.vectorIcon, styles.wrapperLayout]}
-                    contentFit="cover"
-                    source={require("../assets/vector3.png")}
+                    resizeMode="cover"
+                    source={require("../assets/vector4.png")}
                   />
                 </View>
               </View>
@@ -156,7 +154,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_xl,
     fontWeight: "300",
     fontFamily: FontFamily.poppinsLight,
-    color: Color.colorWhitesmoke_100,
+    color: Color.colorWhitesmoke_400,
     textAlign: "center",
     width: 77,
     height: 44,

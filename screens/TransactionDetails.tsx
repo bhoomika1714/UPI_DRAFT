@@ -1,6 +1,5 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, View, Text } from "react-native";
+import { Image, StyleSheet, View, Text } from "react-native";
 import {
   Padding,
   Gap,
@@ -19,7 +18,7 @@ const TransactionDetails = () => {
             <View style={styles.icon}>
               <Image
                 style={styles.tickSquareIcon}
-                contentFit="cover"
+                resizeMode="cover"
                 source={require("../assets/ticksquare.png")}
               />
             </View>
@@ -49,7 +48,7 @@ Was Successful`}</Text>
                 <Text style={[styles.visa, styles.labelTypo]}>Visa</Text>
                 <Image
                   style={styles.dotsIcon}
-                  contentFit="cover"
+                  resizeMode="cover"
                   source={require("../assets/dots.png")}
                 />
                 <Text style={[styles.visa, styles.labelTypo]}>1234</Text>
@@ -106,7 +105,7 @@ const styles = StyleSheet.create({
     right: 0,
   },
   headerFlexBox: {
-    gap: Gap.gap_md,
+    gap: Gap.gap_sm,
     alignSelf: "stretch",
     alignItems: "center",
   },
@@ -212,13 +211,13 @@ const styles = StyleSheet.create({
     height: 4,
   },
   infoCard: {
-    gap: Gap.gap_2xs,
+    gap: Gap.gap_3xs,
     flexDirection: "row",
     alignSelf: "stretch",
     alignItems: "center",
   },
   infoCardName: {
-    gap: Gap.gap_3xs,
+    gap: Gap.gap_4xs,
     width: 115,
     justifyContent: "center",
   },
@@ -261,15 +260,15 @@ const styles = StyleSheet.create({
     marginTop: -294,
     top: "50%",
     borderRadius: 24,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     height: 700,
-    gap: Gap.gap_5xl,
+    gap: Gap.gap_4xl,
     justifyContent: "flex-end",
     alignItems: "center",
     left: 0,
     position: "absolute",
     padding: Padding.p_5xl,
     right: 0,
-    backgroundColor: Color.schemesOnPrimary,
   },
   label7: {
     top: 12,
@@ -313,11 +312,11 @@ const styles = StyleSheet.create({
     shadowRadius: 44.8,
     elevation: 44.8,
     shadowOpacity: 1,
+    backgroundColor: Color.colorWhitesmoke_400,
     flex: 1,
     height: 800,
     overflow: "hidden",
     width: "100%",
-    backgroundColor: Color.schemesOnPrimary,
   },
 });
 

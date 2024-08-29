@@ -1,12 +1,10 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 
 const Incomedetails1 = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.incomedetails2, styles.iconLayout]}>
@@ -18,7 +16,7 @@ const Incomedetails1 = () => {
       </Text>
       <Image
         style={[styles.image20Icon, styles.incomedetails2Layout]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/image-20.png")}
       />
       <Pressable
@@ -27,31 +25,32 @@ const Incomedetails1 = () => {
       >
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left1.png")}
+          resizeMode="cover"
+          source={require("../assets/arrow-left4.png")}
         />
       </Pressable>
       <Image
         style={[styles.bankLogosSmall, styles.incomedetails2Layout]}
-        contentFit="cover"
-        source={require("../assets/bank-logos-small.png")}
+        resizeMode="cover"
+        source={require("../assets/bank-logos-small1.png")}
       />
       <Text style={[styles.sbiLoan, styles.nextTypo]}>SBI LOAN</Text>
       <Text style={[styles.incomeDetails, styles.nextTypo]}>
         <Text style={styles.text}>{`3/5  `}</Text>
-        <Text style={styles.incomeDetails1}> Income Details</Text>
+        <Text style={styles.text1}>{`        `}</Text>
+        <Text style={styles.incomeDetails1}>Income Details</Text>
       </Text>
       <View
         style={[styles.incomedetails2Item, styles.incomedetails2Position1]}
       />
       <Image
         style={[styles.incomedetails2Inner, styles.incomedetails2Position]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-73.png")}
       />
       <Image
         style={[styles.ellipseIcon, styles.ellipseIconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-73.png")}
       />
       <Image
@@ -59,7 +58,7 @@ const Incomedetails1 = () => {
           styles.incomedetails2Child1,
           styles.incomedetails2ChildPosition1,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-73.png")}
       />
       <Text style={styles.salaryperson}>SalaryPerson</Text>
@@ -95,7 +94,7 @@ const Incomedetails1 = () => {
       <Text style={[styles.change, styles.nextTypo]}>Change</Text>
       <Image
         style={[styles.incomedetails2Child4, styles.incomedetails2Position]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-73.png")}
       />
       <Text style={[styles.working, styles.workingTypo]}>Working</Text>
@@ -107,12 +106,12 @@ const Incomedetails1 = () => {
           styles.incomedetails2Child1,
           styles.incomedetails2ChildPosition1,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-78.png")}
       />
       <Image
         style={[styles.incomedetails2Child6, styles.ellipseIconPosition]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-78.png")}
       />
       <Image
@@ -120,7 +119,7 @@ const Incomedetails1 = () => {
           styles.incomedetails2Child7,
           styles.incomedetails2ChildPosition1,
         ]}
-        contentFit="cover"
+        resizeMode="cover"
         source={require("../assets/ellipse-78.png")}
       />
       <Text style={[styles.loanPurpose, styles.workingTypo]}>Loan Purpose</Text>
@@ -191,7 +190,6 @@ const styles = StyleSheet.create({
     height: 1,
     width: 311,
     borderTopWidth: 1,
-    borderColor: Color.colorGray_400,
     borderStyle: "solid",
     marginLeft: -155.5,
     left: "50%",
@@ -220,6 +218,7 @@ const styles = StyleSheet.create({
     height: 60,
   },
   applyingForPersonal: {
+    top: 24,
     left: 35,
     width: 315,
     height: 28,
@@ -228,14 +227,11 @@ const styles = StyleSheet.create({
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
     fontSize: FontSize.size_base,
-    top: 24,
     position: "absolute",
   },
   image20Icon: {
-    left: 293,
-    top: 24,
-    height: 20,
-    width: 20,
+    top: 25,
+    left: 318,
     position: "absolute",
   },
   icon: {
@@ -245,10 +241,10 @@ const styles = StyleSheet.create({
     overflow: "hidden",
   },
   arrowLeft: {
-    left: "-2.22%",
-    top: "-1.5%",
-    right: "88.33%",
-    bottom: "95.25%",
+    left: "-3.06%",
+    top: "1.25%",
+    right: "89.17%",
+    bottom: "92.5%",
     width: "13.89%",
     height: "6.25%",
     position: "absolute",
@@ -266,7 +262,7 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_smi,
     height: 15,
     width: 66,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
     textAlign: "left",
@@ -275,8 +271,11 @@ const styles = StyleSheet.create({
   text: {
     color: Color.colorMediumseagreen_100,
   },
-  incomeDetails1: {
+  text1: {
     color: Color.miscellaneousFloatingTabTextUnselected,
+  },
+  incomeDetails1: {
+    color: Color.colorDarkslategray_100,
   },
   incomeDetails: {
     top: 160,
@@ -336,12 +335,12 @@ const styles = StyleSheet.create({
   fatherAge: {
     top: 370,
     left: 27,
-    color: "#f5eeee",
+    color: Color.colorWhitesmoke_800,
     width: 150,
   },
   motherAge: {
     top: 422,
-    color: Color.colorSnow_200,
+    color: Color.colorSnow_500,
     width: 107,
     height: 16,
     textAlign: "left",
@@ -351,27 +350,30 @@ const styles = StyleSheet.create({
   },
   lineView: {
     top: 351,
+    borderColor: Color.colorSnow_700,
   },
   incomedetails2Child2: {
     top: 400,
+    borderColor: Color.colorSnow_1000,
   },
   incomedetails2Child3: {
     top: 449,
+    borderColor: Color.colorSnow_100,
   },
   rectanglePressable: {
-    marginLeft: -80,
-    top: 571,
+    marginLeft: -85,
+    top: 575,
     borderRadius: Border.br_8xs,
     backgroundColor: Color.colorPaleturquoise_100,
     width: 161,
-    height: 50,
+    height: 43,
   },
   next: {
     marginLeft: -53,
     top: 585,
     width: 120,
     height: 22,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    color: Color.colorDarkslategray_100,
     fontFamily: FontFamily.poppinsBold,
     fontWeight: "700",
     textAlign: "left",
@@ -427,9 +429,10 @@ const styles = StyleSheet.create({
   },
   incomedetails2Child8: {
     top: 501,
+    borderColor: Color.colorGray_100,
   },
   incomedetails2: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

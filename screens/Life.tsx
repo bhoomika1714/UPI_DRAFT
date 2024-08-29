@@ -1,38 +1,36 @@
 import * as React from "react";
-import { Image } from "expo-image";
-import { StyleSheet, Pressable, Text, View } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
-import { Color, FontSize, FontFamily, Border } from "../GlobalStyles";
+import { Image, StyleSheet, Pressable, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { FontSize, Color, FontFamily, Border } from "../GlobalStyles";
 
 const Life = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.life}>
       <Image
         style={[styles.lifeChild, styles.lifeChildPosition]}
-        contentFit="cover"
-        source={require("../assets/rectangle-25.png")}
+        resizeMode="cover"
+        source={require("../assets/rectangle-1.png")}
       />
       <Pressable
         style={[styles.wrapper, styles.frameLayout]}
-        onPress={() => navigation.navigate("Notifications7")}
+        onPress={() => navigation.navigate("Notifications")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-26.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-2.png")}
         />
       </Pressable>
       <Pressable
         style={[styles.container, styles.frameLayout]}
-        onPress={() => navigation.navigate("Help4")}
+        onPress={() => navigation.navigate("Help1")}
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-27.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-3.png")}
         />
       </Pressable>
       <Pressable
@@ -41,28 +39,23 @@ const Life = () => {
       >
         <Image
           style={styles.iconLayout}
-          contentFit="cover"
-          source={require("../assets/rectangle-28.png")}
+          resizeMode="cover"
+          source={require("../assets/rectangle-4.png")}
         />
       </Pressable>
       <View style={[styles.rectangleParent, styles.lifeChildPosition]}>
+        <Image
+          style={[styles.frameChild, styles.wrapperLayout]}
+          resizeMode="cover"
+          source={require("../assets/rectangle-321.png")}
+        />
         <Pressable
           style={[styles.rectanglePressable, styles.wrapperLayout]}
-          onPress={() => navigation.navigate("Transactions")}
-        >
-          <Image
-            style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-324.png")}
-          />
-        </Pressable>
-        <Pressable
-          style={[styles.wrapper1, styles.wrapperLayout]}
           onPress={() => navigation.navigate("History1")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/rectangle-34.png")}
           />
         </Pressable>
@@ -72,34 +65,34 @@ const Life = () => {
         <Text style={[styles.transac, styles.checkPosition]}>Transac...</Text>
         <Text style={[styles.cards, styles.homeTypo]}>Cards</Text>
         <Pressable
-          style={[styles.wrapper2, styles.wrapper2Position]}
+          style={[styles.wrapper1, styles.wrapper1Position]}
           onPress={() => navigation.navigate("")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/rectangle-35.png")}
           />
         </Pressable>
         <Pressable
-          style={[styles.wrapper3, styles.wrapperLayout]}
+          style={[styles.wrapper2, styles.wrapperLayout]}
           onPress={() => navigation.navigate("MyCardsBalance")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-33.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-331.png")}
           />
         </Pressable>
-        <View style={[styles.frameChild, styles.wrapper2Position]} />
+        <View style={[styles.frameItem, styles.wrapper1Position]} />
         <Pressable
-          style={[styles.wrapper4, styles.wrapperLayout]}
-          onPress={() => navigation.navigate("Home")}
+          style={[styles.wrapper3, styles.wrapperLayout]}
+          onPress={() => navigation.navigate("Home1")}
         >
           <Image
             style={styles.iconLayout}
-            contentFit="cover"
-            source={require("../assets/rectangle-37.png")}
+            resizeMode="cover"
+            source={require("../assets/rectangle-371.png")}
           />
         </Pressable>
       </View>
@@ -108,20 +101,20 @@ const Life = () => {
       </Text>
       <Pressable style={styles.arrowLeft} onPress={() => navigation.goBack()}>
         <Image
-          style={[styles.icon8, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left13.png")}
+          style={[styles.icon7, styles.iconLayout]}
+          resizeMode="cover"
+          source={require("../assets/arrow-left2.png")}
         />
       </Pressable>
       <View style={styles.lifeItem} />
       <Text style={[styles.croreTermLife, styles.croreTermLifePosition]}>
         ₹ 1 Crore Term Life Insurance
       </Text>
-      <Text style={[styles.startingAt499month, styles.croreTermLifePosition]}>
-        Starting at ₹499/month
-      </Text>
+      <Text style={styles.startingAt499month}>Starting at ₹499/month</Text>
       <View style={styles.lifeInner} />
-      <Text style={styles.calculateYourCover}>Calculate your cover amount</Text>
+      <Text style={[styles.calculateYourCover, styles.croreTermLifePosition]}>
+        Calculate your cover amount
+      </Text>
       <Text style={[styles.dateOfBirth, styles.dateOfBirthTypo]}>
         Date of Birth
       </Text>
@@ -160,9 +153,9 @@ const styles = StyleSheet.create({
   },
   homeTypo: {
     height: 20,
-    color: Color.schemesOnPrimary,
     fontSize: FontSize.size_smi,
     top: 43,
+    color: Color.schemesOnPrimary,
     fontFamily: FontFamily.interBold,
     fontWeight: "700",
     position: "absolute",
@@ -181,12 +174,11 @@ const styles = StyleSheet.create({
     left: 143,
     textAlign: "left",
   },
-  wrapper2Position: {
+  wrapper1Position: {
     top: 13,
     position: "absolute",
   },
   checkTypo: {
-    fontFamily: FontFamily.interBlack,
     fontWeight: "900",
     position: "absolute",
   },
@@ -196,15 +188,16 @@ const styles = StyleSheet.create({
   },
   croreTermLifePosition: {
     left: 20,
+    fontSize: FontSize.size_5xl,
     textAlign: "left",
     position: "absolute",
   },
   dateOfBirthTypo: {
     fontFamily: FontFamily.interBold,
-    fontWeight: "700",
     color: Color.miscellaneousFloatingTabTextUnselected,
     fontSize: FontSize.size_base,
     textAlign: "left",
+    fontWeight: "700",
     position: "absolute",
   },
   lifeChild2Layout: {
@@ -244,13 +237,13 @@ const styles = StyleSheet.create({
   frame: {
     left: 276,
   },
-  rectanglePressable: {
+  frameChild: {
     left: 165,
     top: 11,
     width: 25,
     position: "absolute",
   },
-  wrapper1: {
+  rectanglePressable: {
     left: 234,
     top: 11,
     width: 25,
@@ -272,9 +265,9 @@ const styles = StyleSheet.create({
   transac: {
     width: 63,
     height: 20,
-    color: Color.schemesOnPrimary,
     fontSize: FontSize.size_smi,
     top: 43,
+    color: Color.schemesOnPrimary,
     fontFamily: FontFamily.interBold,
     fontWeight: "700",
     position: "absolute",
@@ -284,25 +277,25 @@ const styles = StyleSheet.create({
     width: 38,
     textAlign: "left",
   },
-  wrapper2: {
+  wrapper1: {
     left: 292,
     height: 31,
     width: 25,
   },
-  wrapper3: {
+  wrapper2: {
     left: 101,
     top: 11,
     width: 25,
     position: "absolute",
   },
-  frameChild: {
+  frameItem: {
     borderRadius: Border.br_3xs,
     backgroundColor: Color.colorTurquoise,
     height: 32,
     width: 38,
     left: 31,
   },
-  wrapper4: {
+  wrapper3: {
     left: 37,
     top: 14,
     position: "absolute",
@@ -316,13 +309,15 @@ const styles = StyleSheet.create({
   lifeInsurance: {
     top: 119,
     left: 29,
+    fontFamily: FontFamily.poppinsBlack,
     textAlign: "center",
     width: 205,
     height: 36,
     fontSize: FontSize.size_5xl,
+    fontWeight: "900",
     color: Color.schemesOnPrimary,
   },
-  icon8: {
+  icon7: {
     overflow: "hidden",
   },
   arrowLeft: {
@@ -347,17 +342,20 @@ const styles = StyleSheet.create({
   croreTermLife: {
     top: 205,
     fontWeight: "800",
-    fontFamily: FontFamily.interExtraBold,
+    fontFamily: FontFamily.poppinsExtraBold,
     width: 276,
-    fontSize: FontSize.size_5xl,
     color: Color.schemesOnPrimary,
+    left: 20,
   },
   startingAt499month: {
-    top: 263,
+    top: 277,
+    left: 11,
     fontWeight: "600",
-    fontFamily: FontFamily.interSemiBold,
+    fontFamily: FontFamily.poppinsSemiBold,
     color: "#98d5de",
     fontSize: FontSize.size_base,
+    textAlign: "left",
+    position: "absolute",
   },
   lifeInner: {
     top: 325,
@@ -369,15 +367,12 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   calculateYourCover: {
-    top: 340,
+    top: 330,
+    fontFamily: FontFamily.poppinsBold,
     width: 324,
     color: Color.miscellaneousFloatingTabTextUnselected,
-    left: 24,
-    fontSize: FontSize.size_5xl,
-    textAlign: "left",
-    fontFamily: FontFamily.interBold,
+    left: 20,
     fontWeight: "700",
-    position: "absolute",
   },
   dateOfBirth: {
     top: 407,
@@ -399,7 +394,7 @@ const styles = StyleSheet.create({
     top: 580,
     left: 52,
     borderRadius: Border.br_lg,
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.colorGainsboro_100,
     width: 245,
     height: 40,
     position: "absolute",
@@ -432,6 +427,7 @@ const styles = StyleSheet.create({
   check: {
     top: 588,
     fontSize: FontSize.size_xl,
+    fontFamily: FontFamily.interBlack,
     color: "#6b6b75",
     left: 143,
     textAlign: "left",

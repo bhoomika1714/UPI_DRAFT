@@ -1,12 +1,10 @@
 import * as React from "react";
-import { Text, StyleSheet, Pressable, View } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
+import { Text, StyleSheet, Image, Pressable, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import { FontFamily, Color, FontSize, Gap, Border } from "../GlobalStyles";
 
 const AboutUS = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={styles.aboutUs}>
@@ -24,7 +22,7 @@ Updated On: 14/9/2023, 9:29:34 am (IST)
       <Pressable style={styles.wrapper} onPress={() => navigation.goBack()}>
         <Image
           style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
+          resizeMode="cover"
           source={require("../assets/group-1000000893.png")}
         />
       </Pressable>
@@ -33,34 +31,34 @@ Updated On: 14/9/2023, 9:29:34 am (IST)
         <View style={[styles.statusBar, styles.statusBarPosition]}>
           <Image
             style={[styles.notchIcon, styles.statusBarPosition]}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/notch.png")}
           />
           <View style={[styles.statusIcons, styles.ourGoalIsFlexBox]}>
             <Image
               style={styles.networkSignalLight}
-              contentFit="cover"
+              resizeMode="cover"
               source={require("../assets/network-signal-light.png")}
             />
             <Image
               style={styles.wifiSignalLight}
-              contentFit="cover"
+              resizeMode="cover"
               source={require("../assets/wifi-signal--light.png")}
             />
             <Image
               style={styles.batteryLight}
-              contentFit="cover"
+              resizeMode="cover"
               source={require("../assets/battery--light.png")}
             />
           </View>
           <Image
             style={styles.indicatorIcon}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/indicator.png")}
           />
           <Image
             style={styles.timeLight}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/time--light.png")}
           />
         </View>
@@ -72,7 +70,7 @@ Updated On: 14/9/2023, 9:29:34 am (IST)
         >
           <Image
             style={styles.iconLayout1}
-            contentFit="cover"
+            resizeMode="cover"
             source={require("../assets/group-42.png")}
           />
         </Pressable>
@@ -163,7 +161,7 @@ const styles = StyleSheet.create({
   },
   aboutUs2: {
     marginLeft: -76,
-    top: 124,
+    top: 109,
     color: Color.colorTeal_100,
     width: 152,
     height: 35,
@@ -201,7 +199,7 @@ const styles = StyleSheet.create({
     right: 14,
     width: 69,
     flexDirection: "row",
-    gap: Gap.gap_4xs,
+    gap: Gap.gap_5xs,
     height: 14,
   },
   indicatorIcon: {
@@ -261,7 +259,7 @@ const styles = StyleSheet.create({
     width: 303,
   },
   aboutUs: {
-    backgroundColor: Color.schemesOnPrimary,
+    backgroundColor: Color.stateLayersSurfaceVariantOpacity08,
     flex: 1,
     height: 800,
     overflow: "hidden",

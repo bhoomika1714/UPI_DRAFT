@@ -1,17 +1,36 @@
 import * as React from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
-import { Image } from "expo-image";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { useNavigation, ParamListBase } from "@react-navigation/native";
-import { FontSize, FontFamily, Color } from "../GlobalStyles";
+import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Color, FontFamily, FontSize } from "../GlobalStyles";
 
 const StatementOverview = () => {
-  const navigation = useNavigation<StackNavigationProp<ParamListBase>>();
+  const navigation = useNavigation();
 
   return (
     <View style={[styles.statementOverview, styles.iconLayout]}>
       <View style={[styles.statementOverviewChild, styles.statementPosition]} />
-      <Text style={styles.transactionReportMerchantContainer}>
+      <View style={[styles.statementOverviewItem, styles.statementPosition]} />
+      <Text style={styles.statementRepresentation}>
+        {" "}
+        Statement Representation
+      </Text>
+      <Pressable
+        style={styles.arrowLeft}
+        onPress={() => navigation.navigate("ViewStatement")}
+      >
+        <Image
+          style={[styles.icon, styles.iconLayout]}
+          resizeMode="cover"
+          source={require("../assets/arrow-left5.png")}
+        />
+      </Pressable>
+      <View style={styles.statementOverviewInner} />
+      <Text
+        style={[
+          styles.transactionReportMerchantContainer,
+          styles.february2021Clr,
+        ]}
+      >
         <Text style={styles.transactionReport}>{`Transaction Report:
 `}</Text>
         <Text
@@ -46,22 +65,7 @@ Transaction Timeline:
 15:00:00 - TRX004: Cloth Purchase of 300.00 using Amex card **** **** **** 9012
 15:05:00 - TRX005: Grocery Purchase of 400.00 using Visa card **** **** **** 1234`}</Text>
       </Text>
-      <View style={[styles.statementOverviewItem, styles.statementPosition]} />
-      <Text style={[styles.statementRepresentation, styles.february2021Typo]}>
-        {" "}
-        Statement Representation
-      </Text>
-      <Pressable
-        style={styles.arrowLeft}
-        onPress={() => navigation.navigate("ViewStatement")}
-      >
-        <Image
-          style={[styles.icon, styles.iconLayout]}
-          contentFit="cover"
-          source={require("../assets/arrow-left17.png")}
-        />
-      </Pressable>
-      <Text style={[styles.february2021, styles.february2021Typo]}>
+      <Text style={[styles.february2021, styles.february2021Clr]}>
         FEBRUARY 2021
       </Text>
     </View>
@@ -78,35 +82,15 @@ const styles = StyleSheet.create({
     left: 0,
     position: "absolute",
   },
-  february2021Typo: {
-    fontSize: FontSize.size_xl,
-    left: 11,
-    fontFamily: FontFamily.interRegular,
+  february2021Clr: {
+    color: Color.miscellaneousFloatingTabTextUnselected,
     textAlign: "left",
     position: "absolute",
   },
   statementOverviewChild: {
-    backgroundColor: Color.colorGainsboro_200,
+    backgroundColor: Color.stateLayersPrimaryOpacity08,
     height: 738,
     top: 69,
-    left: 0,
-  },
-  transactionReport: {
-    fontWeight: "700",
-    fontFamily: FontFamily.interBold,
-  },
-  merchantNameXyzRetail: {
-    fontFamily: FontFamily.interRegular,
-  },
-  transactionReportMerchantContainer: {
-    top: 103,
-    left: 19,
-    fontSize: FontSize.size_sm,
-    height: 667,
-    width: 337,
-    textAlign: "left",
-    color: Color.miscellaneousFloatingTabTextUnselected,
-    position: "absolute",
   },
   statementOverviewItem: {
     top: 0,
@@ -118,6 +102,11 @@ const styles = StyleSheet.create({
     color: Color.schemesOnPrimary,
     height: 43,
     width: 337,
+    textAlign: "left",
+    fontFamily: FontFamily.interRegular,
+    fontSize: FontSize.size_xl,
+    left: 11,
+    position: "absolute",
   },
   icon: {
     height: "100%",
@@ -133,12 +122,36 @@ const styles = StyleSheet.create({
     height: "6.25%",
     position: "absolute",
   },
+  statementOverviewInner: {
+    left: -44,
+    backgroundColor: Color.colorGray_100,
+    width: 447,
+    height: 750,
+    top: 69,
+    position: "absolute",
+  },
+  transactionReport: {
+    fontWeight: "700",
+    fontFamily: FontFamily.interBold,
+  },
+  merchantNameXyzRetail: {
+    fontFamily: FontFamily.interRegular,
+  },
+  transactionReportMerchantContainer: {
+    top: 152,
+    left: 13,
+    fontSize: FontSize.size_sm,
+    height: 667,
+    width: 337,
+  },
   february2021: {
+    top: 100,
     width: 219,
     height: 21,
-    color: Color.miscellaneousFloatingTabTextUnselected,
+    fontFamily: FontFamily.interRegular,
+    fontSize: FontSize.size_xl,
     left: 11,
-    top: 69,
+    color: Color.miscellaneousFloatingTabTextUnselected,
   },
   statementOverview: {
     backgroundColor: Color.schemesOnPrimary,
